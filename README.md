@@ -7,5 +7,10 @@
 IDEにはVisual Studio Community 2013を使用しています。
 また、ライブラリはDXライブラリを用いています。
 
+## 3Dモデルの変換方法
+3Dモデルはxファイルを使う。
+最初の変換方法はfbxはAutodesk FBX Converterを使ってobjに変換。
+その後、objをオンラインでxに変換。
+
 ## 参考文献
 -[DXライブラリの置き場](http://dxlib.o.oo7.jp/)
