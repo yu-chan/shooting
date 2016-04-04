@@ -1,14 +1,13 @@
-﻿Build started 2016/03/31 18:35:36.
-     1>Project "C:\College\syusyoku\shooting\shooting\shooting.vcxproj" on node 2 (Build target(s)).
+﻿2016/04/03 16:32:46 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\College\syusyoku\shooting\shooting\shooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"c:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt shooting_main.cpp
          shooting_main.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\College\syusyoku\shooting\Debug\shooting.exe" /INCREMENTAL /NOLOGO /LIBPATH:"c:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\College\syusyoku\shooting\Debug\shooting.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\College\syusyoku\shooting\Debug\shooting.lib" /MACHINE:X86 Debug\shooting_main.obj
-            Creating library C:\College\syusyoku\shooting\Debug\shooting.lib and object C:\College\syusyoku\shooting\Debug\shooting.exp
          shooting.vcxproj -> C:\College\syusyoku\shooting\Debug\shooting.exe
-     1>Done Building Project "C:\College\syusyoku\shooting\shooting\shooting.vcxproj" (Build target(s)).
+     1>プロジェクト "C:\College\syusyoku\shooting\shooting\shooting.vcxproj" (Build ターゲット) のビルドが完了しました。
 
-Build succeeded.
+ビルドに成功しました。
 
-Time Elapsed 00:00:16.40
+経過時間 00:00:07.49

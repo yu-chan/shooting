@@ -3,16 +3,22 @@
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
+	// ＤＸライブラリの初期化
+	if (DxLib_Init() < 0)
 	{
-		return -1;			// エラーが起きたら直ちに終了
+		// エラーが発生したら直ちに終了
+		return -1;
 	}
 
-	DrawPixel(320, 240, GetColor(255, 255, 255));	// 点を打つ
+	// ３Ｄ空間上に線分を描画する
+	DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 
-	WaitKey();				// キー入力待ち
+	// キー入力待ちをする
+	WaitKey();
 
-	DxLib_End();				// ＤＸライブラリ使用の終了処理
+	// ＤＸライブラリの後始末
+	DxLib_End();
 
-	return 0;				// ソフトの終了 
+	// ソフトの終了
+	return 0;
 }
