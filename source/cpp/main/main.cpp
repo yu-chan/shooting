@@ -1,7 +1,12 @@
 // shooting/source/cpp/mainの中
 
 #define GLOBAL_INSTANCE
-#include "./../../../DxLib_VC/DxLib.h"
+//#include "./../../../DxLib_VC/DxLib.h"
+
+#include <windows.h>
+
+#include "DxLib.h"
+#include "./../source/h/global.h"
 
 //実行中にエラーが出たら、ゲームを強制終了する関数
 int Process_Screen() {
@@ -26,8 +31,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 
 	// ＤＸライブラリの初期化
-	if (DxLib_Init() < 0)
-	{
+	if (DxLib_Init() < 0) {
 		//初期化に失敗したら終了
 		return -1;
 	}
@@ -38,6 +42,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 
+
+	//最初に１度だけデータをロードする
+	load_3DModel();
+
 	//ここに関数を置く
 	while (Process_Screen() == 0) {
 		//ESCきーを押せば強制終了
@@ -45,15 +53,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
+		//座標をセット
+		setCamera();
+
+		//描画
+		draw();
+
 		//裏画面反映
 		ScreenFlip();
 	}
-
-	// ３Ｄ空間上に線分を描画する
-	//DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
-
-	// キー入力待ちをする
-	WaitKey();
 
 	// ＤＸライブラリの後始末
 	DxLib_End();

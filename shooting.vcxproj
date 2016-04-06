@@ -11,13 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="aaa.cpp" />
-    <ClCompile Include="source\cpp\a.cpp" />
-    <ClCompile Include="source\cpp\main\shooting_main.cpp" />
+    <ClCompile Include="source\cpp\draw\draw.cpp" />
+    <ClCompile Include="source\cpp\load\load.cpp" />
+    <ClCompile Include="source\cpp\main\main.cpp" />
+    <ClCompile Include="source\cpp\setPosition\setPosition.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="aaa.h" />
-    <ClInclude Include="source\h\a.h" />
+    <ClInclude Include="source\h\define.h" />
+    <ClInclude Include="source\h\global.h" />
+    <ClInclude Include="source\h\globalFunction.h" />
+    <ClInclude Include="source\h\globalVariable.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A0EC9B5F-E553-4656-940E-035DE13EE7CB}</ProjectGuid>
