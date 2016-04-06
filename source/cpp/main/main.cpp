@@ -1,5 +1,7 @@
+// shooting/source/cpp/mainの中
+
 #define GLOBAL_INSTANCE
-#include "DxLib.h"
+#include "./../../../DxLib_VC/DxLib.h"
 
 //実行中にエラーが出たら、ゲームを強制終了する関数
 int Process_Screen() {

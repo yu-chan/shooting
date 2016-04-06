@@ -11,7 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aaa.cpp" />
+    <ClCompile Include="source\cpp\a.cpp" />
     <ClCompile Include="source\cpp\main\shooting_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aaa.h" />
+    <ClInclude Include="source\h\a.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A0EC9B5F-E553-4656-940E-035DE13EE7CB}</ProjectGuid>
