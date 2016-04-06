@@ -63,6 +63,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();
 	}
 
+	//エラー処理したい時にこれを使おう
+	//OutputDebugStringW(L"とりあえず\n");
+
 	// ＤＸライブラリの後始末
 	DxLib_End();
 
