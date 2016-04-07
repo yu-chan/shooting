@@ -11,3 +11,5 @@
 
 #include "./globalFunction.h"
 #include "./globalVariable.h"
+#include "./globalClass.h"
+#include "./object/character/Character.h"

@@ -8,38 +8,40 @@ Keyboard::Keyboard()
 {
 	X = 0;
 	Y = 0;
-	left_right_flag = 0;
-	up_down_flag = 0;
+	LRFlag = 0;
+	UDFlag = 0;
 	GetHitKeyStateAll(key);
 }
 
 
 Keyboard::~Keyboard()
 {
+	delete[] inputKey;
+	delete[] key;
 }
 
 //キーが押されているかチェックする
 int Keyboard::checkKey(int KEY) {
 	switch (KEY) {
 		case KEY_INPUT_RIGHT:
-			left_right_flag = TRUE;
+			LRFlag = TRUE;
 			X = 5;
 			return TRUE;
 		case KEY_INPUT_LEFT:
-			left_right_flag = TRUE;
+			LRFlag = TRUE;
 			X = -5;
 			return TRUE;
 		case KEY_INPUT_UP:
-			up_down_flag = TRUE;
+			UDFlag = TRUE;
 			Y = -5;
 			return TRUE;
 		case KEY_INPUT_DOWN:
-			up_down_flag = TRUE;
+			UDFlag = TRUE;
 			Y = 5;
 			return TRUE;
 	}
-	left_right_flag = FALSE;
-	up_down_flag = FALSE;
+	LRFlag = FALSE;
+	UDFlag = FALSE;
 	X = 0;
 	Y = 0;
 	return FALSE;
@@ -53,7 +55,23 @@ void Keyboard::updateKey() {
 			inputKey[i]++;
 		}
 		else {
-			inputKey[i]++;
+			inputKey[i] = 0;
 		}
 	}
+}
+
+int Keyboard::getX() {
+	return X;
+}
+
+int Keyboard::getY() {
+	return  Y;
+}
+
+int Keyboard::getLRFlag() {
+	return LRFlag;
+}
+
+int Keyboard::getUDFlag() {
+	return UDFlag;
 }

@@ -19,6 +19,8 @@ int Process_Screen() {
 		return -1;
 	}
 
+	keyboard.updateKey();
+
 	//エラーが出てないなら、正常なので0を返す
 	return 0;
 }
@@ -45,6 +47,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	//最初に１度だけデータをロードする
 	load_3DModel();
+
+	Keyboard keyboard;
 
 	//ここに関数を置く
 	while (Process_Screen() == 0) {

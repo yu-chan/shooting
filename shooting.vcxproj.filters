@@ -30,7 +30,7 @@
     <ClCompile Include="source\cpp\keyboard\Keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\cpp\player\Player.cpp">
+    <ClCompile Include="source\cpp\object\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +50,10 @@
     <ClInclude Include="source\h\keyboard\Keyboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\h\player\Player.h">
+    <ClInclude Include="source\h\struct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\object\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

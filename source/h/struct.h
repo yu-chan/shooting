@@ -1,4 +1,4 @@
-//プレイヤー、敵、オブジェクトに使う
+//プレイヤー、敵、物に使う
 typedef struct {
 	float x, y, z;//座標
 	float ang;//角度
