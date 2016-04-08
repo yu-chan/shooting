@@ -30,7 +30,13 @@
     <ClCompile Include="source\cpp\keyboard\Keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\cpp\object\Object.cpp">
+    <ClCompile Include="source\cpp\substance\Substance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\cpp\substance\character\player\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\cpp\substance\character\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +59,16 @@
     <ClInclude Include="source\h\struct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\h\object\Object.h">
+    <ClInclude Include="source\h\globalClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\substance\Substance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\substance\character\player\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\substance\character\Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

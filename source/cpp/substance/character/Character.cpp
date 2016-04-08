@@ -1,4 +1,4 @@
-#include "..\..\..\h\object\character\Character.h"
+#include "..\..\..\h\substance\character\Character.h"
 
 
 Character::Character()

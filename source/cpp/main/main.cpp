@@ -48,8 +48,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//最初に１度だけデータをロードする
 	load_3DModel();
 
-	Keyboard keyboard;
-
 	//ここに関数を置く
 	while (Process_Screen() == 0) {
 		//ESCきーを押せば強制終了
@@ -72,6 +70,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// ＤＸライブラリの後始末
 	DxLib_End();
+
+	//メモリの開放
+	keyboard.~Keyboard();
 
 	// ソフトの終了
 	return 0;

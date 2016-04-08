@@ -3,4 +3,5 @@
 /*
   ‚±‚±‚ÉƒOƒ[ƒoƒ‹éŒ¾‚µ‚½‚¢•Ï”‚ð‘‚­
 */
+
 GLOBAL int ModelAirCraft;

@@ -6,17 +6,17 @@ typedef struct {
 	float sp;//スピード
 	float ax, ay, az;//加速度
 	float vx, vy, vz;//速度
-}object;
+}substance;
 
 //キャラクターがもつステータス
 typedef struct {
-	object status;
+	substance status;
 	int hp, hp_mx;
 }character;
 
 //弾
 typedef struct {
-	object status;
+	substance status;
 	int power, num;
 }bullet;
 
@@ -24,4 +24,4 @@ typedef struct {
 typedef struct {
 	character player;
 	bullet shot;
-};
+}player;

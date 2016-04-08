@@ -9,7 +9,9 @@
 #define GLOBAL extern
 #endif
 
+#include "./struct.h"
 #include "./globalFunction.h"
 #include "./globalVariable.h"
 #include "./globalClass.h"
-#include "./object/character/Character.h"
+#include "./substance/Substance.h"
+#include "./substance/character/Character.h"

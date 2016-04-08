@@ -16,8 +16,8 @@ Keyboard::Keyboard()
 
 Keyboard::~Keyboard()
 {
-	delete[] inputKey;
-	delete[] key;
+	//delete[] inputKey;
+	//delete[] key;
 }
 
 //キーが押されているかチェックする
