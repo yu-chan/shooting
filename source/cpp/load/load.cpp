@@ -8,8 +8,9 @@
 #include <Windows.h>
 #include <WinBase.h>
 //#include "./../../../DxLib_VC/DxLib.h"
-#include "DxLib.h"
-#include "./../source/h/globalVariable.h"
+//#include "DxLib.h"
+//#include "./../source/h/globalVariable.h"
+#include "./../source/h/global.h"
 
 using namespace std;
 

@@ -1,5 +1,5 @@
 #pragma once
-//#include "./../source/h/struct.h"
+//#include "./../source/h/global.h"
 class Substance {
 private:
 	substance obj;

@@ -13,5 +13,7 @@
 #include "./globalFunction.h"
 #include "./globalVariable.h"
 #include "./globalClass.h"
+#include "./../source/h/keyboard/Keyboard.h"
 #include "./substance/Substance.h"
 #include "./substance/character/Character.h"
+#include "./substance/character/player/Player.h"

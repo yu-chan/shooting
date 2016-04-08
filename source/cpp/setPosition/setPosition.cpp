@@ -4,9 +4,10 @@
   カメラ、画像、モデルの座標をセットする
 */
 //#include "./../../../DxLib_VC/DxLib.h"
-#include "DxLib.h"
-#include "./../../h/globalVariable.h"
-#include "./../source/h/define.h"
+//#include "DxLib.h"
+//#include "./../../h/globalVariable.h"
+//#include "./../source/h/define.h"
+#include "./../source/h/global.h"
 
 //カメラの描画範囲を決める
 void setCamera() {
