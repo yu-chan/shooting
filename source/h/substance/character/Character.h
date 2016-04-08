@@ -7,5 +7,7 @@ private:
 public:
 	Character();
 	~Character();
+	character getCha();
+	void setCha();
 };
 

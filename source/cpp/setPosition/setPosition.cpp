@@ -14,3 +14,9 @@ void setCamera() {
 	SetCameraNearFar(CAMERA_MIN, CAMERA_MAX);
 	SetCameraPositionAndTarget_UpVecY(VGet(0, 10, -20), VGet(0.0f, 10.0f, 0.0f));
 }
+
+//プレイヤーの位置をセット
+void setPosition_Player() {
+	substance sub = player.getSub();;
+	MV1SetPosition(ModelAirCraft, VGet(sub.x, sub.y, sub.z));
+}

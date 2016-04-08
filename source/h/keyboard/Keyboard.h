@@ -6,19 +6,19 @@
 class Keyboard
 {
 private:
-	int X;
-	int Y;
+	float X;
+	float Y;
 	int LRFlag;
 	int UDFlag;
 public:
-	unsigned int inputKey[KEYBOARD_NUM];//押されているキーフレーム数
+	unsigned int inputKeyFrame[KEYBOARD_NUM];//押されているキーフレーム数
 	char key[KEYBOARD_NUM];
 	Keyboard();
 	~Keyboard();
-	int checkKey(int);
+	int checkKey(unsigned char);
 	void updateKey();
-	int getX();
-	int getY();
+	float getX();
+	float getY();
 	int getLRFlag();
 	int getUDFlag();
 };

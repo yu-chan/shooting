@@ -39,6 +39,9 @@
     <ClCompile Include="source\cpp\substance\character\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\cpp\substance\bullet\Shot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\h\globalVariable.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\h\substance\character\Character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\substance\bullet\Shot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

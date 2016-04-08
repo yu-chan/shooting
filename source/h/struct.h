@@ -10,18 +10,10 @@ typedef struct {
 
 //キャラクターがもつステータス
 typedef struct {
-	substance status;
 	int hp, hp_mx;
 }character;
 
 //弾
 typedef struct {
-	substance status;
 	int power, num;
 }bullet;
-
-//プレイヤー
-typedef struct {
-	character player;
-	bullet shot;
-}player;

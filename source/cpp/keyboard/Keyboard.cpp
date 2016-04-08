@@ -22,7 +22,7 @@ Keyboard::~Keyboard()
 }
 
 //キーが押されているかチェックする
-int Keyboard::checkKey(int KEY) {
+int Keyboard::checkKey(unsigned char KEY) {
 	switch (KEY) {
 		case KEY_INPUT_RIGHT:
 			LRFlag = TRUE;
@@ -46,6 +46,7 @@ int Keyboard::checkKey(int KEY) {
 	X = 0;
 	Y = 0;
 	return FALSE;
+	//return inputKeyFrame[KEY];
 }
 
 //キー入力の状態を更新する
@@ -53,19 +54,19 @@ void Keyboard::updateKey() {
 	GetHitKeyStateAll(key);
 	for (int i = 0; i < KEYBOARD_NUM; i++) {
 		if (key[i] != 0) {
-			inputKey[i]++;
+			inputKeyFrame[i]++;
 		}
 		else {
-			inputKey[i] = 0;
+			inputKeyFrame[i] = 0;
 		}
 	}
 }
 
-int Keyboard::getX() {
+float Keyboard::getX() {
 	return X;
 }
 
-int Keyboard::getY() {
+float Keyboard::getY() {
 	return  Y;
 }
 
