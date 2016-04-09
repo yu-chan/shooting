@@ -19,10 +19,21 @@ Player::~Player()
 void Player::move() {
 	float sp_x[KEY_MOVE] = { -0.1f, 0.1f, 0.0f, -0.0f };
 	float sp_y[KEY_MOVE] = { -0.0f, 0.0f, 0.1f, -0.1f };
+	float sp_z[2] = { -0.1f, 0.1f };
 	float slanting = 1.0;//ŽÎ‚ß
 	substance &sub = *getSub();
 	sub.vx = 0;
 	sub.vy = 0;
+	sub.vz = 0;
+
+	if (keyboard.checkKey(KEY_INPUT_Z) > 0) {
+		if (keyboard.checkKey(KEY_INPUT_LSHIFT)) {
+			sub.z += sp_z[0];
+		}
+		else {
+			sub.z += sp_z[1];
+		}
+	}
 
 	if (keyboard.getLRFlag() == TRUE && keyboard.getUDFlag() == TRUE) {
 		slanting = (float)ROOT2;

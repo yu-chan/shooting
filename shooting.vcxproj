@@ -18,6 +18,7 @@
     <ClCompile Include="source\cpp\setPosition\setPosition.cpp" />
     <ClCompile Include="source\cpp\substance\bullet\Shot.cpp" />
     <ClCompile Include="source\cpp\substance\character\Character.cpp" />
+    <ClCompile Include="source\cpp\substance\character\enemy\Enemy.cpp" />
     <ClCompile Include="source\cpp\substance\character\player\Player.cpp" />
     <ClCompile Include="source\cpp\substance\Substance.cpp" />
   </ItemGroup>
@@ -31,6 +32,7 @@
     <ClInclude Include="source\h\struct.h" />
     <ClInclude Include="source\h\substance\bullet\Shot.h" />
     <ClInclude Include="source\h\substance\character\Character.h" />
+    <ClInclude Include="source\h\substance\character\enemy\Enemy.h" />
     <ClInclude Include="source\h\substance\character\player\Player.h" />
     <ClInclude Include="source\h\substance\Substance.h" />
   </ItemGroup>
