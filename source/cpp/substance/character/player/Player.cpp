@@ -1,5 +1,5 @@
 //#include "..\..\..\..\h\substance\character\player\Player.h"
-#include "./../source/h/global.h"
+#include "./../../../../h/global.h"
 
 
 float x=0, y=0;

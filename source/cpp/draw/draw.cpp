@@ -6,7 +6,7 @@
 //#include "./../../../DxLib_VC/DxLib.h"
 //#include "DxLib.h"
 //#include "./../source/h/globalVariable.h"
-#include "./../source/h/global.h"
+#include "./../../h/global.h"
 
 //Ž©‹@‚Ì•`‰æ
 void draw() {

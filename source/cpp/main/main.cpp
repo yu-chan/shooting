@@ -6,7 +6,7 @@
 #include <windows.h>
 
 #include "DxLib.h"
-#include "./../source/h/global.h"
+#include "./../../h/global.h"
 
 //実行中にエラーが出たら、ゲームを強制終了する関数
 int Process_Screen() {

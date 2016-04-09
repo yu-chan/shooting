@@ -1,5 +1,5 @@
 #pragma once
-//#include "./../source/h/global.h"
+
 class Substance {
 private:
 	substance sub;

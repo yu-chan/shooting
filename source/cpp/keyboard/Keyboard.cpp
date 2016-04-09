@@ -1,9 +1,6 @@
 // shooting/source/cpp/keyboard
 
-//#include "..\..\h\keyboard\Keyboard.h"
-//#include "DxLib.h"
-//#include "./../../h/define.h"
-#include "./../source/h/global.h"
+#include "./../../h/global.h"
 
 Keyboard::Keyboard()
 {

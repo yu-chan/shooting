@@ -1,7 +1,6 @@
 // shooting/source/h/keyboard
 
 #pragma once
-//#include "./../source/h/define.h"
 
 class Keyboard
 {

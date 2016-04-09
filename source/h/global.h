@@ -10,7 +10,7 @@
 #define GLOBAL extern
 #endif
 
-#include "./../source/h/keyboard/Keyboard.h"
+#include "./keyboard/Keyboard.h"
 #include "./struct.h"
 #include "./globalFunction.h"
 #include "./globalVariable.h"
