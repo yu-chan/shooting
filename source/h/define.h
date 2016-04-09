@@ -19,7 +19,15 @@
 #define ROOT2 sqrt(2.0f)
 
 //プレイヤーの行動範囲
-#define RANGE_X_MIN -15
-#define RANGE_X_MAX 15
-#define RANGE_Y_MIN -10
-#define RANGE_Y_MAX 10
+#define PLAYER_RANGE_X_MIN -15
+#define PLAYER_RANGE_X_MAX 15
+#define PLAYER_RANGE_Y_MIN -10
+#define PLAYER_RANGE_Y_MAX 10
+
+//敵の行動範囲
+#define ENEMY_RANGE_X_MIN -20
+#define ENEMY_RANGE_X_MAX 20
+#define ENEMY_RANGE_Y_MIN -20
+#define ENEMY_RANGE_Y_MAX 20
+#define ENEMY_RANGE_Z_MIN -20
+#define ENEMY_RANGE_Z_MAX 20

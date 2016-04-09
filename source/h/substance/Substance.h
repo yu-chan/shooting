@@ -6,7 +6,7 @@ private:
 public:
 	Substance();
 	~Substance();
-	void move();
+	virtual void move() = 0;
 	substance* getSub();
 	void setSub(substance);
 };

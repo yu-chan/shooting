@@ -13,7 +13,7 @@ Enemy::~Enemy()
 void Enemy::move() {
 	substance &sub = *getSub();
 	//character &cha = *getCha();
-	if (sub.x < RANGE_X_MIN || sub.x > RANGE_X_MAX) {
+	if (sub.x < ENEMY_RANGE_X_MIN || sub.x > ENEMY_RANGE_X_MAX) {
 		sub.vx *= -1;
 	}
 	sub.x += sub.vx;

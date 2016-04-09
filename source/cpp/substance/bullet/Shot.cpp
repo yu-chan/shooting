@@ -9,3 +9,7 @@ Shot::Shot()
 Shot::~Shot()
 {
 }
+
+bullet* Shot::getBul() {
+	return &bul;
+}

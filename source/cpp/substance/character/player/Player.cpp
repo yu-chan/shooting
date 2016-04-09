@@ -47,10 +47,10 @@ void Player::move() {
 			sub.y += sp_y[i] / slanting;
 		}
 		//ウィンドウ外に行かないようにする
-		if (sub.x < RANGE_X_MIN) { sub.x = RANGE_X_MIN; }
-		if (sub.x > RANGE_X_MAX) { sub.x = RANGE_X_MAX; }
-		if (sub.y < RANGE_Y_MIN) { sub.y = RANGE_Y_MIN; }
-		if (sub.y > RANGE_Y_MAX) { sub.y = RANGE_Y_MAX; }
+		if (sub.x < PLAYER_RANGE_X_MIN) { sub.x = PLAYER_RANGE_X_MIN; }
+		if (sub.x > PLAYER_RANGE_X_MAX) { sub.x = PLAYER_RANGE_X_MAX; }
+		if (sub.y < PLAYER_RANGE_Y_MIN) { sub.y = PLAYER_RANGE_Y_MIN; }
+		if (sub.y > PLAYER_RANGE_Y_MAX) { sub.y = PLAYER_RANGE_Y_MAX; }
 	}
 
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
