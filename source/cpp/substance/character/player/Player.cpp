@@ -17,7 +17,7 @@ Player::~Player()
 }
 
 void Player::move() {
-	float sp[4] = { -5.0, 5.0, 5.0, -5.0 };
+	float sp[4] = { -0.1f, 0.1f, 0.1f, -0.1f };
 	substance &sub = *getSub();
 	sub.vx = 0;
 	sub.vy = 0;
@@ -39,5 +39,5 @@ void Player::move() {
 	sub.x += sub.vx;
 	sub.y += sub.vy;
 
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }
