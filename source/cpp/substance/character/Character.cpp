@@ -10,10 +10,10 @@ Character::~Character()
 {
 }
 
-character Character::getCha() {
-	return cha;
+character* Character::getCha() {
+	return &cha;
 }
 
-void Character::setCha() {
+void Character::setCha(character c) {
 
 }

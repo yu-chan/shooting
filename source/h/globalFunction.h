@@ -8,8 +8,7 @@
 GLOBAL void draw();
 
 // ./cpp/load/load.cpp
-GLOBAL void load_3DModel();
+GLOBAL void load();
 
 // ./cpp/setPosition/setPosition.cpp
-GLOBAL void setCamera();
-GLOBAL void setPosition_Player();
+GLOBAL void setPosition();

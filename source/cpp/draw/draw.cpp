@@ -9,6 +9,10 @@
 #include "./../../h/global.h"
 
 //Ž©‹@‚Ì•`‰æ
-void draw() {
+void draw_Player() {
 	MV1DrawModel(ModelAirCraft);
+}
+
+void draw() {
+	draw_Player();
 }

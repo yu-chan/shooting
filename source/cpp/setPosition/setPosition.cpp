@@ -18,3 +18,8 @@ void setPosition_Player() {
 	MV1SetPosition(ModelAirCraft, VGet(_sub.x, _sub.y, _sub.z));
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }
+
+void setPosition() {
+	setCamera();
+	setPosition_Player();
+}

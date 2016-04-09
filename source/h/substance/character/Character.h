@@ -6,7 +6,7 @@ private:
 public:
 	Character();
 	~Character();
-	character getCha();
-	void setCha();
+	character* getCha();
+	void setCha(character);
 };
 

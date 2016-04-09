@@ -46,7 +46,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 
 	//最初に１度だけデータをロードする
-	load_3DModel();
+	load();
 
 	//ここに関数を置く
 	while (Process_Screen() == 0) {
@@ -58,8 +58,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		player.move();
 
 		//座標をセット
-		setCamera();
-		setPosition_Player();
+		setPosition();
 
 		//描画
 		draw();
