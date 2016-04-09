@@ -11,7 +11,7 @@ Keyboard::Keyboard()
 	Y = 0;
 	LRFlag = 0;
 	UDFlag = 0;
-	GetHitKeyStateAll(key);
+	//GetHitKeyStateAll(key);
 }
 
 
@@ -23,43 +23,44 @@ Keyboard::~Keyboard()
 
 //キーが押されているかチェックする
 int Keyboard::checkKey(unsigned char KEY) {
-	switch (KEY) {
-		case KEY_INPUT_RIGHT:
-			LRFlag = TRUE;
-			X = 5;
-			//return TRUE;
-		case KEY_INPUT_LEFT:
-			LRFlag = TRUE;
-			X = -5;
-			//return TRUE;
-		case KEY_INPUT_UP:
-			UDFlag = TRUE;
-			Y = -5;
-			//return TRUE;
-		case KEY_INPUT_DOWN:
-			UDFlag = TRUE;
-			Y = 5;
-			//return TRUE;
-	}
-	LRFlag = FALSE;
-	UDFlag = FALSE;
-	X = 0;
-	Y = 0;
+	//switch (KEY) {
+	//	case KEY_INPUT_RIGHT:
+	//		LRFlag = TRUE;
+	//		X = 5;
+	//		//return TRUE;
+	//	case KEY_INPUT_LEFT:
+	//		LRFlag = TRUE;
+	//		X = -5;
+	//		//return TRUE;
+	//	case KEY_INPUT_UP:
+	//		UDFlag = TRUE;
+	//		Y = -5;
+	//		//return TRUE;
+	//	case KEY_INPUT_DOWN:
+	//		UDFlag = TRUE;
+	//		Y = 5;
+	//		//return TRUE;
+	//}
+	//LRFlag = FALSE;
+	//UDFlag = FALSE;
+	//X = 0;
+	//Y = 0;
 	//return FALSE;
 	return inputKeyFrame[KEY];
 }
 
 //キー入力の状態を更新する
-void Keyboard::updateKey() {
+int Keyboard::updateKey() {
 	GetHitKeyStateAll(key);
 	for (int i = 0; i < KEYBOARD_NUM; i++) {
-		if (key[i] != 0) {
+		if (key[i] == 1) {
 			inputKeyFrame[i]++;
 		}
 		else {
 			inputKeyFrame[i] = 0;
 		}
 	}
+	return 0;
 }
 
 float Keyboard::getX() {

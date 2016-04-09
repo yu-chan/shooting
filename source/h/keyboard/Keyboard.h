@@ -16,7 +16,7 @@ public:
 	Keyboard();
 	~Keyboard();
 	int checkKey(unsigned char);
-	void updateKey();
+	int updateKey();
 	float getX();
 	float getY();
 	int getLRFlag();

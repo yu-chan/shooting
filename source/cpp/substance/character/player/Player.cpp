@@ -2,6 +2,7 @@
 #include "./../source/h/global.h"
 
 
+float x=0, y=0;
 Player::Player()
 {
 	key[0] = KEY_INPUT_LEFT;
@@ -16,17 +17,18 @@ Player::~Player()
 }
 
 void Player::move() {
-	substance sub = getSub();
+	float sp[4] = { -5.0, 5.0, -5.0, 5.0 };
+	substance &sub = *getSub();
 	sub.vx = 0;
 	sub.vy = 0;
 	for (int i = 0; i < 2; i++) {
 		if (keyboard.checkKey(key[i]) > 0) {
-			sub.vx = keyboard.getX();
+			sub.vx = sp[i];
 		}
 	}
 	for (int i = 2; i < KEY_MOVE; i++) {
 		if (keyboard.checkKey(key[i]) > 0) {
-			sub.vy = keyboard.getY();
+			sub.vy = sp[i];
 		}
 	}
 
@@ -36,5 +38,6 @@ void Player::move() {
 	}*/
 	sub.x += sub.vx;
 	sub.y += sub.vy;
+
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }

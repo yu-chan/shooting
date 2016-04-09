@@ -38,10 +38,11 @@ void Substance::move() {
 	sub.y += sub.vy;*/
 }
 
-substance Substance::getSub() {
-	return sub;
+substance* Substance::getSub() {
+	return &sub;
 }
 
-void Substance::setSub() {
-
+void Substance::setSub(substance s) {
+	sub.x = s.x;
+	sub.y = s.y;
 }

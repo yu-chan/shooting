@@ -17,7 +17,8 @@ void setCamera() {
 
 //プレイヤーの位置をセット
 void setPosition_Player() {
-	substance sub = player.getSub();
-	MV1SetPosition(ModelAirCraft, VGet(sub.x, sub.y, sub.z));
+	substance _sub, *sub = player.getSub();
+	_sub = *sub;
+	MV1SetPosition(ModelAirCraft, VGet(_sub.x, _sub.y, _sub.z));
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }

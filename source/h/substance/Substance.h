@@ -13,7 +13,7 @@ public:
 	Substance();
 	~Substance();
 	void move();
-	substance getSub();
-	void setSub();
+	substance* getSub();
+	void setSub(substance);
 };
 
