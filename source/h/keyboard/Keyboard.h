@@ -6,8 +6,6 @@
 class Keyboard
 {
 private:
-	float X;
-	float Y;
 	int LRFlag;
 	int UDFlag;
 public:
@@ -17,8 +15,6 @@ public:
 	~Keyboard();
 	int checkKey(unsigned char);
 	int updateKey();
-	float getX();
-	float getY();
 	int getLRFlag();
 	int getUDFlag();
 };
