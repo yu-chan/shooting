@@ -53,5 +53,5 @@ void Player::move() {
 		if (sub.y > RANGE_Y_MAX) { sub.y = RANGE_Y_MAX; }
 	}
 
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }

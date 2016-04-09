@@ -55,7 +55,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
+		//プレイヤーを動かす
 		player.move();
+
+		//敵を動かす
+		enemy.add_count();
+		enemy.move();
 
 		//座標をセット
 		setPosition();

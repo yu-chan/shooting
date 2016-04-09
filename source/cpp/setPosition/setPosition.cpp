@@ -19,7 +19,15 @@ void setPosition_Player() {
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }
 
+//敵の位置をセット
+void setPosition_Enemy() {
+	substance _sub, *sub = enemy.getSub();
+	_sub = *sub;
+	MV1SetPosition(ModelEnemy, VGet(_sub.x, _sub.y, _sub.z));
+}
+
 void setPosition() {
 	setCamera();
 	setPosition_Player();
+	setPosition_Enemy();
 }
