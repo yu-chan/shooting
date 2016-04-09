@@ -12,3 +12,4 @@ GLOBAL void load_3DModel();
 
 // ./cpp/setPosition/setPosition.cpp
 GLOBAL void setCamera();
+GLOBAL void setPosition_Player();

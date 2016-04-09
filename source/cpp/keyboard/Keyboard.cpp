@@ -27,26 +27,26 @@ int Keyboard::checkKey(unsigned char KEY) {
 		case KEY_INPUT_RIGHT:
 			LRFlag = TRUE;
 			X = 5;
-			return TRUE;
+			//return TRUE;
 		case KEY_INPUT_LEFT:
 			LRFlag = TRUE;
 			X = -5;
-			return TRUE;
+			//return TRUE;
 		case KEY_INPUT_UP:
 			UDFlag = TRUE;
 			Y = -5;
-			return TRUE;
+			//return TRUE;
 		case KEY_INPUT_DOWN:
 			UDFlag = TRUE;
 			Y = 5;
-			return TRUE;
+			//return TRUE;
 	}
 	LRFlag = FALSE;
 	UDFlag = FALSE;
 	X = 0;
 	Y = 0;
-	return FALSE;
-	//return inputKeyFrame[KEY];
+	//return FALSE;
+	return inputKeyFrame[KEY];
 }
 
 //キー入力の状態を更新する

@@ -4,6 +4,10 @@
 
 Player::Player()
 {
+	key[0] = KEY_INPUT_LEFT;
+	key[1] = KEY_INPUT_RIGHT;
+	key[2] = KEY_INPUT_UP;
+	key[3] = KEY_INPUT_DOWN;
 }
 
 
@@ -26,10 +30,11 @@ void Player::move() {
 		}
 	}
 
-	if (keyboard.getLRFlag() == TRUE && keyboard.getUDFlag() == TRUE) {
+	/*if (keyboard.getLRFlag() == TRUE && keyboard.getUDFlag() == TRUE) {
 		sub.vx /= ROOT2;
 		sub.vy /= ROOT2;
-	}
+	}*/
 	sub.x += sub.vx;
 	sub.y += sub.vy;
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }

@@ -55,8 +55,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
+		player.move();
+
 		//座標をセット
 		setCamera();
+		setPosition_Player();
 
 		//描画
 		draw();
