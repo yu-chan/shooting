@@ -17,7 +17,7 @@ Player::~Player()
 }
 
 void Player::move() {
-	float sp[4] = { -5.0, 5.0, -5.0, 5.0 };
+	float sp[4] = { -5.0, 5.0, 5.0, -5.0 };
 	substance &sub = *getSub();
 	sub.vx = 0;
 	sub.vy = 0;
