@@ -32,10 +32,10 @@ void Player::move() {
 		}
 	}
 
-	/*if (keyboard.getLRFlag() == TRUE && keyboard.getUDFlag() == TRUE) {
+	if (keyboard.getLRFlag() == TRUE && keyboard.getUDFlag() == TRUE) {
 		sub.vx /= ROOT2;
 		sub.vy /= ROOT2;
-	}*/
+	}
 	sub.x += sub.vx;
 	sub.y += sub.vy;
 
