@@ -46,7 +46,12 @@ void Player::move() {
 			sub.x += sp_x[i] / slanting;
 			sub.y += sp_y[i] / slanting;
 		}
+		//ウィンドウ外に行かないようにする
+		if (sub.x < RANGE_X_MIN) { sub.x = RANGE_X_MIN; }
+		if (sub.x > RANGE_X_MAX) { sub.x = RANGE_X_MAX; }
+		if (sub.y < RANGE_Y_MIN) { sub.y = RANGE_Y_MIN; }
+		if (sub.y > RANGE_Y_MAX) { sub.y = RANGE_Y_MAX; }
 	}
 
-	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }

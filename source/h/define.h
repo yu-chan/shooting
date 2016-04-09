@@ -17,3 +17,9 @@
 
 //斜めに動かした時に必要
 #define ROOT2 sqrt(2.0f)
+
+//プレイヤーの行動範囲
+#define RANGE_X_MIN -15
+#define RANGE_X_MAX 15
+#define RANGE_Y_MIN -10
+#define RANGE_Y_MAX 10
