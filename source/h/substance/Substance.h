@@ -9,5 +9,6 @@ public:
 	virtual void move() = 0;
 	substance* getSub();
 	void setSub(substance);
+	void add_count();
 };
 

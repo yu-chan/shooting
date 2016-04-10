@@ -20,8 +20,3 @@ void Enemy::move() {
 	}
 	sub.x += sub.vx;
 }
-
-void Enemy::add_count() {
-	substance &sub = *getSub();
-	sub.count++;
-}

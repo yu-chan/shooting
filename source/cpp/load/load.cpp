@@ -21,7 +21,8 @@ void load_3DModel() {
 	ModelEnemy = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 
 	//ショットの読み込み
-	ModelShot = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelPlayerShot = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelEnemyShot = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 }
 
 void load() {

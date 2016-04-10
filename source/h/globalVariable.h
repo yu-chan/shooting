@@ -11,4 +11,5 @@ GLOBAL int ModelAirCraft;
 GLOBAL int ModelEnemy;
 
 //’e‚Ìƒ‚ƒfƒ‹
-GLOBAL int ModelShot;
+GLOBAL int ModelPlayerShot;
+GLOBAL int ModelEnemyShot;

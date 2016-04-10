@@ -26,12 +26,19 @@ void setPosition_Enemy() {
 	_sub = *sub;*/
 	substance &sub = *enemy.getSub();
 	MV1SetPosition(ModelEnemy, VGet(sub.x, sub.y, sub.z));
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "count=%.1f", sub.count);
 }
 
-//プレイヤー弾のいちをセット
+//プレイヤー弾の位置をセット
 void setPosition_Player_shot() {
 	substance &sub = *player_shot.getSub();
-	MV1SetPosition(ModelShot, VGet(sub.x, sub.y, sub.z));
+	MV1SetPosition(ModelPlayerShot, VGet(sub.x, sub.y, sub.z));
+}
+
+//敵の弾の位置をセット
+void setPosition_Enemy_shot() {
+	substance &sub = *enemy_shot.getSub();
+	MV1SetPosition(ModelEnemyShot, VGet(sub.x, sub.y, sub.z));
 }
 
 void setPosition() {
@@ -39,4 +46,5 @@ void setPosition() {
 	setPosition_Player();
 	setPosition_Player_shot();
 	setPosition_Enemy();
+	setPosition_Enemy_shot();
 }

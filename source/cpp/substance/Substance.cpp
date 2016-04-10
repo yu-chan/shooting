@@ -23,3 +23,8 @@ void Substance::setSub(substance s) {
 	sub.x = s.x;
 	sub.y = s.y;
 }
+
+
+void Substance::add_count() {
+	sub.count++;
+}
