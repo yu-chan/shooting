@@ -9,3 +9,6 @@ GLOBAL int ModelAirCraft;
 
 //“G‚Ìƒ‚ƒfƒ‹
 GLOBAL int ModelEnemy;
+
+//’e‚Ìƒ‚ƒfƒ‹
+GLOBAL int ModelShot;

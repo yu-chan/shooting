@@ -19,4 +19,6 @@
 #include "./substance/character/player/Player.h"
 #include "./substance/character/enemy/Enemy.h"
 #include "./substance/bullet/Shot.h"
+#include "./substance/bullet/player_shot/Player_shot.h"
+#include "./substance/bullet/enemy_shot/Enemy_shot.h"
 #include "./globalClass.h"

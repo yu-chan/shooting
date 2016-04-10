@@ -3,6 +3,8 @@
 
 Enemy::Enemy()
 {
+	//substance &sub = *getSub();
+	//sub.flag = TRUE;
 }
 
 

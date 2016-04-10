@@ -13,21 +13,30 @@ void setCamera() {
 
 //プレイヤーの位置をセット
 void setPosition_Player() {
-	substance _sub, *sub = player.getSub();
-	_sub = *sub;
-	MV1SetPosition(ModelAirCraft, VGet(_sub.x, _sub.y, _sub.z));
+	/*substance _sub, *sub = player.getSub();
+	_sub = *sub;*/
+	substance &sub = *player.getSub();
+	MV1SetPosition(ModelAirCraft, VGet(sub.x, sub.y, sub.z));
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }
 
 //敵の位置をセット
 void setPosition_Enemy() {
-	substance _sub, *sub = enemy.getSub();
-	_sub = *sub;
-	MV1SetPosition(ModelEnemy, VGet(_sub.x, _sub.y, _sub.z));
+	/*substance _sub, *sub = enemy.getSub();
+	_sub = *sub;*/
+	substance &sub = *enemy.getSub();
+	MV1SetPosition(ModelEnemy, VGet(sub.x, sub.y, sub.z));
+}
+
+//プレイヤー弾のいちをセット
+void setPosition_Player_shot() {
+	substance &sub = *player_shot.getSub();
+	MV1SetPosition(ModelShot, VGet(sub.x, sub.y, sub.z));
 }
 
 void setPosition() {
 	setCamera();
 	setPosition_Player();
+	setPosition_Player_shot();
 	setPosition_Enemy();
 }

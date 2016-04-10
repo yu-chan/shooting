@@ -9,6 +9,9 @@ Player::Player()
 	key[1] = KEY_INPUT_RIGHT;
 	key[2] = KEY_INPUT_UP;
 	key[3] = KEY_INPUT_DOWN;
+	//substance &sub = *getSub();
+	//sub.flag = TRUE;
+	//sub.flag = FALSE;
 }
 
 
