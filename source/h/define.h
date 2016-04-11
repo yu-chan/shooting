@@ -31,3 +31,6 @@
 #define ENEMY_RANGE_Y_MAX 20
 #define ENEMY_RANGE_Z_MIN -20
 #define ENEMY_RANGE_Z_MAX 20
+
+//パスのサイズ
+#define PATH_SIZE 64
