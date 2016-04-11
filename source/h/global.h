@@ -12,7 +12,6 @@
 
 #include "./keyboard/Keyboard.h"
 #include "./struct.h"
-#include "./globalFunction.h"
 #include "./globalVariable.h"
 #include "./substance/Substance.h"
 #include "./substance/character/Character.h"
@@ -22,3 +21,4 @@
 #include "./substance/bullet/player_shot/Player_shot.h"
 #include "./substance/bullet/enemy_shot/Enemy_shot.h"
 #include "./globalClass.h"
+#include "./globalFunction.h"

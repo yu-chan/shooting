@@ -4,11 +4,14 @@
   ‚±‚±‚ÉƒOƒ[ƒoƒ‹éŒ¾‚µ‚½‚¢ŠÖ”‚ğ‘‚­
 */
 
-// ./cpp/draw/draw.cpp
+// ./../cpp/draw/draw.cpp
 GLOBAL void draw();
 
-// ./cpp/load/load.cpp
+// ./../cpp/load/load.cpp
 GLOBAL void load();
 
-// ./cpp/setPosition/setPosition.cpp
+// ./../cpp/setPosition/setPosition.cpp
 GLOBAL void setPosition();
+
+// ./../cpp/music/music.cpp
+GLOBAL void music();

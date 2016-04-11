@@ -51,6 +51,9 @@
     <ClCompile Include="source\cpp\substance\bullet\enemy_shot\Enemy_shot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\cpp\music\music.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\h\globalVariable.h">

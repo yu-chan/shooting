@@ -1,7 +1,7 @@
 // shooting/source/cpp/loadの中
 
 /*
-  画像、3Dモデル、csvファイルをロードする
+  画像、3Dモデル、音楽、csvファイルをロードする
 */			 
 
 #include <iostream>
@@ -40,6 +40,9 @@ void load_EnemyCsv() {
 	//ファイルの読み込み
 	fp = FileRead_open(path);
 
+	//ファイルがなかったら終了
+	if (fp == NULL) return;
+
 	//各データの取得
 	while (TRUE) {
 		for (int i = 0; i < PATH_SIZE; i++) {
@@ -50,6 +53,9 @@ void load_EnemyCsv() {
 				inputc[i] = '\0';
 				break;
 			}
+
+			//ファイルの終わりなら終了
+			if (input[i] == EOF) return;
 		}
 
 		//それぞれのデータを格納
