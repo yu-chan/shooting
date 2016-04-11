@@ -17,3 +17,8 @@ typedef struct {
 typedef struct {
 	int power, num;
 }bullet;
+
+//ƒAƒCƒeƒ€
+typedef struct {
+	int num, kind;
+}item;
