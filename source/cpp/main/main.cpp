@@ -55,7 +55,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
-		//music.se_initialization();
+		music.se_initialization();
 
 		//ƒvƒŒƒCƒ„[‚ğ“®‚©‚·
 		player.move();

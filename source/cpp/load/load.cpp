@@ -76,7 +76,7 @@ void load_EnemyCsv() {
 void load_se() {
 	char str[64];
 	for (int i = 0; i < SE_NUM; i++) {
-		sprintf(str, "./data/music/se/se%d", i);
+		sprintf(str, "./data/music/se/se%d.wav", i);
 		music.se[i].handle = LoadSoundMem(str);
 	}
 }
@@ -84,5 +84,5 @@ void load_se() {
 void load() {
 	load_3DModel();
 	//load_EnemyCsv()
-	//load_se();
+	load_se();
 }

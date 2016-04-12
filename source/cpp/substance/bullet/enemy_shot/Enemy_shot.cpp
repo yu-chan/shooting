@@ -22,9 +22,9 @@ void Enemy_shot::shot_regist() {
 		_sub.z = sub.z;
 		_sub.vz = 0.1f;
 		//ショット音のフラグを立てる
-		//music.se_flag(SHOT_NO);
+		music.se_flag(SHOT_NO);
 	}
-	//music.se_play(SHOT_NO);
+	music.se_play(SHOT_NO);
 }
 
 void Enemy_shot::move() {
