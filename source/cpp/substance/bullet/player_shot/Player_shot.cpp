@@ -20,9 +20,9 @@ void Player_shot::shot_regist() {
 		substance &sub = *getSub();
 		sub.vz = 0.1f;
 		//ショット音のフラグを立てる
-		//music.se_flag(SHOT_NO);
+		music.se_flag(SHOT_NO);
 	}
-	//music.se_play(SHOT_NO);
+	music.se_play(SHOT_NO);
 }
 
 void Player_shot::move() { 

@@ -38,8 +38,8 @@ void draw_Enemy_shot() {
 }
 
 void draw() {
-	//draw_Player();
-	//draw_Player_shot();
+	draw_Player();
+	draw_Player_shot();
 	draw_Enemy();
 	draw_Enemy_shot();
 }

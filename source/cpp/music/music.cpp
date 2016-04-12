@@ -33,19 +33,64 @@ void Music::se_play(int flag) {
 
 //BGM‚Ìƒ[ƒh
 void Music::load_bgm(int stage, int flag) {
+	char str[64];
+	sprintf(str, "./data/music/bgm/stage%d_%d.mp3", stage, flag);
+	bgm[stage].handle = LoadSoundMem(str);
 }
 
 //BGM‚Ìíœ
-void Music::delete_bgm() {
+void Music::delete_bgm(int stage) {
+	DeleteSoundMem(bgm[stage].handle);
 }
 
 void Music::bgm_main() {
-}
-
-music_ Music::getBgm(int flag) {
-	return bgm[flag];
-}
-
-music_ Music::getSe(int flag) {
-	return se[flag];
+	int flag = bgm[stage_num].flag;
+	switch (flag) {
+		case 0:
+			load_bgm(stage_num, 0);
+			SetLoopPosSoundMem(bgm[stage_num].loop_pos[0], bgm[stage_num].handle);
+			bgm[stage_num].flag = 1;
+			break;
+		case 1:
+			switch (bgm[stage_num].knd[0]) {
+				case 0:
+					if (stage_count == 60) {
+						PlaySoundMem(bgm[stage_num].handle, DX_PLAYTYPE_LOOP);
+						bgm[stage_num].flag = 2;
+					}
+					break;
+				default:
+					break;
+			}
+			break;
+		case 2:
+			/*
+			60‚Í‚¢‚¸‚ê•Ï‚¦‚é	 
+			*/
+			if (stage_count == 60) {
+				StopSoundMem(bgm[stage_num].handle);
+				delete_bgm(stage_num);
+				load_bgm(stage_num, 1);
+				SetLoopPosSoundMem(bgm[stage_num].loop_pos[1], bgm[stage_num].handle);
+				bgm[stage_num].flag = 3;
+			}
+			break;
+		case 3:
+			switch (bgm[stage_num].knd[0]) {
+				case 0:
+					/*
+					60‚Í‚¢‚¸‚ê•Ï‚¦‚é
+					*/
+					if (stage_count == 60) {
+						PlaySoundMem(bgm[stage_num].handle, DX_PLAYTYPE_LOOP);
+						bgm[stage_num].flag = 4;
+					}
+					break;
+				default:
+					break;
+			}
+			break;
+		default:
+			break;
+	}
 }

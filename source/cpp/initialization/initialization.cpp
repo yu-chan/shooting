@@ -4,5 +4,5 @@
 
 //‚¢‚ë‚¢‚ë‚È‚à‚Ì‚ğ‰Šú‰»
 void initialization() {
-
+	stage_num = 0;
 }

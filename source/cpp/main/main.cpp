@@ -78,6 +78,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//•`‰æ
 		draw();
 
+		//BGM‚ð—¬‚·
+		//music.bgm_main();
+
 
 		//— ‰æ–Ê”½‰f
 		ScreenFlip();

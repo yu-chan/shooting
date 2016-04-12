@@ -13,3 +13,7 @@ GLOBAL int ModelEnemy;
 //弾のモデル
 GLOBAL int ModelPlayerShot;
 GLOBAL int ModelEnemyShot;
+
+//ステージ
+GLOBAL int stage_num;//ステージ番号
+GLOBAL int stage_count;//ステージのカウント

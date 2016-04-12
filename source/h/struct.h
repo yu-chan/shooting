@@ -31,4 +31,5 @@ typedef struct {
 //ステージが持っている情報
 typedef struct {
 	music_ mus;
+	int count;
 }stage;

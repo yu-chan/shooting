@@ -9,9 +9,7 @@ public:
 	void se_flag(int);
 	void se_play(int);
 	void load_bgm(int , int);
-	void delete_bgm();
+	void delete_bgm(int);
 	void bgm_main();
-	music_ getBgm(int);
-	music_ getSe(int);
 };
 
