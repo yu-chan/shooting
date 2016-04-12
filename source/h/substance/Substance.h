@@ -6,7 +6,8 @@ private:
 public:
 	Substance();
 	~Substance();
-	virtual void move() = 0;
+	void move();
+	int collision_detection(Substance);
 	substance* getSub();
 	void setSub(substance);
 	void add_count();
