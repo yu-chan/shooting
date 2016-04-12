@@ -55,6 +55,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
+		//music.se_initialization();
+
 		//ÉvÉåÉCÉÑÅ[ÇìÆÇ©Ç∑
 		player.move();
 
@@ -75,6 +77,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		//ï`âÊ
 		draw();
+
 
 		//ó†âÊñ îΩâf
 		ScreenFlip();

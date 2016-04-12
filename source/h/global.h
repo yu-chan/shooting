@@ -13,6 +13,7 @@
 #include "./keyboard/Keyboard.h"
 #include "./struct.h"
 #include "./globalVariable.h"
+#include "./music/Music.h"
 #include "./substance/Substance.h"
 #include "./substance/character/Character.h"
 #include "./substance/character/player/Player.h"

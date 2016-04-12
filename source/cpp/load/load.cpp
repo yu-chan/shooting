@@ -2,7 +2,9 @@
 
 /*
   画像、3Dモデル、音楽、csvファイルをロードする
-*/			 
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <Windows.h>
@@ -59,8 +61,8 @@ void load_EnemyCsv() {
 		}
 
 		//それぞれのデータを格納
-		switch (num) {
-		}
+		/*switch (num) {
+		}*/
 		num++;
 		if (num == 19) { 
 			num = 0;
@@ -70,7 +72,17 @@ void load_EnemyCsv() {
 	FileRead_close(fp);//ファイルを閉じる
 }
 
+//SEを読み込む
+void load_se() {
+	char str[64];
+	for (int i = 0; i < SE_NUM; i++) {
+		sprintf(str, "./data/music/se/se%d", i);
+		music.se[i].handle = LoadSoundMem(str);
+	}
+}
+
 void load() {
 	load_3DModel();
 	//load_EnemyCsv()
+	//load_se();
 }

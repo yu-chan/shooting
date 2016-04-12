@@ -22,3 +22,13 @@ typedef struct {
 typedef struct {
 	int num, kind;
 }item;
+
+//音楽に関する構造体
+typedef struct {
+	int flag, handle, knd[2], loop_pos[2];
+}music_;
+
+//ステージが持っている情報
+typedef struct {
+	music_ mus;
+}stage;

@@ -12,6 +12,3 @@ GLOBAL void load();
 
 // ./../cpp/setPosition/setPosition.cpp
 GLOBAL void setPosition();
-
-// ./../cpp/music/music.cpp
-GLOBAL void music();

@@ -34,3 +34,8 @@
 
 //パスのサイズ
 #define PATH_SIZE 64
+
+//音楽
+#define BGM_NUM 1 //BGMの数
+#define SE_NUM 1  //SEの数
+#define SHOT_NO 0 //ショット音のNo

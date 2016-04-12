@@ -19,7 +19,10 @@ void Player_shot::shot_regist() {
 	if (keyboard.checkKey(KEY_INPUT_SPACE) == 1) { 
 		substance &sub = *getSub();
 		sub.vz = 0.1f;
+		//ショット音のフラグを立てる
+		//music.se_flag(SHOT_NO);
 	}
+	//music.se_play(SHOT_NO);
 }
 
 void Player_shot::move() { 
