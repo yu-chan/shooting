@@ -13,5 +13,5 @@ IDEにはVisual Studio Community 2013を使用しています。
 その後、objをオンラインでxに変換。
 
 ## 参考文献
--[DXライブラリの置き場](http://dxlib.o.oo7.jp/)
+-[DXライブラリの置き場](http://dxlib.o.oo7.jp/)\n
 -[無料で3Dモデルをダウンロードできる60のサイト | CG Campus ...](http://cgcampus.sitemix.jp/?p=312)

@@ -22,14 +22,14 @@ void load_3DModel() {
 	*/
 	//自機の読み込み
 	//ModelAirCraft = MV1LoadModel("./data/3D Model/Vehicles/Aircraft/Models/AircraftFuselage.x");
-	ModelAirCraft = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelAirCraft = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 
 	//敵の読み込み
-	ModelEnemy = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelEnemy = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 
 	//ショットの読み込み
-	ModelPlayerShot = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
-	ModelEnemyShot = MV1LoadModel("./data/3D Model/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelPlayerShot = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelEnemyShot = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 }
 
 //敵の位置情報、行動パターン、ステータスを読み込む
