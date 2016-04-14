@@ -39,3 +39,6 @@
 #define BGM_NUM 1 //BGMの数
 #define SE_NUM 1  //SEの数
 #define SHOT_NO 0 //ショット音のNo
+
+//ショットの最大数
+#define PLAYER_SHOT_MAX 10

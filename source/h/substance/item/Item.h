@@ -7,5 +7,7 @@ private:
 public:
 	Item();
 	~Item();
+	item* getIte();
+	void move();
 };
 
