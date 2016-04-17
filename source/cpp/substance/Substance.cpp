@@ -46,5 +46,10 @@ void Substance::mallocS(int n) {
 
 void Substance::reallocS(int n) {
 	if (size >= n) { return; }
-	s = (substance *)realloc(s, n);
+	size = n;
+	s = (substance *)realloc(s, size);
+}
+
+int Substance::getSize() {
+	return size;
 }

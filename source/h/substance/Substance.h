@@ -17,5 +17,6 @@ public:
 	void setS(substance*);
 	void mallocS(int);
 	void reallocS(int);
+	int getSize();
 };
 

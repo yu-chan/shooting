@@ -11,7 +11,10 @@ void draw_Player() {
 	if (sub.flag == TRUE) {
 		MV1DrawModel(ModelAirCraft);
 	}*/
-	MV1DrawModel(ModelAirCraft);
+	substance *sub;
+	sub = player.getS();
+	if (sub[0].flag == TRUE)
+		MV1DrawModel(ModelAirCraft);
 }
 
 //“G‚Ì•`‰æ

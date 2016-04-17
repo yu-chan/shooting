@@ -6,5 +6,6 @@ public:
 	Enemy();
 	~Enemy();
 	void move();
+	void enemy_regist();
 };
 

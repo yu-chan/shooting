@@ -9,16 +9,17 @@ void ini(substance* s) {
 	sub[0].x = 0;
 	sub[0].y = 0;
 	sub[0].z = 0;
+	sub[0].flag = TRUE;
 }
+
 Player::Player()
 {
+	mallocS(1);
+	ini(getS());
 	key[0] = KEY_INPUT_LEFT;
 	key[1] = KEY_INPUT_RIGHT;
 	key[2] = KEY_INPUT_UP;
 	key[3] = KEY_INPUT_DOWN;
-	OutputDebugStringW(L"Player()\n");
-	mallocS(1);
-	ini(getS());
 	//substance &sub = *getSub();
 	//sub.flag = TRUE;
 	//sub.flag = FALSE;

@@ -5,6 +5,7 @@ Enemy::Enemy()
 {
 	//substance &sub = *getSub();
 	//sub.flag = TRUE;
+	mallocS(1);
 }
 
 
@@ -19,4 +20,8 @@ void Enemy::move() {
 		sub.vx *= -1;
 	}
 	sub.x += sub.vx;
+}
+
+void Enemy::enemy_regist() {
+
 }
