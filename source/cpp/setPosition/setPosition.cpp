@@ -38,8 +38,8 @@ void setPosition_Enemy() {
 
 //プレイヤー弾の位置をセット
 void setPosition_Player_shot() {
-	substance &sub = *player_shot.getSub();
-	MV1SetPosition(ModelPlayerShot, VGet(sub.x, sub.y, sub.z));
+	substance *sub = player_shot.getS();
+	MV1SetPosition(ModelPlayerShot, VGet(sub[0].x, sub[0].y, sub[0].z));
 }
 
 //敵の弾の位置をセット
@@ -51,7 +51,7 @@ void setPosition_Enemy_shot() {
 void setPosition() {
 	setCamera();
 	setPosition_Player();
-	//setPosition_Player_shot();
+	setPosition_Player_shot();
 	setPosition_Enemy();
 	setPosition_Enemy_shot();
 }

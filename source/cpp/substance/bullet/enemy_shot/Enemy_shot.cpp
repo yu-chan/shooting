@@ -6,7 +6,6 @@ Enemy_shot::Enemy_shot()
 	//substance &sub = *getSub();
 	//sub.flag = TRUE;
 	mallocS(1);
-	substance *sub = getS();
 }
 
 
