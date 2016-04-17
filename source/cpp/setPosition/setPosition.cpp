@@ -19,18 +19,20 @@ void setPosition_Player() {
 	MV1SetPosition(ModelAirCraft, VGet(sub.x, sub.y, sub.z));*/
 	substance *sub;
 	sub = player.getS();
-	if (sub == NULL)OutputDebugStringW(L"ポインタ違う\n");
-	if (player.getS() == NULL)OutputDebugStringW(L"とりあえず\n");
+	//if (sub == NULL)OutputDebugStringW(L"ポインタ違う\n");
+	//if (player.getS() == NULL)OutputDebugStringW(L"とりあえず\n");
 	MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }
 
 //敵の位置をセット
 void setPosition_Enemy() {
+	substance *sub = enemy.getS();
+	MV1SetPosition(ModelEnemy, VGet(sub[0].x, sub[0].y, sub[0].z));
 	/*substance _sub, *sub = enemy.getSub();
 	_sub = *sub;*/
-	substance &sub = *enemy.getSub();
-	MV1SetPosition(ModelEnemy, VGet(sub.x, sub.y, sub.z));
+	//substance &sub = *enemy.getSub();
+	//MV1SetPosition(ModelEnemy, VGet(sub.x, sub.y, sub.z));
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "count=%.1f", sub.count);
 }
 
@@ -50,6 +52,6 @@ void setPosition() {
 	setCamera();
 	setPosition_Player();
 	//setPosition_Player_shot();
-	//setPosition_Enemy();
+	setPosition_Enemy();
 	//setPosition_Enemy_shot();
 }

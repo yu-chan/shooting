@@ -28,7 +28,11 @@ void Substance::setSub(substance s) {
 
 
 void Substance::add_count() {
-	sub.count++;
+	for (int i = 0; i < size; i++) { 
+		if (s[i].flag == TRUE)
+			s[i].count++;
+	}
+	//sub.count++;
 }
 
 substance* Substance::getS() {

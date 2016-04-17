@@ -23,7 +23,9 @@ void draw_Enemy() {
 	if (sub.flag == TRUE) {
 		MV1DrawModel(ModelEnemy);
 	}*/
-	MV1DrawModel(ModelEnemy);
+	substance *sub = enemy.getS();
+	if (sub[0].flag == TRUE)
+		MV1DrawModel(ModelEnemy);
 }
 
 //ƒvƒŒƒCƒ„[’e‚Ì•`‰æ
@@ -43,6 +45,6 @@ void draw_Enemy_shot() {
 void draw() {
 	draw_Player();
 	//draw_Player_shot();
-	//draw_Enemy();
+	draw_Enemy();
 	//draw_Enemy_shot();
 }

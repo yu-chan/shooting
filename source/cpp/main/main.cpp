@@ -66,8 +66,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//player_shot.move();
 
 		//“G‚ð“®‚©‚·
-		//enemy.add_count();
-		//enemy.move();
+		enemy.add_count();
+		enemy.move();
 		//“G‚Ì’e‚ð“®‚©‚·
 		//enemy_shot.shot_regist();
 		//enemy_shot.move();
