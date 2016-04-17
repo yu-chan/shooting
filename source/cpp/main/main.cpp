@@ -61,16 +61,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		player.move();
 
 		//プレイヤーの弾を生成
-		player_shot.shot_regist();
+		//player_shot.shot_regist();
 		//プレイヤーの弾を動かす
-		player_shot.move();
+		//player_shot.move();
 
 		//敵を動かす
-		enemy.add_count();
-		enemy.move();
+		//enemy.add_count();
+		//enemy.move();
 		//敵の弾を動かす
-		enemy_shot.shot_regist();
-		enemy_shot.move();
+		//enemy_shot.shot_regist();
+		//enemy_shot.move();
 
 		//座標をセット
 		setPosition();

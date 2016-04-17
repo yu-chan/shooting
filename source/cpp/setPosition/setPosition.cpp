@@ -15,8 +15,13 @@ void setCamera() {
 void setPosition_Player() {
 	/*substance _sub, *sub = player.getSub();
 	_sub = *sub;*/
-	substance &sub = *player.getSub();
-	MV1SetPosition(ModelAirCraft, VGet(sub.x, sub.y, sub.z));
+	/*substance &sub = *player.getSub();
+	MV1SetPosition(ModelAirCraft, VGet(sub.x, sub.y, sub.z));*/
+	substance *sub;
+	sub = player.getS();
+	if (sub == NULL)OutputDebugStringW(L"ƒ|ƒCƒ“ƒ^ˆá‚¤\n");
+	if (player.getS() == NULL)OutputDebugStringW(L"‚Æ‚è‚ ‚¦‚¸\n");
+	MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }
 
@@ -44,7 +49,7 @@ void setPosition_Enemy_shot() {
 void setPosition() {
 	setCamera();
 	setPosition_Player();
-	setPosition_Player_shot();
-	setPosition_Enemy();
-	setPosition_Enemy_shot();
+	//setPosition_Player_shot();
+	//setPosition_Enemy();
+	//setPosition_Enemy_shot();
 }

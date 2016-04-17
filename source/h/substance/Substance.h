@@ -3,6 +3,8 @@
 class Substance {
 private:
 	substance sub;
+	substance* s;
+	int size;
 public:
 	Substance();
 	~Substance();
@@ -11,5 +13,9 @@ public:
 	substance* getSub();
 	void setSub(substance);
 	void add_count();
+	substance* getS();
+	void setS(substance*);
+	void mallocS(int);
+	void reallocS(int);
 };
 
