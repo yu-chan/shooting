@@ -39,12 +39,14 @@ void draw_Player_shot() {
 
 //“G‚Ì’e‚Ì•`‰æ
 void draw_Enemy_shot() {
-	MV1DrawModel(ModelEnemyShot);
+	substance *sub = enemy_shot.getS();
+	if (sub[0].flag == TRUE)
+		MV1DrawModel(ModelEnemyShot);
 }
 
 void draw() {
 	draw_Player();
 	//draw_Player_shot();
 	draw_Enemy();
-	//draw_Enemy_shot();
+	draw_Enemy_shot();
 }

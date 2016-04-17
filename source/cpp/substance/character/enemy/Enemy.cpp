@@ -11,6 +11,7 @@ Enemy::Enemy()
 	sub[0].y = 0;
 	sub[0].z = 0;
 	sub[0].vx = 0.1f;
+	sub[0].count = 0;
 	sub[0].flag = TRUE;
 }
 
@@ -27,6 +28,7 @@ void Enemy::move() {
 		sub[0].vx *= -1;
 	}
 	sub[0].x += sub[0].vx;
+	sub[0].count++;
 	//sub.x += sub.vx;
 }
 

@@ -44,8 +44,8 @@ void setPosition_Player_shot() {
 
 //“G‚Ì’e‚ÌˆÊ’u‚ðƒZƒbƒg
 void setPosition_Enemy_shot() {
-	substance &sub = *enemy_shot.getSub();
-	MV1SetPosition(ModelEnemyShot, VGet(sub.x, sub.y, sub.z));
+	substance *sub = enemy_shot.getS();
+	MV1SetPosition(ModelEnemyShot, VGet(sub[0].x, sub[0].y, sub[0].z));
 }
 
 void setPosition() {
@@ -53,5 +53,5 @@ void setPosition() {
 	setPosition_Player();
 	//setPosition_Player_shot();
 	setPosition_Enemy();
-	//setPosition_Enemy_shot();
+	setPosition_Enemy_shot();
 }

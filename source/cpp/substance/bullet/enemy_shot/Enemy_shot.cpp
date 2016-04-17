@@ -5,6 +5,8 @@ Enemy_shot::Enemy_shot()
 {
 	//substance &sub = *getSub();
 	//sub.flag = TRUE;
+	mallocS(1);
+	substance *sub = getS();
 }
 
 
@@ -13,14 +15,14 @@ Enemy_shot::~Enemy_shot()
 }
 
 void Enemy_shot::shot_regist() {
-	substance &sub = *enemy.getSub();
-	//DrawFormatString(0, 50, GetColor(255, 255, 255), "count=%d", sub.count);
-	if (sub.count == 30) {
-		substance &_sub = *getSub();
-		_sub.x = sub.x;
-		_sub.y = sub.y;
-		_sub.z = sub.z;
-		_sub.vz = 0.1f;
+	substance *sub = enemy.getS();
+	if (sub[0].count == 30) {
+		substance *_sub = getS();
+		_sub[0].x = sub[0].x;
+		_sub[0].y = sub[0].y;
+		_sub[0].z = sub[0].z;
+		_sub[0].vz = 0.1f;
+		_sub[0].flag = TRUE;
 		//ショット音のフラグを立てる
 		music.se_flag(SHOT_NO);
 	}
@@ -28,6 +30,6 @@ void Enemy_shot::shot_regist() {
 }
 
 void Enemy_shot::move() {
-	substance &sub = *getSub();
-	sub.z += sub.vz;
+	substance *sub = getS();
+	sub[0].z += sub[0].vz;
 }
