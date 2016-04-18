@@ -3,10 +3,7 @@
 
 Player_shot::Player_shot()
 {
-	//substance &sub = *getSub();
-	//sub.vy = 0.1f;
-	//sub.flag = TRUE;
-	mallocS(1);
+	mallocSub(1);
 }
 
 
@@ -15,11 +12,9 @@ Player_shot::~Player_shot()
 }
 
 void Player_shot::shot_regist() {
-	//substance &sub = *getSub();
-	//sub.vy = 0.1f;
-	substance *sub = player.getS();
+	substance *sub = player.getSub();
 	if (keyboard.checkKey(KEY_INPUT_SPACE) == 1) { 
-		substance *_sub = getS();
+		substance *_sub = getSub();
 		//for (int i = 0; i < getSize(); i++) {
 			//if (_sub[i].flag == FALSE){
 				/*_sub[i].flag = TRUE;
@@ -42,7 +37,7 @@ void Player_shot::shot_regist() {
 }
 
 void Player_shot::move() {
-	substance *sub = getS();
+	substance *sub = getSub();
 	for (int i = 0; i < getSize(); i++){
 		if (sub[i].flag == TRUE) {
 			sub[i].z += sub[i].vz;

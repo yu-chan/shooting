@@ -7,41 +7,29 @@
 
 //©‹@‚Ì•`‰æ
 void draw_Player() {
-	/*substance &sub = *player_shot.getSub();
-	if (sub.flag == TRUE) {
-		MV1DrawModel(ModelAirCraft);
-	}*/
 	substance *sub;
-	sub = player.getS();
+	sub = player.getSub();
 	if (sub[0].flag == TRUE)
 		MV1DrawModel(ModelAirCraft);
 }
 
 //“G‚Ì•`‰æ
 void draw_Enemy() {
-	/*substance &sub = *player_shot.getSub();
-	if (sub.flag == TRUE) {
-		MV1DrawModel(ModelEnemy);
-	}*/
-	substance *sub = enemy.getS();
+	substance *sub = enemy.getSub();
 	if (sub[0].flag == TRUE)
 		MV1DrawModel(ModelEnemy);
 }
 
 //ƒvƒŒƒCƒ„[’e‚Ì•`‰æ
 void draw_Player_shot() {
-	/*substance &sub = *player_shot.getSub();
-	if (sub.flag == TRUE) {
-		MV1DrawModel(ModelShot);
-	}*/
-	substance *sub = player_shot.getS();
+	substance *sub = player_shot.getSub();
 	if (sub[0].flag == TRUE)
 		MV1DrawModel(ModelPlayerShot);
 }
 
 //“G‚Ì’e‚Ì•`‰æ
 void draw_Enemy_shot() {
-	substance *sub = enemy_shot.getS();
+	substance *sub = enemy_shot.getSub();
 	if (sub[0].flag == TRUE)
 		MV1DrawModel(ModelEnemyShot);
 }

@@ -2,8 +2,7 @@
 
 class Substance {
 private:
-	substance sub;
-	substance* s;
+	substance* sub;
 	int size;
 public:
 	Substance();
@@ -11,12 +10,9 @@ public:
 	void move();
 	int collision_detection(Substance);
 	substance* getSub();
-	void setSub(substance);
-	void add_count();
-	substance* getS();
-	void setS(substance*);
-	void mallocS(int);
-	void reallocS(int);
+	void setSub(substance*);
+	void mallocSub(int);
+	void reallocSub(int);
 	int getSize();
 };
 

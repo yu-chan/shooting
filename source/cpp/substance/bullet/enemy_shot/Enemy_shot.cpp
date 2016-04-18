@@ -3,9 +3,7 @@
 
 Enemy_shot::Enemy_shot()
 {
-	//substance &sub = *getSub();
-	//sub.flag = TRUE;
-	mallocS(1);
+	mallocSub(1);
 }
 
 
@@ -14,9 +12,9 @@ Enemy_shot::~Enemy_shot()
 }
 
 void Enemy_shot::shot_regist() {
-	substance *sub = enemy.getS();
+	substance *sub = enemy.getSub();
 	if (sub[0].count == 30) {
-		substance *_sub = getS();
+		substance *_sub = getSub();
 		_sub[0].x = sub[0].x;
 		_sub[0].y = sub[0].y;
 		_sub[0].z = sub[0].z;
@@ -29,6 +27,6 @@ void Enemy_shot::shot_regist() {
 }
 
 void Enemy_shot::move() {
-	substance *sub = getS();
+	substance *sub = getSub();
 	sub[0].z += sub[0].vz;
 }
