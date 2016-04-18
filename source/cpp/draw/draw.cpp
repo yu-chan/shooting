@@ -23,8 +23,10 @@ void draw_Enemy() {
 //ƒvƒŒƒCƒ„[’e‚Ì•`‰æ
 void draw_Player_shot() {
 	substance *sub = player_shot.getSub();
-	if (sub[0].flag == TRUE)
-		MV1DrawModel(ModelPlayerShot);
+	for (int i = 0; i < player_shot.getSize(); i++) {
+		if (sub[i].flag == TRUE)
+			MV1DrawModel(ModelPlayerShot);
+	}
 }
 
 //“G‚Ì’e‚Ì•`‰æ

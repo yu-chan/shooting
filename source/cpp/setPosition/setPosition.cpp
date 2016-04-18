@@ -27,7 +27,10 @@ void setPosition_Enemy() {
 //プレイヤー弾の位置をセット
 void setPosition_Player_shot() {
 	substance *sub = player_shot.getSub();
-	MV1SetPosition(ModelPlayerShot, VGet(sub[0].x, sub[0].y, sub[0].z));
+	for (int i = 0; i < player_shot.getSize(); i++) {
+		if (sub[i].flag == TRUE) 
+			MV1SetPosition(ModelPlayerShot, VGet(sub[i].x, sub[i].y, sub[i].z));
+	}
 }
 
 //敵の弾の位置をセット

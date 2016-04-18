@@ -1,4 +1,4 @@
-// shooting/source/hの中
+// shooting/source/hの中 
 
 
 //true,false
@@ -41,4 +41,11 @@
 #define SHOT_NO 0 //ショット音のNo
 
 //ショットの最大数
-#define PLAYER_SHOT_MAX 10
+#define PLAYER_SHOT_MAX 100
+//ショットの行動範囲
+#define SHOT_RANGE_X_MIN -20
+#define SHOT_RANGE_X_MAX 20
+#define SHOT_RANGE_Y_MIN -20
+#define SHOT_RANGE_Y_MAX 20
+#define SHOT_RANGE_Z_MIN -20
+#define SHOT_RANGE_Z_MAX 20

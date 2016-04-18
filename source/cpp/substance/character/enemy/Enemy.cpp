@@ -16,6 +16,7 @@ Enemy::Enemy()
 
 Enemy::~Enemy()
 {
+	delete[] getSub();
 }
 
 void Enemy::move() {
