@@ -25,6 +25,7 @@ Player::Player()
 
 Player::~Player()
 {
+	free(getSub());
 }
 
 void Player::move() {

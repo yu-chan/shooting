@@ -17,7 +17,7 @@ Player_shot::Player_shot()
 
 Player_shot::~Player_shot()
 {
-	delete[] getSub();
+	free(getSub());
 }
 
 void Player_shot::shot_regist() {

@@ -9,7 +9,7 @@ Enemy_shot::Enemy_shot()
 
 Enemy_shot::~Enemy_shot()
 {
-	delete[] getSub();
+	free(getSub());
 }
 
 void Enemy_shot::shot_regist() {
