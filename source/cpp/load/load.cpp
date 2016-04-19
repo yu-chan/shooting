@@ -46,7 +46,7 @@ void load_EnemyCsv() {
 	if (fp == NULL) return;
 
 	//各データの取得
-	while (TRUE) {
+	while (true) {
 		for (int i = 0; i < PATH_SIZE; i++) {
 			inputc[i] = input[i] = FileRead_getc(fp);//１文字取得
 

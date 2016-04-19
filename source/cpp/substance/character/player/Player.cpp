@@ -1,4 +1,3 @@
-//#include "..\..\..\..\h\substance\character\player\Player.h"
 #include "./../../../../h/global.h"
 
 
@@ -9,7 +8,7 @@ void ini(substance* s) {
 	sub[0].x = 0;
 	sub[0].y = 0;
 	sub[0].z = 0;
-	sub[0].flag = TRUE;
+	sub[0].flag = true;
 }
 
 Player::Player()
@@ -49,7 +48,7 @@ void Player::move() {
 		}
 	}
 
-	if (keyboard.getLRFlag() == TRUE && keyboard.getUDFlag() == TRUE) {
+	if (keyboard.getLRFlag() == true && keyboard.getUDFlag() == true) {
 		slanting = (float)ROOT2;
 	}
 

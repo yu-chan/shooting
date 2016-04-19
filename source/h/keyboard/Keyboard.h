@@ -5,8 +5,8 @@
 class Keyboard
 {
 private:
-	int LRFlag;
-	int UDFlag;
+	bool LRFlag;
+	bool UDFlag;
 public:
 	unsigned int inputKeyFrame[KEYBOARD_NUM];//押されているキーフレーム数
 	char key[KEYBOARD_NUM];
@@ -14,7 +14,7 @@ public:
 	~Keyboard();
 	int checkKey(unsigned char);
 	int updateKey();
-	int getLRFlag();
-	int getUDFlag();
+	bool getLRFlag();
+	bool getUDFlag();
 };
 

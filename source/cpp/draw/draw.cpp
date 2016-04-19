@@ -15,7 +15,7 @@ void setCamera() {
 void draw_Player() {
 	substance *sub;
 	sub = player.getSub();
-	if (sub[0].flag == TRUE) {
+	if (sub[0].flag == true) {
 		MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
 		MV1DrawModel(ModelAirCraft);
 	}
@@ -25,7 +25,7 @@ void draw_Player() {
 void draw_Enemy() {
 	substance *sub = enemy.getSub();
 	for (int i = 0; i < enemy.getSize(); i++) {
-		if (sub[i].flag == TRUE) {
+		if (sub[i].flag == true) {
 			MV1SetPosition(ModelEnemy, VGet(sub[i].x, sub[i].y, sub[i].z));
 			MV1DrawModel(ModelEnemy);
 		}
@@ -36,7 +36,7 @@ void draw_Enemy() {
 void draw_Player_shot() {
 	substance *sub = player_shot.getSub();
 	for (int i = 0; i < player_shot.getSize(); i++) {
-		if (sub[i].flag == TRUE) {
+		if (sub[i].flag == true) {
 			MV1SetPosition(ModelPlayerShot, VGet(sub[i].x, sub[i].y, sub[i].z));
 			MV1DrawModel(ModelPlayerShot);
 		}
@@ -47,7 +47,7 @@ void draw_Player_shot() {
 void draw_Enemy_shot() {
 	substance *sub = enemy_shot.getSub();
 	for (int i = 0; i < enemy_shot.getSize(); i++) {
-		if (sub[i].flag == TRUE) {
+		if (sub[i].flag == true) {
 			MV1SetPosition(ModelEnemyShot, VGet(sub[i].x, sub[i].y, sub[i].z));
 			MV1DrawModel(ModelEnemyShot);
 		}

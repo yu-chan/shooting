@@ -4,8 +4,8 @@
 
 Keyboard::Keyboard()
 {
-	LRFlag = FALSE;
-	UDFlag = FALSE;
+	LRFlag = false;
+	UDFlag = false;
 }
 
 
@@ -17,20 +17,20 @@ Keyboard::~Keyboard()
 
 //キーが押されているかチェックする
 int Keyboard::checkKey(unsigned char KEY) {
-	LRFlag = FALSE;
-	UDFlag = FALSE;
+	LRFlag = false;
+	UDFlag = false;
 	switch (KEY) {
 		case KEY_INPUT_RIGHT:
-			LRFlag = TRUE;
+			LRFlag = true;
 			break;
 		case KEY_INPUT_LEFT:
-			LRFlag = TRUE;
+			LRFlag = true;
 			break;
 		case KEY_INPUT_UP:
-			UDFlag = TRUE;
+			UDFlag = true;
 			break;
 		case KEY_INPUT_DOWN:
-			UDFlag = TRUE;
+			UDFlag = true;
 			break;
 		default:
 			break;
@@ -52,10 +52,10 @@ int Keyboard::updateKey() {
 	return 0;
 }
 
-int Keyboard::getLRFlag() {
+bool Keyboard::getLRFlag() {
 	return LRFlag;
 }
 
-int Keyboard::getUDFlag() {
+bool Keyboard::getUDFlag() {
 	return UDFlag;
 }

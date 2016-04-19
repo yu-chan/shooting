@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\cpp\draw\draw.cpp" />
+    <ClCompile Include="source\cpp\fps\Fps.cpp" />
     <ClCompile Include="source\cpp\initialization\initialization.cpp" />
     <ClCompile Include="source\cpp\keyboard\Keyboard.cpp" />
     <ClCompile Include="source\cpp\load\load.cpp" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\h\define.h" />
+    <ClInclude Include="source\h\fps\Fps.h" />
     <ClInclude Include="source\h\global.h" />
     <ClInclude Include="source\h\globalClass.h" />
     <ClInclude Include="source\h\globalFunction.h" />

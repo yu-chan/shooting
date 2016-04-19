@@ -57,6 +57,9 @@
     <ClCompile Include="source\cpp\music\Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\cpp\fps\Fps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\h\globalVariable.h">
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\h\music\Music.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\fps\Fps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

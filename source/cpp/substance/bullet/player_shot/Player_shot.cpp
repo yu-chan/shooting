@@ -26,11 +26,11 @@ void Player_shot::shot_regist() {
 	if (keyboard.checkKey(KEY_INPUT_SPACE)) { 
 		substance* _sub = getSub();
 		for (int i = 0; i < getSize(); i++) {
-			if (_sub[i].flag == FALSE){	
-				/*OutputDebugStringW(L"Player_shotでメモリがFALSE\n");
+			if (_sub[i].flag == false){	
+				/*OutputDebugStringW(L"Player_shotでメモリがfalse\n");
 				sprintf(str, "%d:フラグが%d\n", i, _sub[i].flag);
 				OutputDebugString(str);*/
-				_sub[i].flag = TRUE;
+				_sub[i].flag = true;
 				_sub[i].x = sub[0].x;
 				_sub[i].y = sub[0].y;
 				_sub[i].z = sub[0].z;
@@ -43,7 +43,7 @@ void Player_shot::shot_regist() {
 				return;
 			}
 			else {
-				/*OutputDebugStringW(L"Player_shotでメモリがTRUE\n");;
+				/*OutputDebugStringW(L"Player_shotでメモリがtrue\n");;
 				sprintf(str, "%d:フラグが%d\n", i, _sub[i].flag);
 				OutputDebugString(str);*/
 			}
@@ -55,13 +55,13 @@ void Player_shot::shot_regist() {
 void Player_shot::move() {
 	substance *sub = getSub();
 	for (int i = 0; i < getSize(); i++){
-		if (sub[i].flag == TRUE) {
+		if (sub[i].flag == true) {
 			sub[i].z += sub[i].vz;
 			sub[i].count++;
 			
 			//範囲外に出たらフラグを消す
 			if (sub[i].z < SHOT_RANGE_Z_MIN || sub[i].z > SHOT_RANGE_Z_MAX) {
-				sub[i].flag = FALSE;
+				sub[i].flag = false;
 			}
 		}
 	}

@@ -10,7 +10,7 @@ Enemy::Enemy()
 	sub[0].z = 0;
 	sub[0].vx = 0.1f;
 	sub[0].count = 0;
-	sub[0].flag = TRUE;
+	sub[0].flag = true;
 }
 
 
