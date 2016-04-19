@@ -24,9 +24,6 @@
     <ClCompile Include="source\cpp\draw\draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\cpp\setPosition\setPosition.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\cpp\keyboard\Keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

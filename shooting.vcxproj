@@ -17,7 +17,6 @@
     <ClCompile Include="source\cpp\load\load.cpp" />
     <ClCompile Include="source\cpp\main\main.cpp" />
     <ClCompile Include="source\cpp\music\Music.cpp" />
-    <ClCompile Include="source\cpp\setPosition\setPosition.cpp" />
     <ClCompile Include="source\cpp\substance\bullet\enemy_shot\Enemy_shot.cpp" />
     <ClCompile Include="source\cpp\substance\bullet\player_shot\Player_shot.cpp" />
     <ClCompile Include="source\cpp\substance\bullet\Shot.cpp" />

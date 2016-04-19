@@ -10,8 +10,5 @@ GLOBAL void draw();
 // ./../cpp/load/load.cpp
 GLOBAL void load();
 
-// ./../cpp/setPosition/setPosition.cpp
-GLOBAL void setPosition();
-
 // ./../cpp/initialization/initialization.cpp
 GLOBAL void initialization();

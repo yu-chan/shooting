@@ -72,9 +72,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		enemy_shot.shot_regist();
 		enemy_shot.move();
 
-		//座標をセット
-		setPosition();
-
 		//描画
 		draw();
 
