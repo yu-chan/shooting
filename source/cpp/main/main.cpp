@@ -55,6 +55,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
+		//FPSの制御
+		fps.Update();
+
 		music.se_initialization();
 
 		//プレイヤーを動かす
@@ -81,6 +84,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		//裏画面反映
 		ScreenFlip();
+
+		//FPSの待機
+		fps.Wait();
 	}
 
 	//エラー処理したい時にこれを使おう

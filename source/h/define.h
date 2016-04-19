@@ -6,7 +6,7 @@
 #define FALSE 0
 
 //FPS
-#define FSP 60
+#define FPS 60
 
 //ƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ
 #define CAMERA_MIN 0.1f
