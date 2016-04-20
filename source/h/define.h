@@ -52,3 +52,14 @@
 #define SHOT_RANGE_Y_MAX 20
 #define SHOT_RANGE_Z_MIN -20
 #define SHOT_RANGE_Z_MAX 20
+
+//アイテム
+#define ITEM_KIND_NUM 2//アイテムの種類数
+#define ITEM_HAVE_MAX 99 //アイテムの所持限度数 
+//アイテムの行動範囲
+#define ITEM_RANGE_X_MIN -20
+#define ITEM_RANGE_X_MAX 20
+#define ITEM_RANGE_Y_MIN -20
+#define ITEM_RANGE_Y_MAX 20
+#define ITEM_RANGE_Z_MIN -20
+#define ITEM_RANGE_Z_MAX 20

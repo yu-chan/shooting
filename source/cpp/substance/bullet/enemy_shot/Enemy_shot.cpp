@@ -30,4 +30,11 @@ void Enemy_shot::shot_regist() {
 void Enemy_shot::move() {
 	substance *sub = getSub();
 	sub[0].z += sub[0].vz;
+
+	//範囲外に出たらフラグを消す
+	if (sub[0].x < SHOT_RANGE_X_MIN || sub[0].x > SHOT_RANGE_X_MAX ||
+		sub[0].y < SHOT_RANGE_Y_MIN || sub[0].y > SHOT_RANGE_Y_MAX ||
+		sub[0].z < SHOT_RANGE_Z_MIN || sub[0].z > SHOT_RANGE_Z_MAX) {
+		sub[0].flag = false;
+	}
 }

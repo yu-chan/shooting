@@ -3,11 +3,12 @@ class Item :
 	public Substance
 {
 private:
-	item ite;
+	item *ite;
 public:
 	Item();
 	~Item();
 	item* getIte();
+	void item_regist(int, substance);
 	void move();
 };
 
