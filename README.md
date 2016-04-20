@@ -45,3 +45,4 @@ csvの作成
 ## 参考文献
 - [DXライブラリの置き場](http://dxlib.o.oo7.jp/)
 - [無料で3Dモデルをダウンロードできる60のサイト | CG Campus ...](http://cgcampus.sitemix.jp/?p=312)
+- [3DスペースシューティングをProcessingで作ろう - 遊んで航海記](http://eyln.hatenablog.com/entry/2015/12/18/223626)

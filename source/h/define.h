@@ -34,6 +34,8 @@
 #define ENEMY_RANGE_Y_MAX 20
 #define ENEMY_RANGE_Z_MIN -20
 #define ENEMY_RANGE_Z_MAX 20
+//敵データの数
+#define ENEMY_DATA_CSV_NUM 6
 
 //パスのサイズ
 #define PATH_SIZE 64

@@ -34,8 +34,10 @@ void load_3DModel() {
 
 //敵の位置情報、行動パターン、ステータスを読み込む
 void load_EnemyCsv() {
+	substance *sub = enemy.getSub();
+	character *cha = enemy.getCha();
 	int n = 0, num = 0, fp;
-	char path[PATH_SIZE] = { "./../../../data/csv/Enemy/enemy0.csv" };
+	char path[PATH_SIZE] = { "./../../../data/csv/Enemy/enemy_0.csv" };
 	int input[PATH_SIZE];
 	char inputc[PATH_SIZE];
 
@@ -45,10 +47,22 @@ void load_EnemyCsv() {
 	//ファイルがなかったら終了
 	if (fp == NULL) return;
 
+	//ファイルの最初の2行を読み飛ばす
+	for (int i = 0; i < 2; i++) {
+		while (FileRead_getc(fp) != '\n');
+	}
+
 	//各データの取得
 	while (true) {
 		for (int i = 0; i < PATH_SIZE; i++) {
 			inputc[i] = input[i] = FileRead_getc(fp);//１文字取得
+
+			//スラッシュがあれば開業までループして、最初のデータに行く
+			if (inputc[i] == '/') {
+				while (FileRead_getc(fp) != '\n');
+				i = -1;//カウンタを最初に戻す
+				continue;
+			}
 
 			/*カンマか改行なら、そこまでを文字列として読み込む*/
 			if (input[i] == ',' || input[i] == '\n') {
@@ -61,12 +75,90 @@ void load_EnemyCsv() {
 		}
 
 		//それぞれのデータを格納
-		/*switch (num) {
-		}*/
+		switch (num) {
+			case 0: sub[n].x  = (float)atoi(inputc); break;
+			case 1:	sub[n].y  = (float)atoi(inputc); break;
+			case 2: sub[n].sp = (float)atoi(inputc); break;
+			case 3: cha[n].hp =        atoi(inputc); break;
+			//case 4:
+			//case 5:
+			default:                          break;
+		}
 		num++;
-		if (num == 19) { 
+		//1行のデータ数と同じだった場合、次の行の最初のデータに行く
+		if (num == ENEMY_DATA_CSV_NUM) { 
 			num = 0;
 			n++;
+		}
+		//データが予め確保した敵メモリより大きいなら、メモリを拡大する
+		if (n >= enemy.getSize()) {
+			enemy.reallocSub(n);
+		}
+	}
+	FileRead_close(fp);//ファイルを閉じる
+}
+
+//ボスの位置情報、行動パターン、ステータスを読み込む
+void load_BossCsv() {
+	substance *sub = enemy.getSub();
+	character *cha = enemy.getCha();
+	int n = 0, num = 0, fp;
+	char path[PATH_SIZE] = { "./../../../data/csv/Boss/boss0.csv" };
+	int input[PATH_SIZE];
+	char inputc[PATH_SIZE];
+
+	//ファイルの読み込み
+	fp = FileRead_open(path);
+
+	//ファイルがなかったら終了
+	if (fp == NULL) return;
+
+	//ファイルの最初の2行を読み飛ばす
+	for (int i = 0; i < 2; i++) {
+		while (FileRead_getc(fp) != '\n');
+	}
+
+	//各データの取得
+	while (true) {
+		for (int i = 0; i < PATH_SIZE; i++) {
+			inputc[i] = input[i] = FileRead_getc(fp);//１文字取得
+
+			//スラッシュがあれば開業までループして、最初のデータに行く
+			if (inputc[i] == '/') {
+				while (FileRead_getc(fp) != '\n');
+				i = -1;//カウンタを最初に戻す
+				continue;
+			}
+
+			/*カンマか改行なら、そこまでを文字列として読み込む*/
+			if (input[i] == ',' || input[i] == '\n') {
+				inputc[i] = '\0';
+				break;
+			}
+
+			//ファイルの終わりなら終了
+			if (input[i] == EOF) return;
+		}
+
+		//それぞれのデータを格納
+		switch (num) {
+		case 0: sub[n].x  = (float)atoi(inputc); break;
+		case 1:	sub[n].y  = (float)atoi(inputc); break;
+		case 2: sub[n].sp = (float)atoi(inputc); break;
+		case 3: cha[n].hp =        atoi(inputc); break;
+			//case 4:
+			//case 5:
+		default:                          break;
+		}
+		num++;
+		//1行のデータ数と同じだった場合、次の行の最初のデータに行く
+		if (num == ENEMY_DATA_CSV_NUM) {
+			num = 0;
+			n++;
+		}
+		//データが予め確保した敵メモリより大きいなら、メモリを拡大する
+		if (n >= enemy.getSize()) {
+			enemy.reallocSub(n);
 		}
 	}
 	FileRead_close(fp);//ファイルを閉じる
@@ -83,6 +175,7 @@ void load_se() {
 
 void load() {
 	load_3DModel();
-	//load_EnemyCsv()
+	//load_EnemyCsv();
+	//load_BossCsv();
 	load_se();
 }
