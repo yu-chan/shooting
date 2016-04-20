@@ -19,7 +19,7 @@ void Enemy_shot::shot_regist() {
 		_sub[0].x = sub[0].x;
 		_sub[0].y = sub[0].y;
 		_sub[0].z = sub[0].z;
-		_sub[0].vz = 0.1f;
+		_sub[0].vz = -0.1f;
 		_sub[0].flag = true;
 		//ショット音のフラグを立てる
 		music.se_flag(SHOT_NO);
