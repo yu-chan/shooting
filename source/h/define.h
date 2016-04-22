@@ -2,8 +2,11 @@
 
 
 //true,false
-#define TRUE 1
-#define FALSE 0
+//#define TRUE 1
+//#define FALSE 0
+
+//ラジアンパイ
+#define PI 3.141592
 
 //FPS
 #define FPS 60

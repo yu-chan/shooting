@@ -34,3 +34,8 @@ typedef struct {
 	music_ mus;
 	int count;
 }stage;
+
+//ƒxƒNƒgƒ‹‰‰Z
+typedef struct {
+	float x, y, z;
+}vec3;

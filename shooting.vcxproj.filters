@@ -60,6 +60,9 @@
     <ClCompile Include="source\cpp\fps\Fps.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\cpp\vector\Vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\h\globalVariable.h">
@@ -111,6 +114,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\h\fps\Fps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\h\vector\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
