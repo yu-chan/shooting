@@ -50,3 +50,4 @@ csvの作成
 - [3DスペースシューティングをProcessingで作ろう - 遊んで航海記](http://eyln.hatenablog.com/entry/2015/12/18/223626)
 - [3Dゲームの当たり判定 - Biglobe](http://www5f.biglobe.ne.jp/~kenmo/program/collision/3d/3d.html)
 - [新・C言語 ～ゲームプログラミングの館～ [DXライブラリ]](http://dixq.net/g/)
+- [サンプルプログラム　3Dアクション基本](http://dxlib.o.oo7.jp/program/dxprogram_3DAction.html)
