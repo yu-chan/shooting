@@ -1,41 +1,42 @@
-//ƒvƒŒƒCƒ„[A“GA•¨‚Ég‚¤
+//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Aï¿½Gï¿½Aï¿½ï¿½ï¿½Égï¿½ï¿½
 typedef struct {
-	float x, y, z;//À•W
-	float ang;//Šp“x
-	bool flag;//ƒtƒ‰ƒO
-	int count;//oŒ»ŠÔ
-	float sp;//ƒXƒs[ƒh
-	float ax, ay, az;//‰Á‘¬“x
-	float vx, vy, vz;//‘¬“x
+	float x, y, z;//ï¿½ï¿½ï¿½W
+    float cX, cY, cZ;//ä¸­å¿ƒåº§æ¨™
+	float ang;//ï¿½pï¿½x
+	bool flag;//ï¿½tï¿½ï¿½ï¿½O
+	int count;//ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	float sp;//ï¿½Xï¿½sï¿½[ï¿½h
+	float ax, ay, az;//ï¿½ï¿½ï¿½ï¿½ï¿½x
+	float vx, vy, vz;//ï¿½ï¿½ï¿½x
 }substance;
 
-//ƒLƒƒƒ‰ƒNƒ^[‚ª‚à‚ÂƒXƒe[ƒ^ƒX
+//ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ÂƒXï¿½eï¿½[ï¿½^ï¿½X
 typedef struct {
 	int hp, hp_mx;
 }character;
 
-//’e
+//ï¿½e
 typedef struct {
 	int power, num;
 }bullet;
 
-//ƒAƒCƒeƒ€
+//ï¿½Aï¿½Cï¿½eï¿½ï¿½
 typedef struct {
 	int num, kind;
 }item;
 
-//‰¹Šy‚ÉŠÖ‚·‚é\‘¢‘Ì
+//ï¿½ï¿½ï¿½yï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
 typedef struct {
 	int flag, handle, knd[2], loop_pos[2];
 }music_;
 
-//ƒXƒe[ƒW‚ª‚Á‚Ä‚¢‚éî•ñ
+//ï¿½Xï¿½eï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 typedef struct {
 	music_ mus;
 	int count;
 }stage;
 
-//ƒxƒNƒgƒ‹‰‰Z
+//ï¿½xï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Z
 typedef struct {
 	float x, y, z;
 }vec3;
