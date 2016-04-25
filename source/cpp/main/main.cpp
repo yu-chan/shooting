@@ -77,6 +77,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		//•`‰æ
 		draw();
+		//DrawLine3D(VGet(100.0f, 0.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 
 		//BGM‚ð—¬‚·
 		//music.bgm_main();

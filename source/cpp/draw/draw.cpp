@@ -56,9 +56,9 @@ void draw_Enemy_shot() {
 
 void draw() {
 	setCamera();
-	/*draw_Player();
+	draw_Player();
 	draw_Player_shot();
 	draw_Enemy();
-	draw_Enemy_shot();*/
-	DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
+	draw_Enemy_shot();
+	//DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 }
