@@ -6,11 +6,6 @@ Substance::Substance()
 	size = 0;
 }
 
-
-Substance::~Substance()
-{
-}
-
 substance* Substance::getSub() {
 	return sub;
 }

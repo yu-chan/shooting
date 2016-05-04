@@ -57,6 +57,8 @@
 #define SHOT_RANGE_Y_MAX 20
 #define SHOT_RANGE_Z_MIN -20
 #define SHOT_RANGE_Z_MAX 20
+#define SHOT_CAPSULE_R 1.0f
+#define SHOT_CAPSULE_DIVNUM 8
 
 //アイテム
 #define ITEM_KIND_NUM 2//アイテムの種類数

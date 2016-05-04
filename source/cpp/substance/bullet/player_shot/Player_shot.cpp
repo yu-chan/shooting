@@ -34,7 +34,7 @@ void Player_shot::shot_regist() {
 				_sub[i].x = sub[0].x;
 				_sub[i].y = sub[0].y;
 				_sub[i].z = sub[0].z;
-				_sub[i].vz = 0.1f;
+				_sub[i].vz = 0.5f;
 				_sub[i].count = 0;
 
 				//ショット音のフラグを立てる
@@ -50,6 +50,10 @@ void Player_shot::shot_regist() {
 		}
 	}
 	music.se_play(SHOT_NO);
+}
+
+bool Player_shot::collision_detection() {
+	return false;
 }
 
 void Player_shot::move() {

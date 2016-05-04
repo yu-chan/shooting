@@ -37,10 +37,12 @@ void draw_Player_shot() {
 	substance *sub = player_shot.getSub();
 	for (int i = 0; i < player_shot.getSize(); i++) {
 		if (sub[i].flag == true) {
-			MV1SetPosition(ModelPlayerShot, VGet(sub[i].x, sub[i].y, sub[i].z));
-			MV1DrawModel(ModelPlayerShot);
+			//MV1SetPosition(ModelPlayerShot, VGet(sub[i].x, sub[i].y, sub[i].z));
+			//MV1DrawModel(ModelPlayerShot);
+			DrawCapsule3D(VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 		}
 	}
+	//DrawCapsule3D(VGet(15, 10, 0), VGet(15, 10, 5), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 }
 
 //“G‚Ì’e‚Ì•`‰æ
@@ -48,8 +50,9 @@ void draw_Enemy_shot() {
 	substance *sub = enemy_shot.getSub();
 	for (int i = 0; i < enemy_shot.getSize(); i++) {
 		if (sub[i].flag == true) {
-			MV1SetPosition(ModelEnemyShot, VGet(sub[i].x, sub[i].y, sub[i].z));
-			MV1DrawModel(ModelEnemyShot);
+			//MV1SetPosition(ModelEnemyShot, VGet(sub[i].x, sub[i].y, sub[i].z));
+			//MV1DrawModel(ModelEnemyShot);
+			DrawCapsule3D(VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(255, 0, 0), GetColor(255, 255, 255), TRUE);
 		}
 	}
 }
