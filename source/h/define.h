@@ -29,6 +29,8 @@
 #define PLAYER_RANGE_X_MAX 15
 #define PLAYER_RANGE_Y_MIN -10
 #define PLAYER_RANGE_Y_MAX 10
+//プレイヤーモデルのFrameIndex
+#define PLAYER_MODEL_FRAMEINDEX 0
 
 //敵の行動範囲
 #define ENEMY_RANGE_X_MIN -20
@@ -39,6 +41,8 @@
 #define ENEMY_RANGE_Z_MAX 20
 //敵データの数
 #define ENEMY_DATA_CSV_NUM 6
+//敵モデルのFrameIndex
+#define ENEMY_MODEL_FRAMEINDEX 0
 
 //パスのサイズ
 #define PATH_SIZE 64
