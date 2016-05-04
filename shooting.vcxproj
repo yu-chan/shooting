@@ -26,7 +26,6 @@
     <ClCompile Include="source\cpp\substance\character\player\Player.cpp" />
     <ClCompile Include="source\cpp\substance\item\Item.cpp" />
     <ClCompile Include="source\cpp\substance\Substance.cpp" />
-    <ClCompile Include="source\cpp\vector\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\h\define.h" />
@@ -46,7 +45,6 @@
     <ClInclude Include="source\h\substance\character\player\Player.h" />
     <ClInclude Include="source\h\substance\item\Item.h" />
     <ClInclude Include="source\h\substance\Substance.h" />
-    <ClInclude Include="source\h\vector\Vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A0EC9B5F-E553-4656-940E-035DE13EE7CB}</ProjectGuid>
