@@ -6,7 +6,7 @@ private:
 public:
 	Shot();
 	//~Shot();
-	bool collision_detection(Substance*, VECTOR, VECTOR);
+	bool collision_detection(Substance*, VECTOR, VECTOR, int, int);
 	virtual void shot_regist() = 0;
 	bullet* getBul();
 };

@@ -64,7 +64,7 @@ void Player_shot::move() {
 			sub[i].count++;
 
 			//‘ŠŽè‚É“–‚½‚Á‚Ä‚é‚È‚çƒtƒ‰ƒO‚ð0‚É‚·‚é
-			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5))) {
+			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), ModelEnemy, ENEMY_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}
 			

@@ -27,9 +27,19 @@ void Enemy_shot::shot_regist() {
 	music.se_play(SHOT_NO);
 }
 
+//bool Enemy_shot::collision_detection() {
+//	return false;
+//}
+
 void Enemy_shot::move() {
 	substance *sub = getSub();
 	sub[0].z += sub[0].vz;
+	sub[0].count++;
+
+	//相手に当たってるなら、フラグを消す
+	if (collision_detection(&player, VGet(sub[0].x, sub[0].y + 10, sub[0].z), VGet(sub[0].x, sub[0].y + 10, sub[0].z + 5), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
+		sub[0].flag = false;
+	}
 
 	//範囲外に出たらフラグを消す
 	if (sub[0].x < SHOT_RANGE_X_MIN || sub[0].x > SHOT_RANGE_X_MAX ||
