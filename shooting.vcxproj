@@ -24,7 +24,6 @@
     <ClCompile Include="source\cpp\substance\character\Character.cpp" />
     <ClCompile Include="source\cpp\substance\character\enemy\Enemy.cpp" />
     <ClCompile Include="source\cpp\substance\character\player\Player.cpp" />
-    <ClCompile Include="source\cpp\substance\item\Item.cpp" />
     <ClCompile Include="source\cpp\substance\Substance.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -43,7 +42,6 @@
     <ClInclude Include="source\h\substance\character\Character.h" />
     <ClInclude Include="source\h\substance\character\enemy\Enemy.h" />
     <ClInclude Include="source\h\substance\character\player\Player.h" />
-    <ClInclude Include="source\h\substance\item\Item.h" />
     <ClInclude Include="source\h\substance\Substance.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

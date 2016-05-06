@@ -51,9 +51,6 @@
     <ClCompile Include="source\cpp\initialization\initialization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\cpp\substance\item\Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\cpp\music\Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -102,9 +99,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\h\substance\bullet\enemy_shot\Enemy_shot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="source\h\substance\item\Item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\h\music\Music.h">

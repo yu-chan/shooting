@@ -21,7 +21,6 @@
 #include "./substance/bullet/Shot.h"
 #include "./substance/bullet/player_shot/Player_shot.h"
 #include "./substance/bullet/enemy_shot/Enemy_shot.h"
-#include "./substance/item/Item.h"
 #include "./fps/Fps.h"
 #include "./globalClass.h"
 #include "./globalFunction.h"
