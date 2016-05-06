@@ -74,15 +74,24 @@ void load_EnemyCsv() {
 			if (input[i] == EOF) return;
 		}
 
-		//それぞれのデータを格納
+		/*それぞれのデータを格納
+		  0:カウント(出現時間)
+		  1:x座標
+		  2:y座標
+		  3:z座標
+		  4:スピード
+		  5:体力
+		  6:発車時間
+		*/
 		switch (num) {
-			case 0: sub[n].x  = (float)atoi(inputc); break;
-			case 1:	sub[n].y  = (float)atoi(inputc); break;
-			case 2: sub[n].sp = (float)atoi(inputc); break;
-			case 3: cha[n].hp =        atoi(inputc); break;
-			//case 4:
-			//case 5:
-			default:                          break;
+			case 0: sub[n].count  =        atoi(inputc);                            break;
+			case 1: sub[n].x      = (float)atoi(inputc);                            break;
+			case 2:	sub[n].y      = (float)atoi(inputc);                            break;
+			case 3: sub[n].z      = (float)atoi(inputc);                            break;
+			case 4: sub[n].sp     = (float)atoi(inputc);                            break;
+			case 5: cha[n].hp_max =        atoi(inputc); cha[n].hp = cha[n].hp_max; break;
+			case 6: sub[n].bltime =        atoi(inputc);							break;
+			default:                                                                break;
 		}
 		num++;
 		//1行のデータ数と同じだった場合、次の行の最初のデータに行く
