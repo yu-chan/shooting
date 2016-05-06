@@ -8,7 +8,6 @@ private:
 	static const int N = 60;//•½‹Ï‚ğæ‚éƒTƒ“ƒvƒ‹”
 public:
 	Fps();
-	~Fps();
 	bool Update();
 	void Wait();
 };

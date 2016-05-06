@@ -8,11 +8,6 @@ Fps::Fps()
 	fps = 0;
 }
 
-
-Fps::~Fps()
-{
-}
-
 bool Fps::Update() {
 	//1ƒtƒŒ[ƒ€–Ú‚È‚ç‚ğ‹L‰¯
 	if (count == 0) {
