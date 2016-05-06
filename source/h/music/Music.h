@@ -3,8 +3,8 @@ class Music
 {
 public:
 	music_ bgm[BGM_NUM], se[SE_NUM];
-	Music();
-	~Music();
+	//Music();
+	//~Music();
 	void se_initialization();
 	void se_flag(int);
 	void se_play(int);

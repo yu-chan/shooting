@@ -3,15 +3,6 @@
 #include "./../../h/global.h"
 
 
-Music::Music()
-{
-}
-
-
-Music::~Music()
-{
-}
-
 //SE‚Ì‰Šú‰»
 void Music::se_initialization() {
 	for (int i = 0; i < SE_NUM; i++) {
