@@ -84,7 +84,7 @@ void load_EnemyCsv() {
 		  6:”­ŽÔŽžŠÔ
 		*/
 		switch (num) {
-			case 0: sub[n].count  =        atoi(inputc);                            break;
+			case 0: sub[n].aptime =        atoi(inputc);                            break;
 			case 1: sub[n].x      = (float)atoi(inputc);                            break;
 			case 2:	sub[n].y      = (float)atoi(inputc);                            break;
 			case 3: sub[n].z      = (float)atoi(inputc);                            break;
