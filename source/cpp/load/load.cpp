@@ -21,11 +21,13 @@ void load_3DModel() {
 	  あくまで自分の推測だが...
 	*/
 	//自機の読み込み
-	//ModelAirCraft = MV1LoadModel("./data/3D Model/Vehicles/Aircraft/Models/AircraftFuselage.x");
-	ModelAirCraft = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelAirCraft = MV1LoadModel("./data/3dModel/Vehicles/Aircraft/Models/AircraftFuselage.mv1");  //大きさ x:182*4 y:わからん z:182*11  
+	//モデルが大きすぎるので、小さくする
+	MV1SetScale(ModelAirCraft, VGet(0.01f, 0.01f, 0.01f));
+	//ModelAirCraft = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 
 	//敵の読み込み
-	ModelEnemy = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	ModelEnemy = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd"); //大きさ x:2*8 y:わからん z:2*3
 
 	//ショットの読み込み
 	ModelPlayerShot = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
