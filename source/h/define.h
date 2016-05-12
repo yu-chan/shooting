@@ -63,3 +63,5 @@
 #define SHOT_RANGE_Z_MAX 20
 #define SHOT_CAPSULE_R 1.0f
 #define SHOT_CAPSULE_DIVNUM 8
+//プレイヤーがショットを打った時のプラスする座標
+#define SHOT_PLAYER_Y 5.0f
