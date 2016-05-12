@@ -24,6 +24,8 @@ void load_3DModel() {
 	ModelAirCraft = MV1LoadModel("./data/3dModel/Vehicles/Aircraft/Models/AircraftFuselage.mv1");  //大きさ x:182*4 y:わからん z:182*11  
 	//モデルが大きすぎるので、小さくする
 	MV1SetScale(ModelAirCraft, VGet(0.01f, 0.01f, 0.01f));
+	//モデルの先端がプレイヤー側に向いてるので、Y軸に180度回転する 
+	MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 	//ModelAirCraft = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 
 	//敵の読み込み
