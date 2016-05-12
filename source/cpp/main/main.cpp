@@ -44,6 +44,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 
+	//初期化
+	initialization();
 
 	//最初に１度だけデータをロードする
 	load();
@@ -70,6 +72,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		//敵を動かす
 		//enemy.add_count();
+		enemy.enemy_regist();
 		enemy.move();
 		//敵の弾を動かす
 		enemy_shot.shot_regist();
@@ -82,6 +85,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//BGMを流す
 		//music.bgm_main();
 
+		//ステージのカウントを増やす
+		stage_count++;
 
 		//裏画面反映
 		ScreenFlip();

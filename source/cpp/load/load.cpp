@@ -37,7 +37,8 @@ void load_EnemyCsv() {
 	substance *sub = enemy.getSub();
 	character *cha = enemy.getCha();
 	int n = 0, num = 0, fp;
-	char path[PATH_SIZE] = { "./../../../data/csv/Enemy/enemy_0.csv" };
+	//char path[PATH_SIZE] = { "./../../../data/csv/Enemy/enemy_0.csv" };  
+	char path[PATH_SIZE] = { "./data/csv/Enemy/enemy_0.csv" };
 	int input[PATH_SIZE];
 	char inputc[PATH_SIZE];
 
@@ -45,7 +46,10 @@ void load_EnemyCsv() {
 	fp = FileRead_open(path);
 
 	//ファイルがなかったら終了
-	if (fp == NULL) return;
+	if (fp == NULL) {
+		OutputDebugStringW(L"敵情報のファイルがない\n");
+		return; 
+	}
 
 	//ファイルの最初の2行を読み飛ばす
 	for (int i = 0; i < 2; i++) {
@@ -184,7 +188,7 @@ void load_se() {
 
 void load() {
 	load_3DModel();
-	//load_EnemyCsv();
+	load_EnemyCsv();
 	//load_BossCsv();
 	load_se();
 }

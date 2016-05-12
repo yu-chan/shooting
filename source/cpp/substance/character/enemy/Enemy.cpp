@@ -10,7 +10,7 @@ Enemy::Enemy()
 	sub[0].z = 20;
 	sub[0].vx = 0.1f;
 	sub[0].count = 0;
-	sub[0].flag = true;
+	//sub[0].flag = true;
 }
 
 
@@ -29,6 +29,12 @@ void Enemy::move() {
 	sub[0].count++;
 }
 
-void Enemy::enemy_regist() {
+void Enemy::enemy_regist() {   
+	substance *sub = getSub();
 
+	for (int i = 0; i < getSize(); i++) {
+		if (sub[i].aptime == stage_count) {
+			sub[i].flag = true;
+		}
+	}
 }
