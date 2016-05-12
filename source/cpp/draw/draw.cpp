@@ -7,14 +7,14 @@
 
 //ƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ‚ğŒˆ‚ß‚é
 void setCamera() {
+	substance *sub = player.getSub();
 	SetCameraNearFar(CAMERA_MIN, CAMERA_MAX);
-	SetCameraPositionAndTarget_UpVecY(VGet(0, 10, -20), VGet(0.0f, 10.0f, 0.0f));
+	SetCameraPositionAndTarget_UpVecY(VGet(sub[0].x, sub[0].y + 10, sub[0].z - 20), VGet(0.0f, 10.0f, 0.0f));
 }
 
 //©‹@‚Ì•`‰æ
 void draw_Player() {
-	substance *sub;
-	sub = player.getSub();
+	substance *sub = player.getSub();
 	if (sub[0].flag == true) {
 		MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
 		MV1DrawModel(ModelAirCraft);
