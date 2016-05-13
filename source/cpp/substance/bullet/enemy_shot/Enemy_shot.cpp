@@ -48,7 +48,7 @@ void Enemy_shot::move() {
 			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}*/
-			if (collision_detection(&player, VGet(sub[i].x, sub[i].y + 10, sub[i].z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
+			if (collision_detection(&player, VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}
 

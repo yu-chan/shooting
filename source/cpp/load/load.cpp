@@ -29,7 +29,12 @@ void load_3DModel() {
 	//ModelAirCraft = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
 
 	//敵の読み込み
-	ModelEnemy = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd"); //大きさ x:2*8 y:わからん z:2*3
+	//ModelEnemy = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd"); //大きさ x:2*8 y:わからん z:2*3
+	ModelEnemy = MV1LoadModel("./data/3dModel/Enemy/enemy.mqo"); //大きさ x:26*10 y:わからん z:26*10
+	//モデルのサイズを小さくする
+	MV1SetScale(ModelEnemy, VGet(0.05f, 0.05f, 0.05f));
+	//モデルの先端が奥に向いてるので、Y軸に180度回転する
+	MV1SetRotationXYZ(ModelEnemy, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 
 	//ショットの読み込み
 	ModelPlayerShot = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
