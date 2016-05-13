@@ -64,11 +64,29 @@ void draw_Enemy_shot() {
 	}
 }
 
+//o‚Ì•`‰æ
+void draw_Dust() { 
+	//À•W‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é
+
+	for (int i = 0; i < DUST_NUM; i++) {
+		//‰“‚­‚Ì‚à‚Ì‚Í“_‚Å•`‰æ
+
+		//‹ß‚­‚Ì‚à‚Ì‚Íü‚Å•`‰æ
+
+	}
+}
+
+//Â‚¢˜f¯‚Ì•`‰æ
+void draw_Planet() {
+}
+
 void draw() {
 	setCamera();
+	//draw_Dust();
 	draw_Player_shot();
 	draw_Enemy_shot();
 	draw_Player();
 	draw_Enemy();
+	//draw_Planet();
 	//DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 }

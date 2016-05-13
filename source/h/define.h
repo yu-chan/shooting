@@ -68,3 +68,6 @@
 //敵がショットを打った時のプラスする座標
 #define SHOT_ENEMY_Y 1.0f
 #define SHOT_ENEMY_Z -15.0f
+
+//塵の数
+#define DUST_NUM 150
