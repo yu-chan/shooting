@@ -72,5 +72,6 @@
 //o‚Ì”
 #define DUST_NUM 150
 
-//Â‚¢˜f¯‚Ì”¼Œa
-#define PLANET_R 100
+//Â‚¢˜f¯
+#define PLANET_R 100 //”¼Œa
+#define PLANET_DIVNUM 32  //ƒ|ƒŠƒSƒ“”

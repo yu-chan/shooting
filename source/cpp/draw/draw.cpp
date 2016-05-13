@@ -78,15 +78,17 @@ void draw_Dust() {
 
 //ê¬Ç¢òfêØÇÃï`âÊ
 void draw_Planet() {
+	substance *sub = planet.getSub();
+	DrawSphere3D(VGet(sub[0].x, sub[0].y, sub[0].z), PLANET_R, PLANET_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 }
 
 void draw() {
 	setCamera();
+	draw_Planet();
 	//draw_Dust();
 	draw_Player_shot();
 	draw_Enemy_shot();
 	draw_Player();
 	draw_Enemy();
-	//draw_Planet();
 	//DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 }
