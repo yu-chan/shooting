@@ -4,7 +4,6 @@
 
 //いろいろなものを初期化
 void initialization() {
-	stage_num = 0;
 	//ステージのカウントを0にする
 	stage_count = 0;
 

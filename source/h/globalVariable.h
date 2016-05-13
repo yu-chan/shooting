@@ -14,9 +14,8 @@ GLOBAL int ModelEnemy;
 GLOBAL int ModelPlayerShot;
 GLOBAL int ModelEnemyShot;
 
-//ステージ
-GLOBAL int stage_num;//ステージ番号
-GLOBAL int stage_count;//ステージのカウント
+//ステージのカウント
+GLOBAL int stage_count;
 
 //倒した敵の数
 GLOBAL int down_enemy_num;
