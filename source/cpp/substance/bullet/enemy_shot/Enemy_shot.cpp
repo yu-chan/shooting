@@ -45,7 +45,10 @@ void Enemy_shot::move() {
 			//DrawFormatString(0, 0, GetColor(255, 255, 255), "count:%d", sub[i].count);
 
 			//‘Šè‚É“–‚½‚Á‚Ä‚é‚È‚çAƒtƒ‰ƒO‚ğÁ‚·
-			if (collision_detection(&player, VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
+			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
+				sub[i].flag = false;
+			}*/
+			if (collision_detection(&player, VGet(sub[i].x, sub[i].y + 10, sub[i].z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}
 
