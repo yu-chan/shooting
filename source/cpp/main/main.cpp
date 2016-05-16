@@ -83,7 +83,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//DrawLine3D(VGet(100.0f, 0.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 
 		//BGMを流す
-		//music.bgm_main();
+		music.bgm_main();
 
 		//ステージのカウントを増やす
 		stage_count++;

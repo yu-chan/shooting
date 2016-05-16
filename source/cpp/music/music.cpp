@@ -2,6 +2,10 @@
 
 #include "./../../h/global.h"
 
+Music::Music() {
+	bgm.flag = 0;
+	bgm.loop_pos = 26672;
+}
 
 //SEの初期化
 void Music::se_initialization() {
@@ -23,9 +27,9 @@ void Music::se_play(int flag) {
 }
 
 //BGMのロード
-void Music::load_bgm(int flag) {
+void Music::load_bgm() {
 	char str[64];
-	sprintf(str, "./data/music/bgm/stage%d_%d.mp3", 0, flag);
+	sprintf(str, "./data/music/bgm/stage.mp3");
 	bgm.handle = LoadSoundMem(str);
 }
 
@@ -38,40 +42,44 @@ void Music::bgm_main() {
 	int flag = bgm.flag;
 	switch (flag) {
 		case 0:
-			load_bgm(0);
-			SetLoopPosSoundMem(bgm.loop_pos[0], bgm.handle);
+			//load_bgm(0);
+			//BGMを読み込む
+			load_bgm();
+
+			//ループ位置を設定する
+			SetLoopPosSoundMem(bgm.loop_pos, bgm.handle);
+
 			bgm.flag = 1;
 			break;
 		case 1:
-			switch (bgm.knd[0]) {
-				case 0:
+			//switch (bgm.knd[0]) {
+				//case 0:
+					//ステージカウントが60になったら、BGMを流す
 					if (stage_count == 60) {
+						//BGMを流す
 						PlaySoundMem(bgm.handle, DX_PLAYTYPE_LOOP);
-						bgm.flag = 2;
+						//bgm.flag = 2;
 					}
 					break;
-				default:
-					break;
-			}
+				//default:
+					//break;
+			//}
 			break;
-		case 2:
 			/*
-			60はいずれ変える	 
-			*/
+		case 2:
+			// 60はいずれ変える
 			if (stage_count == 60) {
 				StopSoundMem(bgm.handle);
 				delete_bgm();
-				load_bgm(1);
-				SetLoopPosSoundMem(bgm.loop_pos[1], bgm.handle);
+				//load_bgm(1);
+				SetLoopPosSoundMem(bgm.loop_pos, bgm.handle);
 				bgm.flag = 3;
 			}
 			break;
 		case 3:
 			switch (bgm.knd[0]) {
 				case 0:
-					/*
-					60はいずれ変える
-					*/
+					//60はいずれ変える
 					if (stage_count == 60) {
 						PlaySoundMem(bgm.handle, DX_PLAYTYPE_LOOP);
 						bgm.flag = 4;
@@ -81,6 +89,7 @@ void Music::bgm_main() {
 					break;
 			}
 			break;
+			*/
 		default:
 			break;
 	}
