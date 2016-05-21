@@ -69,8 +69,9 @@
 #define SHOT_ENEMY_Y 1.0f
 #define SHOT_ENEMY_Z -15.0f
 
-//o‚Ì”
-#define DUST_NUM 150
+//o
+#define DUST_NUM 150 //”
+#define DUST_RANGE 20 //ƒvƒŒƒCƒ„[‚Ìü‚è‚É‘¶İ‚·‚éo‚Ì•`‰æ”ÍˆÍ
 
 //Â‚¢˜f¯
 #define PLANET_R 100 //”¼Œa

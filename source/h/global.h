@@ -2,6 +2,7 @@
 
 #include "DxLib.h"
 #include <math.h>
+#include <time.h>
 #include "./define.h"
 
 #ifdef GLOBAL_INSTANCE

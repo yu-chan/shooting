@@ -64,15 +64,43 @@ void draw_Enemy_shot() {
 	}
 }
 
-//o‚Ì•`‰æ
-void draw_Dust() { 
-	//À•W‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é
+//—”‚Ì”ÍˆÍ‚ğŒˆ‚ß‚é
+int GetRandom(int min, int max) {
+	return min + (int)(rand() * (max - min + 1.0) / (1.0 + RAND_MAX));
+}
 
-	for (int i = 0; i < DUST_NUM; i++) {
+//a‚ğb‚ÅŠ„‚Á‚½—]‚è‚ğ•Ô‚·
+float modulo(float a, float b) {
+	return a - floorf(a / b) * b;
+}
+
+//o‚Ì•`‰æ
+void draw_Dust() {
+	substance *sub = dust.getSub();
+	substance *p = player.getSub();
+	//—”‚ğ‚²‚Æ‚ÉŒˆ‚ß‚é
+	srand((unsigned)time(NULL));
+
+	//À•W‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é
+	//DrawLine3D(VGet(10.0f, 10.0f, 10.0f), VGet(10.0f, 10.0f, -10.0f), GetColor(255, 255, 255));
+	//DrawLine3D(VGet(10.0f, 10.0f, -10.0f), VGet(10.0f, 10.0f, -10.0f), GetColor(255, 255, 255));
+	//DrawPixel3D(VGet(10.0f, 10.0f, -10.0f), GetColor(255, 255, 255));
+
+	//o‚ÌÀ•W‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é‚½‚ß‚ÉA—”‚ğİ’è
+	int seed = int(rand() % 1000);
+	float range = 20.0f;
+	for (int i = 0; i < dust.getSize(); i++) {
 		//‰“‚­‚Ì‚à‚Ì‚Í“_‚Å•`‰æ
+		sub[i].x = (float)GetRandom(-DUST_RANGE, DUST_RANGE);
+		sub[i].y = (float)GetRandom(-DUST_RANGE, DUST_RANGE);
+		sub[i].z = (float)GetRandom(-DUST_RANGE, DUST_RANGE);
+		DrawPixel3D(VGet(sub[i].x, sub[i].y, sub[i].z), GetColor(255, 255, 255));
 
 		//‹ß‚­‚Ì‚à‚Ì‚Íü‚Å•`‰æ
-
+		sub[i].x = modulo(-p[0].x + sub[i].x, range) - range * 0.5f;
+		sub[i].y = modulo(-p[0].y + sub[i].y, range) - range * 0.5f;
+		sub[i].z = modulo(-p[0].z + sub[i].z, range) - range * 0.5f;
+		DrawLine3D(VGet(sub[i].x, sub[i].y, sub[i].z), VGet(sub[i].x - p[0].x * (range * 0.001f) + 0.001f, sub[i].y - p[0].y * (range * 0.001f), sub[i].z - p[0].z * (range * 0.001f)), GetColor(255, 255, 255));
 	}
 }
 
@@ -85,7 +113,7 @@ void draw_Planet() {
 void draw() {
 	setCamera();
 	draw_Planet();
-	//draw_Dust();
+	draw_Dust();
 	draw_Player_shot();
 	draw_Enemy_shot();
 	draw_Player();

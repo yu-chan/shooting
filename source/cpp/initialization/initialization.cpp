@@ -16,4 +16,7 @@ void initialization() {
 	sub[0].x = 0.0f;
 	sub[0].y = 0.0f;
 	sub[0].z = 600.0f;
+
+	//o‚Ì‰Šú‰»
+	dust.mallocSub(DUST_NUM);
 }
