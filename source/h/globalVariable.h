@@ -19,3 +19,6 @@ GLOBAL int stage_count;
 
 //倒した敵の数
 GLOBAL int down_enemy_num;
+
+//カメラの座標、注視点
+GLOBAL VECTOR camera_pos, camera_look;

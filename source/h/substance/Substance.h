@@ -13,5 +13,6 @@ public:
 	void mallocSub(int);
 	void reallocSub(int);
 	int getSize();
+	void rotate(float, float, float, substance*);
 };
 

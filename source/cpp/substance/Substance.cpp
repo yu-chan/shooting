@@ -1,5 +1,6 @@
 #include "./../../h/global.h"
 
+static const float ROTATE_SPEED = DX_PI_F / 90; //回転スピード
 
 Substance::Substance()
 {
@@ -27,4 +28,7 @@ void Substance::reallocSub(int n) {
 
 int Substance::getSize() {
 	return size;
+}
+
+void Substance::rotate(float angX, float angY, float angZ, substance* s) {
 }
