@@ -2,7 +2,7 @@
 
 
 //float x = 0, y = 0;
-static const float ROTATE_SPEED = DX_PI_F / 90.0f; //回転スピード
+static const float ROTATE_SPEED = 10.0f * DX_PI_F / 180.0f; //回転スピード
 
 void ini(substance* s) {
 	substance *sub = s;
@@ -41,6 +41,10 @@ void Player::move() {
 	sub[0].vy = 0;
 	sub[0].vz = 0;
 
+	//動く前のプレイヤーとカメラの座標を保存
+	VECTOR pre_player = VGet(sub[0].x, sub[0].y, sub[0].z);
+	VECTOR pre_camera_pos = camera_pos, pre_camera_look = camera_look;
+
 	if (keyboard.checkKey(KEY_INPUT_Z) > 0) {
 		if (keyboard.checkKey(KEY_INPUT_LSHIFT)) {
 			sub[0].z += sp_z[0];
@@ -53,24 +57,13 @@ void Player::move() {
 		slanting = (float)ROOT2;
 	}
 
-	//モデルが回転する
-	if (keyboard.checkKey(KEY_INPUT_C)) {
-		MATRIX matrix = MGetRotY(ROTATE_SPEED);
-		sub[0].angy += ROTATE_SPEED;
-
-		//プレイヤーが回転しているので、それに応じてカメラの座標と注視点を変える
-		camera_pos = VTransform(camera_pos, matrix);
-		camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
-		camera_look = VTransform(camera_look, matrix);
-		camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
-	}
-
 	for (int i = 0; i < KEY_MOVE; i++) {
 		if (keyboard.checkKey(key[i]) > 0) {
 			sub[0].x += sp_x[i] / slanting;
 			sub[0].y += sp_y[i] / slanting;
-			camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30);
-			camera_look = VGet(0.0f, 0.0f, 30.0f);
+
+			camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
+			camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
 			camera_look = VAdd(camera_pos, camera_look);
 		}
 		//ウィンドウ外に行かないようにする
@@ -78,5 +71,27 @@ void Player::move() {
 		if (sub[0].x > PLAYER_RANGE_X_MAX) { sub[0].x = PLAYER_RANGE_X_MAX; }
 		if (sub[0].y < PLAYER_RANGE_Y_MIN) { sub[0].y = PLAYER_RANGE_Y_MIN; }
 		if (sub[0].y > PLAYER_RANGE_Y_MAX) { sub[0].y = PLAYER_RANGE_Y_MAX; }
+	}
+
+	//モデルが回転する
+	if (keyboard.checkKey(KEY_INPUT_C)) {
+		sub[0].angy += ROTATE_SPEED;
+	/*動く前後の座標の差を求める*/
+	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);//プレイヤーの前後のベクトルの差
+	VECTOR p_cp_sub = VSub(pre_camera_pos, pre_player);//動く前のカメラの座標とプレイヤーの差
+	VECTOR p_cl_sub = VSub(pre_camera_look, pre_player);//動く前のカメラの注視点とプレイヤーの差
+
+	//プレイヤーが回転していれば、それに応じてカメラの座標と注視点を変える
+	MATRIX matrix = MGetRotY(ROTATE_SPEED);
+	camera_pos = VTransform(p_cp_sub, matrix);
+	camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
+	camera_look = VTransform(p_cl_sub, matrix);
+	camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
+	/*
+	camera_pos = VTransform(camera_pos, matrix);
+	camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
+	camera_look = VTransform(camera_look, matrix);
+	camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
+	*/									  
 	}
 }
