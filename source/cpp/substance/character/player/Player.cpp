@@ -2,6 +2,7 @@
 
 
 //float x = 0, y = 0;
+static const float ROTATE_SPEED = DX_PI_F / 90.0f; //回転スピード
 
 void ini(substance* s) {
 	substance *sub = s;
@@ -52,10 +53,25 @@ void Player::move() {
 		slanting = (float)ROOT2;
 	}
 
+	//モデルが回転する
+	if (keyboard.checkKey(KEY_INPUT_C)) {
+		MATRIX matrix = MGetRotY(ROTATE_SPEED);
+		sub[0].angy += ROTATE_SPEED;
+
+		//プレイヤーが回転しているので、それに応じてカメラの座標と注視点を変える
+		camera_pos = VTransform(camera_pos, matrix);
+		camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
+		camera_look = VTransform(camera_look, matrix);
+		camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
+	}
+
 	for (int i = 0; i < KEY_MOVE; i++) {
 		if (keyboard.checkKey(key[i]) > 0) {
 			sub[0].x += sp_x[i] / slanting;
 			sub[0].y += sp_y[i] / slanting;
+			camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30);
+			camera_look = VGet(0.0f, 0.0f, 30.0f);
+			camera_look = VAdd(camera_pos, camera_look);
 		}
 		//ウィンドウ外に行かないようにする
 		if (sub[0].x < PLAYER_RANGE_X_MIN) { sub[0].x = PLAYER_RANGE_X_MIN; }

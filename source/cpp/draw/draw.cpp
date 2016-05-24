@@ -7,10 +7,10 @@
 
 //カメラの描画範囲を決める
 void setCamera() {
-	substance *sub = player.getSub();
-	camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
-	camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
-	camera_look = VAdd(camera_pos, camera_look);
+	//substance *sub = player.getSub();
+	//camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
+	//camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
+	//camera_look = VAdd(camera_pos, camera_look);
 	SetCameraNearFar(CAMERA_MIN, CAMERA_MAX);
 	//SetCameraPositionAndTarget_UpVecY(VGet(sub[0].x, sub[0].y + 10, sub[0].z - 30), VGet(0.0f, 10.0f, 0.0f));
 	//SetCameraPositionAndTarget_UpVecY(VGet(0.0f, 10.0f, -30), VGet(0.0f, 0.0f, 0.0f));						 
@@ -25,6 +25,8 @@ void draw_Player() {
 	substance *sub = player.getSub();
 	if (sub[0].flag == true) {
 		MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
+		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy * DX_PI_F / 180.0f, 0.0f));
+		MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy, 0.0f));
 		MV1DrawModel(ModelAirCraft);
 	}
 }

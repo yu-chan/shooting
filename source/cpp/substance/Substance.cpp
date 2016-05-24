@@ -1,6 +1,6 @@
 #include "./../../h/global.h"
 
-static const float ROTATE_SPEED = DX_PI_F / 90; //回転スピード
+//static const float ROTATE_SPEED = DX_PI_F / 90; //回転スピード
 
 Substance::Substance()
 {
