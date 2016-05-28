@@ -62,9 +62,9 @@ void Player::move() {
 			sub[0].x += sp_x[i] / slanting;
 			sub[0].y += sp_y[i] / slanting;
 
-			camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
-			camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
-			camera_look = VAdd(camera_pos, camera_look);
+			//camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
+			//camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
+			//camera_look = VAdd(camera_pos, camera_look);
 		}
 		//ウィンドウ外に行かないようにする
 		if (sub[0].x < PLAYER_RANGE_X_MIN) { sub[0].x = PLAYER_RANGE_X_MIN; }
@@ -72,6 +72,9 @@ void Player::move() {
 		if (sub[0].y < PLAYER_RANGE_Y_MIN) { sub[0].y = PLAYER_RANGE_Y_MIN; }
 		if (sub[0].y > PLAYER_RANGE_Y_MAX) { sub[0].y = PLAYER_RANGE_Y_MAX; }
 	}
+	camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
+	camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
+	camera_look = VAdd(camera_pos, camera_look);
 
 	//モデルが回転する
 	if (keyboard.checkKey(KEY_INPUT_C)) {
