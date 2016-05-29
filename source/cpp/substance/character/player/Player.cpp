@@ -57,6 +57,7 @@ void Player::move() {
 		slanting = (float)ROOT2;
 	}
 
+	/*
 	for (int i = 0; i < KEY_MOVE; i++) {
 		if (keyboard.checkKey(key[i]) > 0) {
 			sub[0].x += sp_x[i] / slanting;
@@ -72,6 +73,24 @@ void Player::move() {
 		if (sub[0].y < PLAYER_RANGE_Y_MIN) { sub[0].y = PLAYER_RANGE_Y_MIN; }
 		if (sub[0].y > PLAYER_RANGE_Y_MAX) { sub[0].y = PLAYER_RANGE_Y_MAX; }
 	}
+	*/
+
+	//右が押されてたら、右に移動
+	if (keyboard.checkKey(KEY_INPUT_RIGHT)) {
+		sub[0].x += -0.1f * cos(sub[0].angy * DX_PI_F / 180.0f);
+		sub[0].z += -0.1f * sin(sub[0].angy * DX_PI_F / 180.0f);
+	}
+
+	//左が推されてたら、左に移動
+	if (keyboard.checkKey(KEY_INPUT_LEFT)) {
+		sub[0].x += 0.1f * cos(sub[0].angy * DX_PI_F / 180.0f);
+		sub[0].z += 0.1f * sin(sub[0].angy * DX_PI_F / 180.0f);
+	}
+
+	//モデルが動いたら、カメラも動けるようにする
+	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);
+	camera_pos = VAdd(camera_pos, player_sub);
+	camera_look = VAdd(camera_look, player_sub);
 
 	//モデルが回転する
 	if (keyboard.checkKey(KEY_INPUT_C)) {
