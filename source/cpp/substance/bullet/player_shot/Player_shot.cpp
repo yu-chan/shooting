@@ -34,7 +34,8 @@ void Player_shot::shot_regist() {
 				_sub[i].x = sub[0].x;
 				_sub[i].y = sub[0].y;
 				_sub[i].z = sub[0].z;
-				_sub[i].vz = 0.2f;
+				_sub[i].vx = -0.2f * sin(sub[0].angy * DX_PI_F / 180.0f);
+				_sub[i].vz = -0.2f * cos(sub[0].angy * DX_PI_F / 180.0f);
 				_sub[i].count = 0;
 
 				//ショット音のフラグを立てる
@@ -60,6 +61,7 @@ void Player_shot::move() {
 	substance *sub = getSub();
 	for (int i = 0; i < getSize(); i++){
 		if (sub[i].flag == true) {
+			sub[i].x += sub[i].vx;
 			sub[i].z += sub[i].vz;
 			sub[i].count++;
 
