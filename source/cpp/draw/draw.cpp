@@ -25,10 +25,15 @@ void setCamera() {
 void draw_Player() {
 	substance *sub = player.getSub();
 	if (sub[0].flag == true) {
-		MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
-		MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy * DX_PI_F / 180.0f, 0.0f));
+		//MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
+		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy * DX_PI_F / 180.0f, 0.0f));
 		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy, 0.0f));
-		MV1DrawModel(ModelAirCraft);
+		//MV1DrawModel(ModelAirCraft);
+
+		MV1SetPosition(sub[0].MHandle, VGet(sub[0].x, sub[0].y, sub[0].z));
+		MV1SetRotationXYZ(sub[0].MHandle, VGet(0.0f, sub[0].angy * DX_PI_F / 180.0f, 0.0f));
+		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy, 0.0f));
+		MV1DrawModel(sub[0].MHandle);
 	}
 }
 
@@ -37,8 +42,10 @@ void draw_Enemy() {
 	substance *sub = enemy.getSub();
 	for (int i = 0; i < enemy.getSize(); i++) {
 		if (sub[i].flag == true) {
-			MV1SetPosition(ModelEnemy, VGet(sub[i].x, sub[i].y, sub[i].z));
-			MV1DrawModel(ModelEnemy);
+			//MV1SetPosition(ModelEnemy, VGet(sub[i].x, sub[i].y, sub[i].z));
+			//MV1DrawModel(ModelEnemy);
+			MV1SetPosition(sub[i].MHandle, VGet(sub[i].x, sub[i].y, sub[i].z));
+			MV1DrawModel(sub[i].MHandle);
 		}
 	}
 }
