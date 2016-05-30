@@ -77,15 +77,16 @@ void Player::move() {
 
 	//右が押されてたら、右に移動
 	if (keyboard.checkKey(KEY_INPUT_RIGHT)) {
-		sub[0].x += -0.1f * cos(sub[0].angy * DX_PI_F / 180.0f);
-		sub[0].z += -0.1f * sin(sub[0].angy * DX_PI_F / 180.0f);
+		sub[0].x += 0.1f * cos((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
+		sub[0].z += 0.1f * sin((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
 	}
 
 	//左が推されてたら、左に移動
 	if (keyboard.checkKey(KEY_INPUT_LEFT)) {
-		sub[0].x += 0.1f * cos(sub[0].angy * DX_PI_F / 180.0f);
-		sub[0].z += 0.1f * sin(sub[0].angy * DX_PI_F / 180.0f);
+		sub[0].x += -0.1f * cos((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
+		sub[0].z += -0.1f * sin((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
 	}
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "x:%d  z:%d", sub[0].x, sub[0].z);
 
 	//モデルが動いたら、カメラも動けるようにする
 	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);
