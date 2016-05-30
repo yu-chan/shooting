@@ -102,8 +102,8 @@ void Player::move() {
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "x:%f  z:%f", sub[0].x, sub[0].z);
-	DrawFormatString(0, 50, GetColor(255, 255, 255), "vx:%f vz:%f", sub[0].vx, sub[0].vz);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x:%f  z:%f", sub[0].x, sub[0].z);
+	//DrawFormatString(0, 50, GetColor(255, 255, 255), "vx:%f vz:%f", sub[0].vx, sub[0].vz);
 
 	//ƒ‚ƒfƒ‹‚ª“®‚¢‚½‚çAƒJƒƒ‰‚à“®‚¯‚é‚æ‚¤‚É‚·‚é
 	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);
