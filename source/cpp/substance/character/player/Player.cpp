@@ -94,6 +94,14 @@ void Player::move() {
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}
+
+	//ã‚ª‰Ÿ‚³‚ê‚Ä‚½‚çA‘O‚ÉˆÚ“®
+	if (keyboard.checkKey(KEY_INPUT_UP)) {
+		sub[0].vx = 0.1f * cos((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
+		sub[0].vz = 0.1f * sin((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
+		sub[0].x += sub[0].vx;
+		sub[0].z += sub[0].vz;
+	}
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "x:%f  z:%f", sub[0].x, sub[0].z);
 	DrawFormatString(0, 50, GetColor(255, 255, 255), "vx:%f vz:%f", sub[0].vx, sub[0].vz);
 
