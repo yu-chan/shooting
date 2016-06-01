@@ -41,13 +41,7 @@ void Enemy::move() {
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
 			sub[i].z += p_e_sub.z;
-
-			/*if (sub[i].x < ENEMY_RANGE_X_MIN || sub[i].x > ENEMY_RANGE_X_MAX) {
-				sub[i].vx *= -1;
-			}
-			sub[i].x += sub[i].vx;
-			sub[i].count++;*/
-			//DrawFormatString(0, 0, GetColor(255, 255, 255), "count:%d", sub[i].count);
+			sub[i].count++;
 		}
 	}
 }

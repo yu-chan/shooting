@@ -45,35 +45,6 @@ void Player::move() {
 	VECTOR pre_player = VGet(sub[0].x, sub[0].y, sub[0].z);
 	VECTOR pre_camera_pos = camera_pos, pre_camera_look = camera_look;
 
-	if (keyboard.checkKey(KEY_INPUT_Z) > 0) {
-		if (keyboard.checkKey(KEY_INPUT_LSHIFT)) {
-			sub[0].z += sp_z[0];
-		} else {	
-			sub[0].z += sp_z[1];
-		}
-	}
-
-	if (keyboard.getLRFlag() == true && keyboard.getUDFlag() == true) {
-		slanting = (float)ROOT2;
-	}
-
-	/*
-	for (int i = 0; i < KEY_MOVE; i++) {
-		if (keyboard.checkKey(key[i]) > 0) {
-			sub[0].x += sp_x[i] / slanting;
-			sub[0].y += sp_y[i] / slanting;
-
-			camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
-			camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
-			camera_look = VAdd(camera_pos, camera_look);
-		}
-		//ウィンドウ外に行かないようにする
-		if (sub[0].x < PLAYER_RANGE_X_MIN) { sub[0].x = PLAYER_RANGE_X_MIN; }
-		if (sub[0].x > PLAYER_RANGE_X_MAX) { sub[0].x = PLAYER_RANGE_X_MAX; }
-		if (sub[0].y < PLAYER_RANGE_Y_MIN) { sub[0].y = PLAYER_RANGE_Y_MIN; }
-		if (sub[0].y > PLAYER_RANGE_Y_MAX) { sub[0].y = PLAYER_RANGE_Y_MAX; }
-	}
-	*/
 
 	//右が押されてたら、右に移動
 	if (keyboard.checkKey(KEY_INPUT_RIGHT)) {
@@ -102,8 +73,6 @@ void Player::move() {
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}
-	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x:%f  z:%f", sub[0].x, sub[0].z);
-	//DrawFormatString(0, 50, GetColor(255, 255, 255), "vx:%f vz:%f", sub[0].vx, sub[0].vz);
 
 	//モデルが動いたら、カメラも動けるようにする
 	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);
@@ -124,11 +93,5 @@ void Player::move() {
 	camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
 	camera_look = VTransform(p_cl_sub, matrix);
 	camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
-	/*
-	camera_pos = VTransform(camera_pos, matrix);
-	camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
-	camera_look = VTransform(camera_look, matrix);
-	camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
-	*/									  
 	}
 }
