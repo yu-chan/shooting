@@ -29,8 +29,13 @@ void Enemy::move() {
 			//ベクトルのサイズを求める
 			float vsize = VSize(p_e_sub);
 
-			//敵がプレイヤーの方への移動量を1にする
+			//敵がプレイヤーの方への移動量を0.1にする
 			p_e_sub = VScale(p_e_sub, 1 / (10 * vsize));
+
+			//角度を求める
+			sub[i].angx = acos(p_e_sub.z / vsize);
+			sub[i].angy = acos(p_e_sub.x / vsize);
+			sub[i].angz = acos(p_e_sub.y / vsize);
 
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
