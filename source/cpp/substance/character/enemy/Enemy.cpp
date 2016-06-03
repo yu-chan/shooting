@@ -47,7 +47,6 @@ void Enemy::enemy_regist() {
 		//敵の出現時間とステージのカウントが同じなら、敵を出現させる
 		if (sub[i].aptime == stage_count) {
 			sub[i].flag = true;
-			sub[i].vx = 0.1f;
 			sub[i].count = 0;
 		}
 	}
