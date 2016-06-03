@@ -24,7 +24,7 @@ void load_3DModel() {
 
 	//©‹@‚Ì“Ç‚İ‚İ
 	sub = player.getSub();
-	sub[0].MHandle = MV1LoadModel("./data/3dModel/Vehicles/Aircraft/Models/AircraftFuselage.mv1");  //‘å‚«‚³ x:182*4 y:‚í‚©‚ç‚ñ z:182*11
+	sub[0].MHandle = MV1LoadModel("./data/3dModel/Player/AircraftFuselage.mv1");  //‘å‚«‚³ x:182*4 y:‚í‚©‚ç‚ñ z:182*11
 	MV1SetScale(sub[0].MHandle, VGet(0.01f, 0.01f, 0.01f));
 	MV1SetRotationXYZ(sub[0].MHandle, VGet(0.0f, player.getSub()[0].angy * DX_PI_F / 180.0f, 0.0f));
 	//ModelAirCraft = MV1LoadModel("./data/3dModel/Vehicles/Aircraft/Models/AircraftFuselage.mv1");  //‘å‚«‚³ x:182*4 y:‚í‚©‚ç‚ñ z:182*11 
