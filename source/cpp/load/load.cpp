@@ -24,32 +24,23 @@ void load_3DModel() {
 
 	//自機の読み込み
 	sub = player.getSub();
-	sub[0].MHandle = MV1LoadModel("./data/3dModel/Player/AircraftFuselage.mv1");  //大きさ x:182*4 y:わからん z:182*11
-	MV1SetScale(sub[0].MHandle, VGet(0.01f, 0.01f, 0.01f));
-	MV1SetRotationXYZ(sub[0].MHandle, VGet(0.0f, player.getSub()[0].angy * DX_PI_F / 180.0f, 0.0f));
-	//ModelAirCraft = MV1LoadModel("./data/3dModel/Vehicles/Aircraft/Models/AircraftFuselage.mv1");  //大きさ x:182*4 y:わからん z:182*11 
+	sub[0].MHandle = MV1LoadModel("./data/3dModel/Player/AircraftFuselage.mv1");  //大きさ x:182*4 y:わからん z:182*11	 
 	//モデルが大きすぎるので、小さくする
-	//MV1SetScale(ModelAirCraft, VGet(0.01f, 0.01f, 0.01f));
+	MV1SetScale(sub[0].MHandle, VGet(0.01f, 0.01f, 0.01f));
 	//モデルの先端がプレイヤー側に向いてるので、Y軸に180度回転する 
-	//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, player.getSub()[0].angy * DX_PI_F / 180.0f, 0.0f));
-	//ModelAirCraft = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");
+	MV1SetRotationXYZ(sub[0].MHandle, VGet(0.0f, player.getSub()[0].angy * DX_PI_F / 180.0f, 0.0f));
 
 
 	//敵の読み込み
 	sub = enemy.getSub();
-	//ModelEnemy = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd"); //大きさ x:2*8 y:わからん z:2*3
-	ModelEnemy = MV1LoadModel("./data/3dModel/Enemy/enemy.mqo"); //大きさ x:26*10 y:わからん z:26*10
-	//モデルのサイズを小さくする
-	//MV1SetScale(ModelEnemy, VGet(0.05f, 0.05f, 0.05f));
-	//モデルの先端が奥に向いてるので、Y軸に180度回転する
-	//MV1SetRotationXYZ(ModelEnemy, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
+	ModelEnemy = MV1LoadModel("./data/3dModel/Enemy/enemy.mqo"); //大きさ x:26*10 y:わからん z:26*
 	for (int i = 0; i < enemy.getSize(); i++) {
 		sub[i].MHandle = MV1DuplicateModel(ModelEnemy);
+		//モデルのサイズを小さくする
 		MV1SetScale(sub[i].MHandle, VGet(0.05f, 0.05f, 0.05f));
+		//モデルの先端が奥に向いてるので、Y軸に180度回転する
 		MV1SetRotationXYZ(sub[i].MHandle, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 	}
-	//MV1SetScale(ModelEnemy, VGet(0.05f, 0.05f, 0.05f)); 
-	//MV1SetRotationXYZ(ModelEnemy, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 
 	//ショットの読み込み
 	ModelPlayerShot = MV1LoadModel("./data/3dModel/Lat式ミク/Lat式ミクVer2.3_Normal.pmd");

@@ -53,10 +53,6 @@ void Player_shot::shot_regist() {
 	music.se_play(SHOT_NO);
 }
 
-//bool Player_shot::collision_detection() {
-//	return false;
-//}
-
 void Player_shot::move() {
 	substance *sub = getSub();
 	for (int i = 0; i < getSize(); i++){
@@ -81,6 +77,4 @@ void Player_shot::move() {
 			}
 		}
 	}
-
-	//DrawFormatString(0, 0, GetColor(255, 255, 255), "x=%.1f y=%.1f z=%.1f", sub.x, sub.y, sub.z);
 }

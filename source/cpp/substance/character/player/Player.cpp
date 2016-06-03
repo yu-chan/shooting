@@ -19,10 +19,6 @@ Player::Player()
 {
 	mallocSub(1);
 	ini(getSub());
-	key[0] = KEY_INPUT_LEFT;
-	key[1] = KEY_INPUT_RIGHT;
-	key[2] = KEY_INPUT_UP;
-	key[3] = KEY_INPUT_DOWN;
 }
 
 
@@ -32,10 +28,6 @@ Player::~Player()
 }
 
 void Player::move() {
-	float sp_x[KEY_MOVE] = { -0.1f, 0.1f, 0.0f, -0.0f };
-	float sp_y[KEY_MOVE] = { -0.0f, 0.0f, 0.1f, -0.1f };
-	float sp_z[2] = { -0.1f, 0.1f };
-	float slanting = 1.0;//ŽÎ‚ß
 	substance *sub;
 	sub = getSub();
 	if (sub == NULL)OutputDebugStringW(L"ƒ|ƒCƒ“ƒ^ˆá‚¤\n");

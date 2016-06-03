@@ -32,10 +32,6 @@ void Enemy_shot::shot_regist() {
 	}
 }
 
-//bool Enemy_shot::collision_detection() {
-//	return false;
-//}
-
 void Enemy_shot::move() {
 	substance *sub = getSub();
 	for (int i = 0; i < getSize(); i++) {
@@ -53,15 +49,6 @@ void Enemy_shot::move() {
 			}
 
 			//範囲外に出たらフラグを消す
-			/*
-			弾が出ているか確認しているため、範囲を狭くしている
-			あとに範囲を変える必要がある
-			*/
-			/*if (sub[i].x < SHOT_RANGE_X_MIN || sub[i].x > SHOT_RANGE_X_MAX ||
-				sub[i].y < SHOT_RANGE_Y_MIN || sub[i].y > SHOT_RANGE_Y_MAX ||
-				sub[i].z < SHOT_RANGE_Z_MIN || sub[i].z > SHOT_RANGE_Z_MAX) {
-				sub[i].flag = false;
-			}*/	 
 			if (sub[i].x < SHOT_RANGE_X_MIN || sub[i].x > SHOT_RANGE_X_MAX ||
 				sub[i].y < SHOT_RANGE_Y_MIN || sub[i].y > SHOT_RANGE_Y_MAX ||
 				sub[i].z < SHOT_RANGE_Z_MIN) {

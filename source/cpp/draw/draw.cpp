@@ -25,14 +25,8 @@ void setCamera() {
 void draw_Player() {
 	substance *sub = player.getSub();
 	if (sub[0].flag == true) {
-		//MV1SetPosition(ModelAirCraft, VGet(sub[0].x, sub[0].y, sub[0].z));
-		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy * DX_PI_F / 180.0f, 0.0f));
-		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy, 0.0f));
-		//MV1DrawModel(ModelAirCraft);
-
 		MV1SetPosition(sub[0].MHandle, VGet(sub[0].x, sub[0].y, sub[0].z));
 		MV1SetRotationXYZ(sub[0].MHandle, VGet(0.0f, sub[0].angy * DX_PI_F / 180.0f, 0.0f));
-		//MV1SetRotationXYZ(ModelAirCraft, VGet(0.0f, sub[0].angy, 0.0f));
 		MV1DrawModel(sub[0].MHandle);
 	}
 }
@@ -42,8 +36,6 @@ void draw_Enemy() {
 	substance *sub = enemy.getSub();
 	for (int i = 0; i < enemy.getSize(); i++) {
 		if (sub[i].flag == true) {
-			//MV1SetPosition(ModelEnemy, VGet(sub[i].x, sub[i].y, sub[i].z));
-			//MV1DrawModel(ModelEnemy);
 			MV1SetPosition(sub[i].MHandle, VGet(sub[i].x, sub[i].y, sub[i].z));
 			MV1DrawModel(sub[i].MHandle);
 		}
@@ -55,9 +47,6 @@ void draw_Player_shot() {
 	substance *sub = player_shot.getSub();
 	for (int i = 0; i < player_shot.getSize(); i++) {
 		if (sub[i].flag == true) {
-			//MV1SetPosition(ModelPlayerShot, VGet(sub[i].x, sub[i].y, sub[i].z));
-			//MV1DrawModel(ModelPlayerShot);
-			//DrawCapsule3D(VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z + 5), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 			DrawSphere3D(VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(0, 255, 255), GetColor(0, 0, 255), TRUE);
 		}
 	}
@@ -69,10 +58,6 @@ void draw_Enemy_shot() {
 	substance *sub = enemy_shot.getSub();
 	for (int i = 0; i < enemy_shot.getSize(); i++) {
 		if (sub[i].flag == true) {
-			//MV1SetPosition(ModelEnemyShot, VGet(sub[i].x, sub[i].y, sub[i].z));
-			//MV1DrawModel(ModelEnemyShot);
-			//DrawCapsule3D(VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(255, 0, 0), GetColor(255, 255, 255), TRUE);
-			//DrawSphere3D(VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(255, 0, 0), GetColor(255, 0, 0), TRUE);
 			DrawSphere3D(VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(255, 0, 0), GetColor(255, 0, 0), TRUE);
 		}
 	}
@@ -127,5 +112,4 @@ void draw() {
 	draw_Enemy_shot();
 	draw_Player();
 	draw_Enemy();
-	//DrawLine3D(VGet(100.0f, 100.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
 }

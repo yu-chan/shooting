@@ -5,12 +5,6 @@ Enemy::Enemy()
 {
 	mallocSub(1);
 	substance *sub = getSub();
-	//sub[0].x = 0;
-	//sub[0].y = 0;
-	//sub[0].z = 20;
-	//sub[0].vx = 0.1f;
-	//sub[0].count = 0;
-	//sub[0].flag = true;
 }
 
 
