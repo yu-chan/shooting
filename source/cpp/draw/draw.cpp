@@ -37,9 +37,10 @@ void draw_Enemy() {
 	for (int i = 0; i < enemy.getSize(); i++) {
 		if (sub[i].flag == true) {
 			MV1SetPosition(sub[i].MHandle, VGet(sub[i].x, sub[i].y, sub[i].z));
-			MV1SetRotationXYZ(sub[i].MHandle, 
+			/*MV1SetRotationXYZ(sub[i].MHandle, 
 				VGet(sub[i].angx * DX_PI_F / 180.0f, sub[i].angy * DX_PI_F / 180.0f + 180.0f * DX_PI_F / 180.0f, sub[i].angz * DX_PI_F / 180.0f)
-				);
+				);*/
+			MV1SetRotationXYZ(sub[i].MHandle,VGet(0.0f, sub[i].angy * DX_PI_F / 180.0f, 0.0f)); 
 			MV1DrawModel(sub[i].MHandle);
 		}
 	}

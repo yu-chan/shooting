@@ -21,6 +21,13 @@ void initialization() {
 	sub = player.getSub();
 	sub[0].angy = 180.0f;
 
+	//“G‚Ìƒ‚ƒfƒ‹‚ğY²‚É180“x‰ñ“]‚³‚¹‚é‚½‚ß‚Éangy‚ğ‰Šú‰»
+	sub = enemy.getSub();
+	int size = enemy.getSize();
+	for (int i = 0; i < size; i++) {
+		sub[i].angy = 180.0f;
+	}
+
 	//˜f¯‚ÌÀ•W‚ğŒˆ‚ß‚é
 	planet.mallocSub(1);
 	sub = planet.getSub();

@@ -19,6 +19,8 @@ void Enemy::move() {
 	////character &cha = *getCha();
 	for (int i = 0; i < getSize(); i++) {
 		if (sub[i].flag == true) {
+
+			/*座標*/
 			//動く前の敵、プレイヤーの座標を保存
 			VECTOR pre_enemy = VGet(sub[i].x, sub[i].y, sub[i].z);
 			VECTOR pre_player = VGet(sub_[0].x, sub_[0].y, sub_[0].z);
@@ -32,14 +34,27 @@ void Enemy::move() {
 			//敵がプレイヤーの方への移動量を0.1にする
 			p_e_sub = VScale(p_e_sub, 1 / (10 * vsize));
 
-			//角度を求める
-			sub[i].angx = acos(p_e_sub.z / vsize);
-			sub[i].angy = acos(p_e_sub.x / vsize);
-			sub[i].angz = acos(p_e_sub.y / vsize);
-
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
 			sub[i].z += p_e_sub.z;
+
+
+			/*角度*/
+			//動く前の角度yを保存
+			float pre_angy = sub[i].angy;
+
+			//差ベクトルから角度yを求める
+			float p_e_angy = atan2(p_e_sub.z, p_e_sub.x) / DX_PI_F * 180.0f;
+
+			//角度yの差分を求める
+			float angy_sub = p_e_angy - pre_angy;
+
+			//角度を求める
+			//sub[i].angx = acos(p_e_sub.z / vsize);
+			//sub[i].angy += angy_sub;
+			sub[i].angy += angy_sub;
+			//sub[i].angz = acos(p_e_sub.y / vsize);
+
 			sub[i].count++;
 		}
 	}
