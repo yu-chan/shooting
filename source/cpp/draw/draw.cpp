@@ -54,7 +54,6 @@ void draw_Player_shot() {
 			DrawSphere3D(VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(0, 255, 255), GetColor(0, 0, 255), TRUE);
 		}
 	}
-	//DrawCapsule3D(VGet(15, 10, 0), VGet(15, 10, 5), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 }
 
 //“G‚Ì’e‚Ì•`‰æ

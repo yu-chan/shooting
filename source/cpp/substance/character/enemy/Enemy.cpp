@@ -54,10 +54,8 @@ void Enemy::move() {
 			//äpìxÇãÅÇﬂÇÈ
 			//sub[i].angx = acos(p_e_sub.z / vsize);
 			//sub[i].angy += angy_sub;
-			//sub[i].angy += angy_sub;
-			//sub[i].angy = p_e_angy - 90.0f; 
+			//sub[i].angy += angy_sub; 
 			sub[i].angy = 90.0f - p_e_angy;
-			//sub[i].angy += R_SPEED / DX_PI_F * 180.0f;
 			//sub[i].angz = acos(p_e_sub.y / vsize);
 
 			sub[i].count++;
