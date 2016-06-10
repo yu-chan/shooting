@@ -40,7 +40,7 @@ void load_3DModel() {
 		MV1SetScale(sub[i].MHandle, VGet(0.05f, 0.05f, 0.05f));
 		//モデルの先端が奥に向いてるので、Y軸に180度回転する
 		//MV1SetRotationXYZ(sub[i].MHandle, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
-		MV1SetRotationXYZ(sub[i].MHandle, VGet(0.0f, sub[i].angy * DX_PI_F / 180.0f, 0.0f));
+		//MV1SetRotationXYZ(sub[i].MHandle, VGet(0.0f, sub[i].angy * DX_PI_F / 180.0f, 0.0f));
 	}
 
 	//ショットの読み込み
