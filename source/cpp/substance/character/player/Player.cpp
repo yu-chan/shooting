@@ -65,7 +65,6 @@ void Player::move() {
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}
-	DrawFormatStringF(0.0f, 40.0f, GetColor(255, 255, 255), "Player 位置X : %f 位置Z : %f", sub[0].x, sub[0].z);
 
 	//モデルが動いたら、カメラも動けるようにする
 	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);

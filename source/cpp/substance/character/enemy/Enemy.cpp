@@ -1,6 +1,8 @@
 #include "./../../../../h/global.h"
 
 
+static const float R_SPEED = 10.0f * DX_PI_F / 180.0f;
+
 Enemy::Enemy()
 {
 	mallocSub(1);
@@ -37,7 +39,6 @@ void Enemy::move() {
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
 			sub[i].z += p_e_sub.z;
-			DrawFormatStringF(0.0f, 60.0f, GetColor(255, 255, 255), "Enemy 位置X : %f 位置Z : %f", sub[i].x, sub[i].z);
 
 
 			/*角度*/
@@ -46,19 +47,18 @@ void Enemy::move() {
 
 			//差ベクトルから角度yを求める
 			float p_e_angy = atan2(p_e_sub.z, p_e_sub.x) / DX_PI_F * 180.0f;
-			DrawFormatStringF(0.0f, 0.0f, GetColor(255, 255, 255), "ベクトル角度Y : %f", p_e_angy);
 
 			//角度yの差分を求める
 			float angy_sub = p_e_angy - pre_angy;
-			DrawFormatStringF(0.0f, 20.0f, GetColor(255, 255, 255), "差角度Y : %f", angy_sub);
 
 			//角度を求める
 			//sub[i].angx = acos(p_e_sub.z / vsize);
 			//sub[i].angy += angy_sub;
 			//sub[i].angy += angy_sub;
-			sub[i].angy = p_e_angy - 90.0f;
+			//sub[i].angy = p_e_angy - 90.0f; 
+			sub[i].angy = 90.0f - p_e_angy;
+			//sub[i].angy += R_SPEED / DX_PI_F * 180.0f;
 			//sub[i].angz = acos(p_e_sub.y / vsize);
-			DrawFormatStringF(0.0f, 80.0f, GetColor(255, 255, 255), "Enemy角度Y : %f", sub[i].angy);
 
 			sub[i].count++;
 		}

@@ -25,7 +25,8 @@ void initialization() {
 	sub = enemy.getSub();
 	int size = enemy.getSize();
 	for (int i = 0; i < size; i++) {
-		sub[i].angy = -90.0f;
+		//sub[i].angy = -90.0f;			 
+		sub[i].angy = 0.0f;
 	}
 
 	//˜f¯‚ÌÀ•W‚ðŒˆ‚ß‚é

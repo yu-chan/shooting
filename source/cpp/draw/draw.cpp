@@ -40,7 +40,7 @@ void draw_Enemy() {
 			/*MV1SetRotationXYZ(sub[i].MHandle, 
 				VGet(sub[i].angx * DX_PI_F / 180.0f, sub[i].angy * DX_PI_F / 180.0f + 180.0f * DX_PI_F / 180.0f, sub[i].angz * DX_PI_F / 180.0f)
 				);*/
-			//MV1SetRotationXYZ(sub[i].MHandle,VGet(0.0f, sub[i].angy * DX_PI_F / 180.0f, 0.0f)); 
+			MV1SetRotationXYZ(sub[i].MHandle,VGet(0.0f, sub[i].angy * DX_PI_F / 180.0f, 0.0f));
 			MV1DrawModel(sub[i].MHandle);
 		}
 	}
