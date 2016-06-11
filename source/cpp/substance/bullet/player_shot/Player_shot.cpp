@@ -65,16 +65,27 @@ void Player_shot::move() {
 			/*if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), ModelEnemy, ENEMY_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}*/
-			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), ModelEnemy, ENEMY_MODEL_FRAMEINDEX)) {
+			/*if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), ModelEnemy, ENEMY_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
+				OutputDebugStringW(L"Player_shot Hit!!\n");
+			}*/
+			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), ENEMY_MODEL_FRAMEINDEX)) {
+				sub[i].flag = false;
+				OutputDebugStringW(L"Player_shot Hit!!\n");
 			}
 			
 			//範囲外に出たらフラグを消す
-			if (sub[i].x < SHOT_RANGE_X_MIN || sub[i].x > SHOT_RANGE_X_MAX ||
+			/*if (sub[i].x < SHOT_RANGE_X_MIN || sub[i].x > SHOT_RANGE_X_MAX ||
 				sub[i].y < SHOT_RANGE_Y_MIN || sub[i].y > SHOT_RANGE_Y_MAX ||
 				sub[i].z < SHOT_RANGE_Z_MIN || sub[i].z > SHOT_RANGE_Z_MAX) {
 				sub[i].flag = false;
-			}
+				OutputDebugStringW(L"Player_shot Vanish!!\n");
+			}*/
+
+			/*if (sub[i].count >= 50) {
+				sub[i].flag = false;
+				OutputDebugStringW(L"Player_shot Vanish!!\n");
+			}*/
 		}
 	}
 }

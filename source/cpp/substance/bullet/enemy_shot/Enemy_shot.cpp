@@ -46,7 +46,11 @@ void Enemy_shot::move() {
 			}*/
 			if (collision_detection(&player, VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
-			}
+			}	   
+			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), PLAYER_MODEL_FRAMEINDEX)) {
+				sub[i].flag = false;
+				OutputDebugStringW(L"Enemy_shot Hit!!\n");
+			}*/
 
 			//範囲外に出たらフラグを消す
 			if (sub[i].x < SHOT_RANGE_X_MIN || sub[i].x > SHOT_RANGE_X_MAX ||

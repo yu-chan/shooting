@@ -67,6 +67,35 @@ bool Shot::collision_detection(Substance *Sub, VECTOR v, int ModelHandle, int Mo
 	return false;
 }
 
+bool Shot::collision_detection(Substance *Sub, VECTOR v, int ModelHandleFrameIndex) {
+	Substance *mSub = Sub;
+	substance *msub = mSub->getSub();
+	MV1_COLL_RESULT_POLY_DIM HitPolyDim;
+	int msize = mSub->getSize();
+
+	for (int i = 0; i < msize; i++) {
+		//コリジョン情報を構築する
+		MV1SetupCollInfo(msub[i].MHandle, ModelHandleFrameIndex, 8, 8, 8);
+
+		//相手のフラグがオンで、かつ当たってるならtrueを返す
+		if (msub[i].flag == true) {
+			HitPolyDim = MV1CollCheck_Sphere(msub[i].MHandle, ModelHandleFrameIndex, v, SHOT_CAPSULE_R);
+			if (HitPolyDim.HitNum >= 1) {
+				//コリジョン情報を更新する
+				MV1RefreshCollInfo(msub[i].MHandle, ModelHandleFrameIndex);
+				OutputDebugStringW(L"あたった!!\n");
+
+				return true;
+			}
+		}
+	}
+
+	//コリジョン情報の後始末
+	MV1CollResultPolyDimTerminate(HitPolyDim);
+
+	return false;
+}
+
 bullet* Shot::getBul() {
 	return &bul;
 }
