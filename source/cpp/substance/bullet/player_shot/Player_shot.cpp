@@ -69,9 +69,10 @@ void Player_shot::move() {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Player_shot Hit!!\n");
 			}*/
-			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y + SHOT_PLAYER_Y, sub[i].z), ENEMY_MODEL_FRAMEINDEX)) {
+			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y, sub[i].z), ENEMY_MODEL_FRAMEINDEX) == true) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Player_shot Hit!!\n");
+				continue;
 			}
 			
 			//範囲外に出たらフラグを消す
@@ -82,10 +83,10 @@ void Player_shot::move() {
 				OutputDebugStringW(L"Player_shot Vanish!!\n");
 			}*/
 
-			/*if (sub[i].count >= 50) {
+			if (sub[i].count == 100) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Player_shot Vanish!!\n");
-			}*/
+			}
 		}
 	}
 }

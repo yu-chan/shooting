@@ -108,6 +108,8 @@ void draw_Planet() {
 }
 
 void draw() {
+	SetUseZBuffer3D(TRUE);
+	SetWriteZBuffer3D(TRUE);
 	setCamera();
 	draw_Planet();
 	draw_Dust();

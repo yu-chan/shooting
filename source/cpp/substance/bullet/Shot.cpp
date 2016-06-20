@@ -80,10 +80,10 @@ bool Shot::collision_detection(Substance *Sub, VECTOR v, int ModelHandleFrameInd
 		//相手のフラグがオンで、かつ当たってるならtrueを返す
 		if (msub[i].flag == true) {
 			HitPolyDim = MV1CollCheck_Sphere(msub[i].MHandle, ModelHandleFrameIndex, v, SHOT_CAPSULE_R);
+
 			if (HitPolyDim.HitNum >= 1) {
 				//コリジョン情報を更新する
 				MV1RefreshCollInfo(msub[i].MHandle, ModelHandleFrameIndex);
-				OutputDebugStringW(L"あたった!!\n");
 
 				return true;
 			}
