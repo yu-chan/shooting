@@ -72,7 +72,7 @@
 
 //塵
 #define DUST_NUM 150 //数
-#define DUST_RANGE 20 //プレイヤーの周りに存在する塵の描画範囲
+#define DUST_RANGE 500 //プレイヤーの周りに存在する塵の描画範囲
 
 //青い惑星
 #define PLANET_R 100 //半径

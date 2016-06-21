@@ -86,7 +86,8 @@ void draw_Dust() {
 
 	//o‚ÌÀ•W‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é‚½‚ß‚ÉA—”‚ğİ’è
 	int seed = int(rand() % 1000);
-	float range = 20.0f;
+	//float range = 20.0f;		  
+	float range = 500.0f;
 	for (int i = 0; i < dust.getSize(); i++) {
 		//‰“‚­‚Ì‚à‚Ì‚Í“_‚Å•`‰æ
 		sub[i].x = (float)GetRandom(-DUST_RANGE, DUST_RANGE);
@@ -94,7 +95,10 @@ void draw_Dust() {
 		sub[i].z = (float)GetRandom(-DUST_RANGE, DUST_RANGE);
 		DrawPixel3D(VGet(sub[i].x, sub[i].y, sub[i].z), GetColor(255, 255, 255));
 
-		//‹ß‚­‚Ì‚à‚Ì‚Íü‚Å•`‰æ
+		//‹ß‚­‚Ì‚à‚Ì‚Íü‚Å•`‰æ 
+		sub[i].x = (float)GetRandom(0, DUST_RANGE);
+		sub[i].y = (float)GetRandom(0, DUST_RANGE);
+		sub[i].z = (float)GetRandom(0, DUST_RANGE);
 		sub[i].x = modulo(-p[0].x + sub[i].x, range) - range * 0.5f;
 		sub[i].y = modulo(-p[0].y + sub[i].y, range) - range * 0.5f;
 		sub[i].z = modulo(-p[0].z + sub[i].z, range) - range * 0.5f;
