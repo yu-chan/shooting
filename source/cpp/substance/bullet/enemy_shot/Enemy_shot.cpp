@@ -83,10 +83,10 @@ void Enemy_shot::move() {
 				sub[i].flag = false;
 			}*/
 
-			/*if (sub[i].count == 100) {
+			if (sub[i].count == 100) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Enemy_shot Vanish!!\n");
-			}*/
+			}
 		}
 	}
 }
