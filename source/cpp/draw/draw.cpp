@@ -82,10 +82,12 @@ void draw_Dust() {
 	substance *sub = dust.getSub();
 	substance *p = player.getSub();
 	//—”‚ğ‚²‚Æ‚ÉŒˆ‚ß‚é
-	srand((unsigned)time(NULL));
+	//srand((unsigned)time(NULL));
 
 	//o‚ÌÀ•W‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é‚½‚ß‚ÉA—”‚ğİ’è
-	int seed = int(rand() % 1000);
+	unsigned int seed = int(rand() % 1000 + 1);
+	srand(0);
+
 	//float range = 20.0f;		  
 	float range = 500.0f;
 	for (int i = 0; i < dust.getSize(); i++) {
@@ -104,6 +106,8 @@ void draw_Dust() {
 		sub[i].z = modulo(-p[0].z + sub[i].z, range) - range * 0.5f;
 		DrawLine3D(VGet(sub[i].x, sub[i].y, sub[i].z), VGet(sub[i].x - p[0].x * (range * 0.001f) + 0.001f, sub[i].y - p[0].y * (range * 0.001f), sub[i].z - p[0].z * (range * 0.001f)), GetColor(255, 255, 255));
 	}
+
+	srand(seed);
 }
 
 //Â‚¢˜f¯‚Ì•`‰æ
