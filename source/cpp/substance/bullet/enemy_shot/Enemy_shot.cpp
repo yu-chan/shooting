@@ -18,7 +18,7 @@ void Enemy_shot::shot_regist() {
 	substance *_sub = getSub();
 	for (int i = 0; i < getSize(); i++) {
 		//敵が出現してから増えた時間がショットを打つ時間と同じになったら、弾を打つ
-		if (sub[i].count % 300 == 0) {
+		if (sub[i].count == 30) {
 			//現在の敵とプレイヤーのベクトルを保存
 			VECTOR cur_enemy = VGet(sub[i].x, sub[i].y, sub[i].z);
 			VECTOR cur_player = VGet(player_sub.x, player_sub.y, player_sub.z);
@@ -37,7 +37,7 @@ void Enemy_shot::shot_regist() {
 			//float p_e_angy = atan2(p_e_sub.z, p_e_sub.x);
 
 			_sub[i].x = sub[i].x;
-			_sub[i].y = sub[i].y + SHOT_ENEMY_Y;
+			_sub[i].y = sub[i].y + SHOT_ENEMY_Y + 1;
 			_sub[i].z = sub[i].z;
 
 			_sub[i].vx = 0.2f * cos(p_e_angy * DX_PI_F / 180.0f);
@@ -70,7 +70,7 @@ void Enemy_shot::move() {
 			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}*/	   
-			if (collision_detection(&player, VGet(sub[i].x, sub[i].y, sub[i].z), PLAYER_MODEL_FRAMEINDEX)) {
+			if (collision_detection(&player, VGet(sub[i].x, sub[i].y, sub[i].z), -1) == true) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Enemy_shot Hit!!\n");
 				continue;
@@ -83,10 +83,10 @@ void Enemy_shot::move() {
 				sub[i].flag = false;
 			}*/
 
-			if (sub[i].count == 300) {
+			/*if (sub[i].count == 100) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Enemy_shot Vanish!!\n");
-			}
+			}*/
 		}
 	}
 }
