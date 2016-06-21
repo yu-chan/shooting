@@ -7,7 +7,7 @@ static const float ROTATE_SPEED = 10.0f * DX_PI_F / 180.0f; //回転スピード
 void ini(substance* s) {
 	substance *sub = s;
 	sub[0].x = 0;
-	sub[0].y = 0;
+	sub[0].y = -10;
 	sub[0].z = 0;
 	sub[0].flag = true;
 	sub[0].vx = 0;

@@ -54,6 +54,7 @@
 
 //ショットの最大数
 #define PLAYER_SHOT_MAX 100
+#define ENEMY_SHOT_MAX 100
 //ショットの行動範囲
 #define SHOT_RANGE_X_MIN -20
 #define SHOT_RANGE_X_MAX 20
