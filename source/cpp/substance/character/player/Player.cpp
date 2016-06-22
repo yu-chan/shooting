@@ -68,18 +68,31 @@ void Player::move() {
 	camera_look = VAdd(camera_look, player_sub);
 
 	//モデルが回転する
-	if (keyboard.checkKey(KEY_INPUT_C)) {
-		sub[0].angy += ROTATE_SPEED / DX_PI_F * 180.0f;
-	/*動く前後の座標の差を求める*/
-	VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);//プレイヤーの前後のベクトルの差
-	VECTOR p_cp_sub = VSub(pre_camera_pos, pre_player);//動く前のカメラの座標とプレイヤーの差
-	VECTOR p_cl_sub = VSub(pre_camera_look, pre_player);//動く前のカメラの注視点とプレイヤーの差
+	if (keyboard.checkKey(KEY_INPUT_Z)) {
+		float rot = ROTATE_SPEED / DX_PI_F * 180.0f;
+		//float angy = sub[0].angy + rot;
+		float angy = sub[0].angy + ROTATE_SPEED / DX_PI_F * 180.0f;
+		MATRIX matrix = MGetRotY(ROTATE_SPEED);
 
-	//プレイヤーが回転していれば、それに応じてカメラの座標と注視点を変える
-	MATRIX matrix = MGetRotY(ROTATE_SPEED);
-	camera_pos = VTransform(p_cp_sub, matrix);
-	camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
-	camera_look = VTransform(p_cl_sub, matrix);
-	camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
+		//sub[0].angy += ROTATE_SPEED / DX_PI_F * 180.0f;
+
+		//Zキーを押してるなら、逆回転
+		if (keyboard.checkKey(KEY_INPUT_LSHIFT)) { 
+			angy = sub[0].angy - ROTATE_SPEED / DX_PI_F * 180.0f;
+			matrix = MGetRotY(-ROTATE_SPEED);
+		}
+
+		sub[0].angy = angy;
+
+		/*動く前後の座標の差を求める*/
+		VECTOR player_sub = VSub(VGet(sub[0].x, sub[0].y, sub[0].z), pre_player);//プレイヤーの前後のベクトルの差
+		VECTOR p_cp_sub = VSub(pre_camera_pos, pre_player);//動く前のカメラの座標とプレイヤーの差
+		VECTOR p_cl_sub = VSub(pre_camera_look, pre_player);//動く前のカメラの注視点とプレイヤーの差
+
+		//プレイヤーが回転していれば、それに応じてカメラの座標と注視点を変える
+		camera_pos = VTransform(p_cp_sub, matrix);
+		camera_pos = VAdd(camera_pos, VGet(sub[0].x, sub[0].y, sub[0].z));
+		camera_look = VTransform(p_cl_sub, matrix);
+		camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
 	}
 }
