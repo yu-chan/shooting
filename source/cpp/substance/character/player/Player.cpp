@@ -40,24 +40,24 @@ void Player::move() {
 
 	//右が押されてたら、右に移動
 	if (keyboard.checkKey(KEY_INPUT_RIGHT)) {
-		sub[0].vx = 0.1f * cos(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
-		sub[0].vz = 0.1f * sin(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
+		sub[0].vx = 1.0f * cos(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
+		sub[0].vz = 1.0f * sin(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}
 
 	//左が推されてたら、左に移動
 	if (keyboard.checkKey(KEY_INPUT_LEFT)) {
-		sub[0].vx = -0.1f * cos(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
-		sub[0].vz = -0.1f * sin(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);	
+		sub[0].vx = -1.0f * cos(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
+		sub[0].vz = -1.0f * sin(-(sub[0].angy - 180.0f) * DX_PI_F / 180.0f);	
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}
 
 	//上が押されてたら、前に移動
 	if (keyboard.checkKey(KEY_INPUT_UP)) {
-		sub[0].vx = 0.1f * cos((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
-		sub[0].vz = 0.1f * sin((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
+		sub[0].vx = 1.0f * cos((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
+		sub[0].vz = 1.0f * sin((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
 		sub[0].x += sub[0].vx;
 		sub[0].z += sub[0].vz;
 	}

@@ -1,7 +1,6 @@
 #include "./../../../../h/global.h"
 
 
-static const float R_SPEED = 10.0f * DX_PI_F / 180.0f;
 
 Enemy::Enemy()
 {
@@ -34,7 +33,8 @@ void Enemy::move() {
 			float vsize = VSize(p_e_sub);
 
 			//敵がプレイヤーの方への移動量を0.1にする
-			p_e_sub = VScale(p_e_sub, 1 / (10 * vsize));
+			//p_e_sub = VScale(p_e_sub, 1 / (10 * vsize));	
+			p_e_sub = VScale(p_e_sub, 1 / vsize);
 
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
@@ -68,8 +68,15 @@ void Enemy::enemy_regist() {
 
 	for (int i = 0; i < getSize(); i++) {
 		//敵の出現時間とステージのカウントが同じなら、敵を出現させる
-		if (sub[i].aptime == stage_count) {
+		/*if (sub[i].aptime == stage_count) {
 			sub[i].flag = true;
+			sub[i].count = 0;
+		}*/
+		if (stage_count % 100 == 0 && sub[i].flag == false) {
+			sub[i].flag = true;
+			sub[i].x = (float)GetRandom(-100, 100);
+			sub[i].y = 0;
+			sub[i].z = (float)GetRandom(-100, 100);
 			sub[i].count = 0;
 		}
 	}

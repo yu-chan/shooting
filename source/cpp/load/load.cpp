@@ -201,7 +201,7 @@ void load_se() {
 
 void load() {
 	load_3DModel();
-	load_EnemyCsv();
+	//load_EnemyCsv();
 	//load_BossCsv();
 	load_se();
 }

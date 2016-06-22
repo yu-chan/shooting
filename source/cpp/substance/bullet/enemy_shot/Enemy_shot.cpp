@@ -40,8 +40,8 @@ void Enemy_shot::shot_regist() {
 			_sub[i].y = sub[i].y + SHOT_ENEMY_Y + 1;
 			_sub[i].z = sub[i].z;
 
-			_sub[i].vx = 0.2f * cos(p_e_angy * DX_PI_F / 180.0f);
-			_sub[i].vz = 0.2f * sin(p_e_angy * DX_PI_F / 180.0f);
+			_sub[i].vx = 2.0f * cos(p_e_angy * DX_PI_F / 180.0f);
+			_sub[i].vz = 2.0f * sin(p_e_angy * DX_PI_F / 180.0f);
 			//_sub[i].vz = -0.1f;
 
 			_sub[i].count = 0;

@@ -27,6 +27,7 @@ void initialization() {
 	for (int i = 0; i < size; i++) {
 		//sub[i].angy = -90.0f;			 
 		sub[i].angy = 0.0f;
+		sub[i].flag = false;
 	}
 
 	//˜f¯‚ÌÀ•W‚ðŒˆ‚ß‚é
