@@ -99,5 +99,4 @@ void Player::move() {
 		camera_look = VTransform(p_cl_sub, matrix);
 		camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
 	}
-	DrawFormatString(0, 20, GetColor(255, 255, 255), "Player HP : %d", cha[0].hp);
 }

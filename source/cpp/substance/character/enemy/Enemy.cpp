@@ -62,7 +62,6 @@ void Enemy::move() {
 
 			sub[i].count++;
 		}
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "Enemy HP : %d", cha[i].hp);
 	}
 }
 

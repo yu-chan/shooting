@@ -32,7 +32,7 @@ void Player_shot::shot_regist() {
 				OutputDebugString(str);*/
 				_sub[i].flag = true;
 				_sub[i].x = sub[0].x;
-				_sub[i].y = sub[0].y;
+				_sub[i].y = sub[0].y - 2.0f;
 				_sub[i].z = sub[0].z;
 				_sub[i].vx = 2.0f * sin((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
 				_sub[i].vz = 2.0f * cos((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
@@ -69,7 +69,12 @@ void Player_shot::move() {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Player_shot Hit!!\n");
 			}*/
-			if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y, sub[i].z), ENEMY_MODEL_FRAMEINDEX) == true) {
+			/*if (collision_detection(&enemy, VGet(sub[i].x, sub[i].y, sub[i].z), ENEMY_MODEL_FRAMEINDEX) == true) {
+				sub[i].flag = false;
+				OutputDebugStringW(L"Player_shot Hit!!\n");
+				continue;
+			}*/	   
+			if (collision_detection(&enemy, enemy.getCha(),  VGet(sub[i].x, sub[i].y, sub[i].z), ENEMY_MODEL_FRAMEINDEX, SHOT_POWER) == true) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Player_shot Hit!!\n");
 				continue;

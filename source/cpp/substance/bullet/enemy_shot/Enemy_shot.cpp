@@ -83,7 +83,12 @@ void Enemy_shot::move() {
 			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
 				sub[i].flag = false;
 			}*/	   
-			if (collision_detection(&player, VGet(sub[i].x, sub[i].y, sub[i].z), -1) == true) {
+			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y, sub[i].z), -1) == true) {
+				sub[i].flag = false;
+				OutputDebugStringW(L"Enemy_shot Hit!!\n");
+				continue;
+			}*/	     
+			if (collision_detection(&player, player.getCha(), VGet(sub[i].x, sub[i].y, sub[i].z), -1, SHOT_POWER) == true) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Enemy_shot Hit!!\n");
 				continue;
