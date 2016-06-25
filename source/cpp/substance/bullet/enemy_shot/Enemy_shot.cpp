@@ -20,7 +20,7 @@ void Enemy_shot::shot_regist() {
 
 	for (int i = 0; i < enemy.getSize(); i++) {
 		//敵が出現してから増えた時間がショットを打つ時間と同じになったら、弾を打つ
-		if (sub[i].count % 30 == 0 && sub[i].flag == true) {
+		if (sub[i].count % 30 == 0 && sub[i].flag == true) {	
 			for (int j = 0; j < getSize(); j++) {
 				//ショットのフラグがまだ立ってないなら、登録する
 				if (_sub[j].flag == false) {
@@ -88,7 +88,7 @@ void Enemy_shot::move() {
 				OutputDebugStringW(L"Enemy_shot Hit!!\n");
 				continue;
 			}*/	     
-			if (collision_detection(&player, player.getCha(), VGet(sub[i].x, sub[i].y, sub[i].z), -1, SHOT_POWER) == true) {
+			if (collision_detection(&player, player.getCha(), VGet(sub[i].x, sub[i].y, sub[i].z), -1, 1) == true) {
 				sub[i].flag = false;
 				OutputDebugStringW(L"Enemy_shot Hit!!\n");
 				continue;
