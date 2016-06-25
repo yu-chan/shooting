@@ -66,6 +66,8 @@ void Enemy::move() {
 void Enemy::enemy_regist() {   
 	substance *sub = getSub();
 
+	srand((unsigned)time(NULL));
+
 	for (int i = 0; i < getSize(); i++) {
 		//敵の出現時間とステージのカウントが同じなら、敵を出現させる
 		/*if (sub[i].aptime == stage_count) {
@@ -80,4 +82,6 @@ void Enemy::enemy_regist() {
 			sub[i].count = 0;
 		}
 	}
+
+	srand(0);
 }
