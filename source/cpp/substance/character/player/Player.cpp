@@ -4,21 +4,24 @@
 //float x = 0, y = 0;
 static const float ROTATE_SPEED = 10.0f * DX_PI_F / 180.0f; //回転スピード
 
-void ini(substance* s) {
+void ini(substance* s, character* c) {
 	substance *sub = s;
-	sub[0].x = 0;
-	sub[0].y = 0;
-	sub[0].z = 0;
-	sub[0].flag = true;
-	sub[0].vx = 0;
-	sub[0].vy = 0;
-	sub[0].vz = 0;
+	s[0].x = 0;
+	s[0].y = 0;
+	s[0].z = 0;
+	s[0].flag = true;
+	s[0].vx = 0;
+	s[0].vy = 0;
+	s[0].vz = 0;
+	c[0].hp_max = 10;
+	c[0].hp = c[0].hp_max;
 }
 
 Player::Player()
 {
 	mallocSub(1);
-	ini(getSub());
+	mallocCha(1);
+	ini(getSub(), getCha());
 }
 
 
@@ -29,6 +32,7 @@ Player::~Player()
 
 void Player::move() {
 	substance *sub;
+	character* cha = getCha();
 	sub = getSub();
 	if (sub == NULL)OutputDebugStringW(L"ポインタ違う\n");
 	if (getSub() == NULL)OutputDebugStringW(L"とりあえず\n");
@@ -95,4 +99,5 @@ void Player::move() {
 		camera_look = VTransform(p_cl_sub, matrix);
 		camera_look = VAdd(camera_look, VGet(sub[0].x, sub[0].y, sub[0].z));
 	}
+	DrawFormatString(0, 20, GetColor(255, 255, 255), "Player HP : %d", cha[0].hp);
 }

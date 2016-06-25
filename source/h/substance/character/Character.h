@@ -2,11 +2,12 @@
 
 class Character : public Substance {
 private:
-	character cha;
+	character* cha;
 public:
 	Character();
 	~Character();
 	character* getCha();
 	void setCha(character);
+	void mallocCha(int);
 };
 

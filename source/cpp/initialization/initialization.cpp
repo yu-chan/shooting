@@ -23,11 +23,13 @@ void initialization() {
 
 	//“G‚Ìƒ‚ƒfƒ‹‚ğY²‚É180“x‰ñ“]‚³‚¹‚é‚½‚ß‚Éangy‚ğ‰Šú‰»
 	sub = enemy.getSub();
+	character *cha = enemy.getCha();
 	int size = enemy.getSize();
 	for (int i = 0; i < size; i++) {
 		//sub[i].angy = -90.0f;			 
 		sub[i].angy = 0.0f;
 		sub[i].flag = false;
+		cha[i].hp = 10;
 	}
 
 	//˜f¯‚ÌÀ•W‚ğŒˆ‚ß‚é

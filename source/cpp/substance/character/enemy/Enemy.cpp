@@ -5,6 +5,7 @@
 Enemy::Enemy()
 {
 	mallocSub(1);
+	mallocCha(1);
 	substance *sub = getSub();
 }
 
@@ -17,6 +18,7 @@ Enemy::~Enemy()
 void Enemy::move() {
 	substance *sub = getSub();
 	substance *sub_ = player.getSub();
+	character *cha = getCha();
 	////character &cha = *getCha();
 	for (int i = 0; i < getSize(); i++) {
 		if (sub[i].flag == true) {
@@ -60,6 +62,7 @@ void Enemy::move() {
 
 			sub[i].count++;
 		}
+		DrawFormatString(0, 0, GetColor(255, 255, 255), "Enemy HP : %d", cha[i].hp);
 	}
 }
 
