@@ -116,6 +116,26 @@ void draw_Planet() {
 	DrawSphere3D(VGet(sub[0].x, sub[0].y, sub[0].z), PLANET_R, PLANET_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 }
 
+//Player‚ÌHP‚Ì•`‰æ
+void draw_Player_HP() {
+	character *cha = player.getCha();
+	int px = 480, py = 10;
+	int addx = 100, addy = 15;
+	unsigned int white = GetColor(255, 255, 255), ygreen = GetColor(0, 255, 0);//”’A‰©—Î
+
+	//HP‚Ì•¶š‚ğ•\‹L
+	DrawFormatString(px - 20, py, white, "HP");
+
+	//lŠp‚Ì•`‰æ
+	DrawBox(px, py, px + cha[0].hp - 1, py + addy - 1, ygreen, TRUE);
+
+	//˜g‚Ì•`‰æ
+	DrawLine(px - 1                , py - 1        , px + cha[0].hp_max - 1 , py - 1       , white);//ã‰¡ü
+	DrawLine(px - 1                , py - 1        , px - 1                 , py + addy - 1, white);//¶cü
+	DrawLine(px + cha[0].hp_max - 1, py - 1        , px + cha[0].hp_max - 1 , py + addy    , white);//‰Ecü
+	DrawLine(px - 1                , py + addy - 1 , px + cha[0].hp_max - 1 , py + addy - 1, white);//‰º‰¡ü
+}
+
 void draw() {
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
@@ -126,4 +146,5 @@ void draw() {
 	draw_Enemy_shot();
 	draw_Player();
 	draw_Enemy();
+	draw_Player_HP();
 }
