@@ -5,6 +5,10 @@
 */
 #include "./../../h/global.h" 
 
+//文字の輝度
+static int char_br = 0;
+int i = 2;
+
 //カメラの描画範囲を決める
 void setCamera() {
 	//substance *sub = player.getSub();
@@ -137,20 +141,13 @@ void draw_Player_HP() {
 }
 
 //タイトルの描画
-void draw_Title() {	  
-	static int char_br = 0;
-	int i = 2;
-	int FontHandle = CreateFontToHandle("HGS創英角ﾎﾟｯﾌﾟ体", 64, 8);
+void draw_Title() {
+	int FontHandle = CreateFontToHandle("HGS創英角ﾎﾟｯﾌﾟ体", 64, 8, DX_FONTTYPE_ANTIALIASING_EDGE);
 	char *str = "Space Shooting";
 	int Strlen = strlen(str);
 	int Width = GetDrawStringWidthToHandle(str, Strlen, FontHandle);
 
-	DrawStringToHandle(320 - Width / 2, 240, str, GetColor(255, 255, 255), FontHandle);
-
-	SetFontSize(64);//フォントのサイズを変更
-	SetFontThickness(8);//太さ変更
-	ChangeFont("HGS創英角ﾎﾟｯﾌﾟ体");//フォントの種類変更
-	ChangeFontType(DX_FONTTYPE_ANTIALIASING_EDGE);
+	DrawStringToHandle(320 - Width / 2, 208, str, GetColor(255, 255, 255), FontHandle);
 
 
 	/*フェードイン、フェードアウト*/
@@ -159,13 +156,12 @@ void draw_Title() {
 	str = "Press Space Key";
 	Strlen = strlen(str);
 	Width = GetDrawStringWidth(str, Strlen);
-	DrawString(320 - Width / 2, 310, str, GetColor(255, 255, 255));
-	ChangeFontType(DX_FONTTYPE_ANTIALIASING_EDGE);
+	DrawString(320 - Width / 2, 280, str, GetColor(255, 255, 255));
 
 	//ブレンドを元に戻す
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-	if (char_br < 255 || char_br > 0) {
+	if (char_br > 255 || char_br < 0) {
 		i *= -1;
 	}
 	char_br += i;
@@ -175,17 +171,22 @@ void draw_Title() {
 }
 
 void draw() {
-	SetUseZBuffer3D(TRUE);
-	SetWriteZBuffer3D(TRUE);
-	setCamera();
-	draw_Planet();
-	draw_Dust();
-	draw_Player_shot();
-	draw_Enemy_shot();
-	draw_Player();
-	draw_Enemy();
-	draw_Player_HP();
 	if (play_mode == false) {
-		//draw_Title();
+		draw_Title();
+		if (keyboard.checkKey(KEY_INPUT_SPACE) == 1) {
+			play_mode = true;
+		}
+	}
+	else {
+		SetUseZBuffer3D(TRUE);
+		SetWriteZBuffer3D(TRUE);
+		setCamera();
+		draw_Planet();
+		draw_Dust();
+		draw_Player_shot();
+		draw_Enemy_shot();
+		draw_Player();
+		draw_Enemy();
+		draw_Player_HP();
 	}
 }
