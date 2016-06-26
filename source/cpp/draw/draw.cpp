@@ -136,6 +136,44 @@ void draw_Player_HP() {
 	DrawLine(px - 1                , py + addy - 1 , px + cha[0].hp_max - 1 , py + addy - 1, white);//下横線
 }
 
+//タイトルの描画
+void draw_Title() {	  
+	static int char_br = 0;
+	int i = 2;
+	int FontHandle = CreateFontToHandle("HGS創英角ﾎﾟｯﾌﾟ体", 64, 8);
+	char *str = "Space Shooting";
+	int Strlen = strlen(str);
+	int Width = GetDrawStringWidthToHandle(str, Strlen, FontHandle);
+
+	DrawStringToHandle(320 - Width / 2, 240, str, GetColor(255, 255, 255), FontHandle);
+
+	SetFontSize(64);//フォントのサイズを変更
+	SetFontThickness(8);//太さ変更
+	ChangeFont("HGS創英角ﾎﾟｯﾌﾟ体");//フォントの種類変更
+	ChangeFontType(DX_FONTTYPE_ANTIALIASING_EDGE);
+
+
+	/*フェードイン、フェードアウト*/
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, char_br);
+	str = "Press Space Key";
+	Strlen = strlen(str);
+	Width = GetDrawStringWidth(str, Strlen);
+	DrawString(320 - Width / 2, 310, str, GetColor(255, 255, 255));
+	ChangeFontType(DX_FONTTYPE_ANTIALIASING_EDGE);
+
+	//ブレンドを元に戻す
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+	if (char_br < 255 || char_br > 0) {
+		i *= -1;
+	}
+	char_br += i;
+
+	//フォントを削除
+	DeleteFontToHandle(FontHandle);
+}
+
 void draw() {
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
@@ -147,4 +185,7 @@ void draw() {
 	draw_Player();
 	draw_Enemy();
 	draw_Player_HP();
+	if (play_mode == false) {
+		//draw_Title();
+	}
 }

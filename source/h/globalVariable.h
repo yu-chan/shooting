@@ -22,3 +22,6 @@ GLOBAL int down_enemy_num;
 
 //カメラの座標、注視点
 GLOBAL VECTOR camera_pos, camera_look;
+
+//プレイモード
+GLOBAL bool play_mode;

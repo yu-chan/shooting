@@ -14,6 +14,9 @@ void initialization() {
 	//ステージのカウントを0にする
 	stage_count = 0;
 
+	//プレイモードをfalseにする
+	play_mode = false;
+
 	//倒した敵の数を0にする
 	down_enemy_num = 0;
 
