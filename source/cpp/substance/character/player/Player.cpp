@@ -15,6 +15,7 @@ void ini(substance* s, character* c) {
 	s[0].vz = 0;
 	c[0].hp_max = 10;
 	c[0].hp = c[0].hp_max;
+	c[0].knd = 0;
 }
 
 Player::Player()

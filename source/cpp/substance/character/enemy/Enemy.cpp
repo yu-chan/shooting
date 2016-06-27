@@ -4,8 +4,8 @@
 
 Enemy::Enemy()
 {
-	mallocSub(100);
-	mallocCha(getSize());
+	mallocSub(3);
+	mallocCha(3);
 	substance *sub = getSub();
 }
 
@@ -77,7 +77,8 @@ void Enemy::enemy_regist() {
 			sub[i].count = 0;
 		}*/
 		//100ÉJÉEÉìÉgÇ≤Ç∆Ç…ÅAÇPëÃÇ∏Ç¬ìoò^
-		if (stage_count % 100 == 0 && sub[i].flag == false && sub[i].fall_flag == false) {
+		if (stage_count != 0 && stage_count % 100 == 0 && sub[i].flag == false && sub[i].fall_flag == false) {
+			OutputDebugStringW(L"enemyçÏÇ¡ÇΩ\n");
 			sub[i].flag = true;
 			sub[i].x = (float)GetRandom(-100, 100);
 			sub[i].y = 0;
@@ -86,6 +87,7 @@ void Enemy::enemy_regist() {
 			break;
 		}
 	}
-
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", getSize());
+	DrawFormatString(0, 10, GetColor(255, 255, 255), "%d", down_enemy_num);
 	srand(0);
 }

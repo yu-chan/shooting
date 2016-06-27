@@ -25,3 +25,6 @@ GLOBAL VECTOR camera_pos, camera_look;
 
 //プレイモード
 GLOBAL bool play_mode;
+
+//クリア、ゲームオーバーしたかどうかのフラグ
+GLOBAL bool clear_flag, over_flag;

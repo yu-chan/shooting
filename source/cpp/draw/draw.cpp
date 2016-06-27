@@ -7,6 +7,7 @@
 
 //文字の輝度
 static int char_br = 0;
+static int charClearOver = 0;
 int i = 2;
 
 //カメラの描画範囲を決める
@@ -170,6 +171,66 @@ void draw_Title() {
 	DeleteFontToHandle(FontHandle);
 }
 
+//クリアの描画
+void draw_GameClear() {
+	int FontHandle = CreateFontToHandle("HGS創英角ﾎﾟｯﾌﾟ体", 64, 8, DX_FONTTYPE_ANTIALIASING_EDGE);
+	char *str = "Game Clear!!";
+	int Strlen = strlen(str);
+	int Width = GetDrawStringWidthToHandle(str, Strlen, FontHandle);
+
+	DrawStringToHandle(320 - Width / 2, 208, str, GetColor(255, 255, 255), FontHandle);
+
+
+	/*フェードイン、フェードアウト*/
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, charClearOver);
+	str = "One More?";
+	Strlen = strlen(str);
+	Width = GetDrawStringWidth(str, Strlen);
+	DrawString(320 - Width / 2, 280, str, GetColor(255, 255, 255));
+
+	//ブレンドを元に戻す
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+	if (charClearOver > 255 || charClearOver < 0) {
+		i *= -1;
+	}
+	charClearOver += i;
+
+	//フォントを削除
+	DeleteFontToHandle(FontHandle);
+}
+
+//ゲームオーバーの描画
+void draw_GameOver() {
+	int FontHandle = CreateFontToHandle("HGS創英角ﾎﾟｯﾌﾟ体", 64, 8, DX_FONTTYPE_ANTIALIASING_EDGE);
+	char *str = "Game Over....";
+	int Strlen = strlen(str);
+	int Width = GetDrawStringWidthToHandle(str, Strlen, FontHandle);
+
+	DrawStringToHandle(320 - Width / 2, 208, str, GetColor(255, 255, 255), FontHandle);
+
+
+	/*フェードイン、フェードアウト*/
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, charClearOver);
+	str = "One More?";
+	Strlen = strlen(str);
+	Width = GetDrawStringWidth(str, Strlen);
+	DrawString(320 - Width / 2, 280, str, GetColor(255, 255, 255));
+
+	//ブレンドを元に戻す
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+	if (charClearOver > 255 || charClearOver < 0) {
+		i *= -1;
+	}
+	charClearOver += i;
+
+	//フォントを削除
+	DeleteFontToHandle(FontHandle);
+}
+
 void draw() {
 	if (play_mode == false) {
 		draw_Title();
@@ -178,15 +239,24 @@ void draw() {
 		}
 	}
 	else {
-		SetUseZBuffer3D(TRUE);
-		SetWriteZBuffer3D(TRUE);
-		setCamera();
-		draw_Planet();
-		draw_Dust();
-		draw_Player_shot();
-		draw_Enemy_shot();
-		draw_Player();
-		draw_Enemy();
-		draw_Player_HP();
+		//if (over_flag == false) {
+			SetUseZBuffer3D(TRUE);
+			SetWriteZBuffer3D(TRUE);
+			setCamera();
+			draw_Planet();
+			draw_Dust();
+			draw_Player_shot();
+			draw_Enemy_shot();
+			draw_Player();
+			draw_Enemy();
+			draw_Player_HP();
+			if (clear_flag == true) {
+				draw_GameClear();
+			}
+			/*
+		}
+		else {
+			draw_GameOver();
+		}*/
 	}
 }

@@ -121,6 +121,12 @@ bool Shot::collision_detection(Substance *Sub, character* cha, VECTOR v, int Mod
 				if (cha[i].hp <= 0) {
 					msub[i].flag = false;
 					msub[i].fall_flag = true;
+					
+					if (cha[i].knd == 1) {//倒されたのが敵なら、増やす
+						down_enemy_num++;
+					} else if (cha[i].knd == 0) {//倒されたのがプレイヤーなら、over_flagをtrueにする
+						over_flag = true;
+					}
 				}
 
 				//コリジョン情報の後始末

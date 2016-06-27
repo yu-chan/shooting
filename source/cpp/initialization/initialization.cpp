@@ -17,6 +17,10 @@ void initialization() {
 	//プレイモードをfalseにする
 	play_mode = false;
 
+	//クリア、オーバーフラグをfalseにする
+	clear_flag = false;
+	over_flag = false;
+
 	//倒した敵の数を0にする
 	down_enemy_num = 0;
 
@@ -34,6 +38,7 @@ void initialization() {
 		sub[i].flag = false;
 		sub[i].fall_flag = false;
 		cha[i].hp = 10;
+		cha[i].knd = 1;
 	}
 
 	//惑星の座標を決める

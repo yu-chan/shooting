@@ -78,6 +78,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//enemy_shot.shot_regist();
 		//enemy_shot.move();
 
+		//敵を全て倒したら、クリア
+		if (down_enemy_num == enemy.getSize()) {
+			clear_flag = true;
+		}
+
 		//描画
 		draw();
 		//DrawLine3D(VGet(100.0f, 0.0f, 0.0f), VGet(300.0f, 200.0f, 0.0f), GetColor(255, 255, 255));
@@ -86,7 +91,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		music.bgm_main();
 
 		//ステージのカウントを増やす
-		stage_count++;
+		if (play_mode == true) {
+			//enemy.enemy_regist();
+			//enemy.move();
+			stage_count++;
+		}
 
 		//裏画面反映
 		ScreenFlip();
