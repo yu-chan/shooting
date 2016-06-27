@@ -123,13 +123,16 @@ bool Shot::collision_detection(Substance *Sub, character* cha, VECTOR v, int Mod
 					msub[i].fall_flag = true;
 				}
 
+				//コリジョン情報の後始末
+				MV1CollResultPolyDimTerminate(HitPolyDim);
+
 				return true;
 			}
 		}
 	}
 
 	//コリジョン情報の後始末
-	MV1CollResultPolyDimTerminate(HitPolyDim);
+	//MV1CollResultPolyDimTerminate(HitPolyDim);
 
 	return false;
 }
