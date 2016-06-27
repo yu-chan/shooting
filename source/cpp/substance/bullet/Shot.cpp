@@ -120,6 +120,7 @@ bool Shot::collision_detection(Substance *Sub, character* cha, VECTOR v, int Mod
 				//HP‚ª0‚É‚È‚Á‚½‚çAƒ‚ƒfƒ‹‚ğÁ‚·
 				if (cha[i].hp <= 0) {
 					msub[i].flag = false;
+					msub[i].fall_flag = true;
 				}
 
 				return true;

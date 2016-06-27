@@ -4,8 +4,8 @@
 
 Enemy::Enemy()
 {
-	mallocSub(1);
-	mallocCha(1);
+	mallocSub(100);
+	mallocCha(getSize());
 	substance *sub = getSub();
 }
 
@@ -76,12 +76,14 @@ void Enemy::enemy_regist() {
 			sub[i].flag = true;
 			sub[i].count = 0;
 		}*/
-		if (stage_count % 100 == 0 && sub[i].flag == false) {
+		//100ƒJƒEƒ“ƒg‚²‚Æ‚ÉA‚P‘Ì‚¸‚Â“o˜^
+		if (stage_count % 100 == 0 && sub[i].flag == false && sub[i].fall_flag == false) {
 			sub[i].flag = true;
 			sub[i].x = (float)GetRandom(-100, 100);
 			sub[i].y = 0;
 			sub[i].z = (float)GetRandom(-100, 100);
 			sub[i].count = 0;
+			break;
 		}
 	}
 

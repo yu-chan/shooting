@@ -32,6 +32,7 @@ void initialization() {
 		//sub[i].angy = -90.0f;			 
 		sub[i].angy = 0.0f;
 		sub[i].flag = false;
+		sub[i].fall_flag = false;
 		cha[i].hp = 10;
 	}
 
