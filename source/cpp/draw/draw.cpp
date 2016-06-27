@@ -239,7 +239,7 @@ void draw() {
 		}
 	}
 	else {
-		//if (over_flag == false) {
+		if (over_flag == false) {
 			SetUseZBuffer3D(TRUE);
 			SetWriteZBuffer3D(TRUE);
 			setCamera();
@@ -253,10 +253,10 @@ void draw() {
 			if (clear_flag == true) {
 				draw_GameClear();
 			}
-			/*
+			
 		}
 		else {
 			draw_GameOver();
-		}*/
+		}
 	}
 }
