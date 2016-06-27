@@ -2,7 +2,7 @@
 
 
 //float x = 0, y = 0;
-static const float ROTATE_SPEED = 10.0f * DX_PI_F / 180.0f; //回転スピード
+static const float ROTATE_SPEED = 1.0f * DX_PI_F / 180.0f; //回転スピード
 
 void ini(substance* s, character* c) {
 	substance *sub = s;

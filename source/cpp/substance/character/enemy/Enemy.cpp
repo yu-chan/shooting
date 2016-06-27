@@ -35,8 +35,8 @@ void Enemy::move() {
 			float vsize = VSize(p_e_sub);
 
 			//“G‚ªƒvƒŒƒCƒ„[‚Ì•û‚Ö‚ÌˆÚ“®—Ê‚ğ0.1‚É‚·‚é
-			//p_e_sub = VScale(p_e_sub, 1 / (10 * vsize));	
-			p_e_sub = VScale(p_e_sub, 1 / vsize);
+			p_e_sub = VScale(p_e_sub, 1 / (3 * vsize));	
+			//p_e_sub = VScale(p_e_sub, 1 / vsize);
 
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
