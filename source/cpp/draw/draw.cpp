@@ -12,18 +12,8 @@ int i = 2;
 
 //カメラの描画範囲を決める
 void setCamera() {
-	//substance *sub = player.getSub();
-	//camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置
-	//camera_look = VGet(0.0f, 0.0f, 30.0f); //カメラの注視点(カメラの座標から足したもの)
-	//camera_look = VAdd(camera_pos, camera_look);
-	SetCameraNearFar(CAMERA_MIN, CAMERA_MAX);
-	//SetCameraPositionAndTarget_UpVecY(VGet(sub[0].x, sub[0].y + 10, sub[0].z - 30), VGet(0.0f, 10.0f, 0.0f));
-	//SetCameraPositionAndTarget_UpVecY(VGet(0.0f, 10.0f, -30), VGet(0.0f, 0.0f, 0.0f));						 
+	SetCameraNearFar(CAMERA_MIN, CAMERA_MAX);						 
 	SetCameraPositionAndTarget_UpVecY(camera_pos, camera_look);
-	//DrawPixel3D(camera_look, GetColor(255, 0, 0));
-	//SetCameraPositionAndTarget_UpVecY(VGet(0, 20, -50), VGet(0.0f, 10.0f, 0.0f));				
-	//SetCameraPositionAndTarget_UpVecY(VGet(sub[0].x, sub[0].y + 20, sub[0].z - 50), VGet(0.0f, 10.0f, 0.0f));
-	//SetCameraPositionAndTarget_UpVecY(VGet(0.0f, 200.0f, 0), VGet(0.0f, 0.0f, 0.0f));
 }
 
 //自機の描画
@@ -42,9 +32,6 @@ void draw_Enemy() {
 	for (int i = 0; i < enemy.getSize(); i++) {
 		if (sub[i].flag == true) {
 			MV1SetPosition(sub[i].MHandle, VGet(sub[i].x, sub[i].y, sub[i].z));
-			/*MV1SetRotationXYZ(sub[i].MHandle, 
-				VGet(sub[i].angx * DX_PI_F / 180.0f, sub[i].angy * DX_PI_F / 180.0f + 180.0f * DX_PI_F / 180.0f, sub[i].angz * DX_PI_F / 180.0f)
-				);*/
 			MV1SetRotationXYZ(sub[i].MHandle,VGet(0.0f, sub[i].angy * DX_PI_F / 180.0f, 0.0f));
 			MV1DrawModel(sub[i].MHandle);
 		}
@@ -66,7 +53,6 @@ void draw_Enemy_shot() {
 	substance *sub = enemy_shot.getSub();
 	for (int i = 0; i < enemy_shot.getSize(); i++) {
 		if (sub[i].flag == true) {
-			//DrawSphere3D(VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(255, 0, 0), GetColor(255, 0, 0), TRUE); 
 			DrawSphere3D(VGet(sub[i].x, sub[i].y, sub[i].z), SHOT_CAPSULE_R, SHOT_CAPSULE_DIVNUM, GetColor(255, 0, 0), GetColor(255, 0, 0), TRUE);
 		}
 	}
@@ -87,7 +73,6 @@ void draw_Dust() {
 	substance *sub = dust.getSub();
 	substance *p = player.getSub();
 	//乱数を時刻ごとに決める
-	//srand((unsigned)time(NULL));
 
 	//塵の座標をランダムに決めるために、乱数を設定
 	unsigned int seed = int(rand() % 1000 + 1);
