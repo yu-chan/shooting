@@ -139,7 +139,7 @@ void draw_Title() {
 	/*フェードイン、フェードアウト*/
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, char_br);
-	str = "Press Space Key";
+	str = "スペースキーを押してください";
 	Strlen = strlen(str);
 	Width = GetDrawStringWidth(str, Strlen);
 	DrawString(320 - Width / 2, 280, str, GetColor(255, 255, 255));
@@ -169,7 +169,7 @@ void draw_GameClear() {
 	/*フェードイン、フェードアウト*/
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, charClearOver);
-	str = "One More?";
+	str = "スペースキーを押せば、もう一度プレイできます";
 	Strlen = strlen(str);
 	Width = GetDrawStringWidth(str, Strlen);
 	DrawString(320 - Width / 2, 280, str, GetColor(255, 255, 255));
@@ -199,7 +199,7 @@ void draw_GameOver() {
 	/*フェードイン、フェードアウト*/
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, charClearOver);
-	str = "One More?";
+	str = "スペースキーを押せば、もう一度プレイできます";
 	Strlen = strlen(str);
 	Width = GetDrawStringWidth(str, Strlen);
 	DrawString(320 - Width / 2, 280, str, GetColor(255, 255, 255));
@@ -237,11 +237,19 @@ void draw() {
 			draw_Player_HP();
 			if (clear_flag == true) {
 				draw_GameClear();
+				if (keyboard.checkKey(KEY_INPUT_SPACE) == 1) {
+					play_mode = true;
+					initialization();
+				}
 			}
 			
 		}
 		else {
 			draw_GameOver();
+			if (keyboard.checkKey(KEY_INPUT_SPACE) == 1) {
+				play_mode = true;
+				initialization();
+			}
 		}
 	}
 }

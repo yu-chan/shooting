@@ -6,13 +6,13 @@ Enemy::Enemy()
 {
 	mallocSub(3);
 	mallocCha(3);
-	substance *sub = getSub();
 }
 
 
 Enemy::~Enemy()
 {
 	free(getSub());
+	free(getCha());
 }
 
 void Enemy::move() {

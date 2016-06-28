@@ -29,6 +29,7 @@ Player::Player()
 Player::~Player()
 {
 	free(getSub());
+	free(getCha());
 }
 
 void Player::move() {
