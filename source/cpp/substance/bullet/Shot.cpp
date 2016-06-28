@@ -60,7 +60,3 @@ bool Shot::collision_detection(Substance *Sub, character* cha, VECTOR v, int Mod
 
 	return false;
 }
-
-bullet* Shot::getBul() {
-	return &bul;
-}

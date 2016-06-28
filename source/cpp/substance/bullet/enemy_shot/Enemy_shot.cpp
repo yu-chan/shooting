@@ -51,9 +51,6 @@ void Enemy_shot::shot_regist() {
 					music.se_play(SHOT_NO);
 					break;
 				}
-				else {
-					OutputDebugStringW(L"Enemy_shot true\n");
-				}
 			}
 		}
 	}
