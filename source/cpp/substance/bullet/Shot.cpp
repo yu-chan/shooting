@@ -55,8 +55,5 @@ bool Shot::collision_detection(Substance *Sub, character* cha, VECTOR v, int Mod
 		}
 	}
 
-	//ƒRƒŠƒWƒ‡ƒ“î•ñ‚ÌŒãn––
-	//MV1CollResultPolyDimTerminate(HitPolyDim);
-
 	return false;
 }
