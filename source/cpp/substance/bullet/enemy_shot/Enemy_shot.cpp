@@ -31,15 +31,8 @@ void Enemy_shot::shot_regist() {
 					//差を求める
 					VECTOR p_e_sub = VSub(cur_player, cur_enemy);
 
-					//サイズを求める
-					//float vsize = VSize(p_e_sub);
-
-					//移動量を0.2にする
-					//p_e_sub = VScale(p_e_sub, 0.2f * 1 / vsize);
-
 					//差ベクトルから角度を求める	   
 					float p_e_angy = atan2(p_e_sub.z, p_e_sub.x) / DX_PI_F * 180.0f;
-					//float p_e_angy = atan2(p_e_sub.z, p_e_sub.x);
 
 					_sub[j].x = sub[i].x;
 					_sub[j].y = sub[i].y + SHOT_ENEMY_Y + 1;
@@ -47,7 +40,6 @@ void Enemy_shot::shot_regist() {
 
 					_sub[j].vx = 2.0f * cos(p_e_angy * DX_PI_F / 180.0f);
 					_sub[j].vz = 2.0f * sin(p_e_angy * DX_PI_F / 180.0f);
-					//_sub[i].vz = -0.1f;
 
 					_sub[j].count = 0;
 					_sub[j].flag = true;
@@ -74,36 +66,16 @@ void Enemy_shot::move() {
 			sub[i].x += sub[i].vx;
 			sub[i].z += sub[i].vz;
 			sub[i].count++;
-			//DrawFormatString(0, 0, GetColor(255, 255, 255), "count:%d", sub[i].count);
 
-			//相手に当たってるなら、フラグを消す
-			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + 10, sub[i].z), VGet(sub[i].x, sub[i].y + 10, sub[i].z + 5), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
-				sub[i].flag = false;
-			}*/
-			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y + SHOT_ENEMY_Y, sub[i].z + SHOT_ENEMY_Z), ModelAirCraft, PLAYER_MODEL_FRAMEINDEX)) {
-				sub[i].flag = false;
-			}*/	   
-			/*if (collision_detection(&player, VGet(sub[i].x, sub[i].y, sub[i].z), -1) == true) {
-				sub[i].flag = false;
-				OutputDebugStringW(L"Enemy_shot Hit!!\n");
-				continue;
-			}*/	     
 			if (collision_detection(&player, player.getCha(), VGet(sub[i].x, sub[i].y, sub[i].z), -1, 1) == true) {
 				sub[i].flag = false;
-				OutputDebugStringW(L"Enemy_shot Hit!!\n");
+				//OutputDebugStringW(L"Enemy_shot Hit!!\n");
 				continue;
 			}
 
-			//範囲外に出たらフラグを消す
-			/*if (sub[i].x < SHOT_RANGE_X_MIN || sub[i].x > SHOT_RANGE_X_MAX ||
-				sub[i].y < SHOT_RANGE_Y_MIN || sub[i].y > SHOT_RANGE_Y_MAX ||
-				sub[i].z < SHOT_RANGE_Z_MIN) {
-				sub[i].flag = false;
-			}*/
-
 			if (sub[i].count == 100) {
 				sub[i].flag = false;
-				OutputDebugStringW(L"Enemy_shot Vanish!!\n");
+				//OutputDebugStringW(L"Enemy_shot Vanish!!\n");
 			}
 		}
 	}

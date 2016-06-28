@@ -7,7 +7,6 @@ private:
 public:
 	Substance();
 	void move();
-	//bool collision_detection(substance);
 	substance* getSub();
 	void setSub(substance*);
 	void mallocSub(int);

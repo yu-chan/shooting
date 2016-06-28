@@ -4,7 +4,6 @@
 
 //いろいろなものを初期化
 void initialization() {
-	//substance *sub;
 	//カメラの座標、注視点を初期化する
 	substance *sub = player.getSub();
 	camera_pos = VGet(sub[0].x, sub[0].y + 10.0f, sub[0].z - 30); //カメラの位置

@@ -19,7 +19,7 @@ void Enemy::move() {
 	substance *sub = getSub();
 	substance *sub_ = player.getSub();
 	character *cha = getCha();
-	////character &cha = *getCha();
+
 	for (int i = 0; i < getSize(); i++) {
 		if (sub[i].flag == true) {
 
@@ -36,7 +36,6 @@ void Enemy::move() {
 
 			//敵がプレイヤーの方への移動量を0.1にする
 			p_e_sub = VScale(p_e_sub, 1 / (3 * vsize));	
-			//p_e_sub = VScale(p_e_sub, 1 / vsize);
 
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
@@ -54,11 +53,7 @@ void Enemy::move() {
 			float angy_sub = p_e_angy - pre_angy;
 
 			//角度を求める
-			//sub[i].angx = acos(p_e_sub.z / vsize);
-			//sub[i].angy += angy_sub;
-			//sub[i].angy += angy_sub; 
 			sub[i].angy = 90.0f - p_e_angy;
-			//sub[i].angz = acos(p_e_sub.y / vsize);
 
 			sub[i].count++;
 		}
@@ -72,10 +67,7 @@ void Enemy::enemy_regist() {
 
 	for (int i = 0; i < getSize(); i++) {
 		//敵の出現時間とステージのカウントが同じなら、敵を出現させる
-		/*if (sub[i].aptime == stage_count) {
-			sub[i].flag = true;
-			sub[i].count = 0;
-		}*/
+
 		//100カウントごとに、１体ずつ登録
 		if (stage_count != 0 && stage_count % 100 == 0 && sub[i].flag == false && sub[i].fall_flag == false) {
 			OutputDebugStringW(L"enemy作った\n");
@@ -87,7 +79,5 @@ void Enemy::enemy_regist() {
 			break;
 		}
 	}
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", getSize());
-	DrawFormatString(0, 10, GetColor(255, 255, 255), "%d", down_enemy_num);
 	srand(0);
 }

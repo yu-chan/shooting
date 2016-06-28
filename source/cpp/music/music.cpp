@@ -52,44 +52,13 @@ void Music::bgm_main() {
 			bgm.flag = 1;
 			break;
 		case 1:
-			//switch (bgm.knd[0]) {
-				//case 0:
 					//ステージカウントが60になったら、BGMを流す
 					if (stage_count == 60) {
 						//BGMを流す
 						PlaySoundMem(bgm.handle, DX_PLAYTYPE_LOOP);
-						//bgm.flag = 2;
 					}
 					break;
-				//default:
-					//break;
-			//}
 			break;
-			/*
-		case 2:
-			// 60はいずれ変える
-			if (stage_count == 60) {
-				StopSoundMem(bgm.handle);
-				delete_bgm();
-				//load_bgm(1);
-				SetLoopPosSoundMem(bgm.loop_pos, bgm.handle);
-				bgm.flag = 3;
-			}
-			break;
-		case 3:
-			switch (bgm.knd[0]) {
-				case 0:
-					//60はいずれ変える
-					if (stage_count == 60) {
-						PlaySoundMem(bgm.handle, DX_PLAYTYPE_LOOP);
-						bgm.flag = 4;
-					}
-					break;
-				default:
-					break;
-			}
-			break;
-			*/
 		default:
 			break;
 	}

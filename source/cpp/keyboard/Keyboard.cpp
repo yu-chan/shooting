@@ -8,13 +8,6 @@ Keyboard::Keyboard()
 	UDFlag = false;
 }
 
-
-Keyboard::~Keyboard()
-{
-	//delete[] inputKey;
-	//delete[] key;
-}
-
 //キーが押されているかチェックする
 int Keyboard::checkKey(unsigned char KEY) {
 	LRFlag = false;
