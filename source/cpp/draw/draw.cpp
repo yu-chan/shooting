@@ -116,6 +116,15 @@ void draw_Effect() {
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 		}
 	}
+
+	eff = enemy_shot.getEff();
+	for (int i = 0; i < player_shot.getSize(); i++) {
+		if (eff[i].flag == true) {
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, eff[i].br);
+			DrawSphere3D(VGet(eff[i].x, eff[i].y, eff[i].z), eff[i].r, 8, GetColor(255, 0, 0), GetColor(255, 255, 255), TRUE);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+		}
+	}
 }
 
 //Player‚ÌHP‚Ì•`‰æ

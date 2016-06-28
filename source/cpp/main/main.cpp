@@ -78,6 +78,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//“G‚Ì’e‚ğ“®‚©‚·
 		enemy_shot.shot_regist();
 		enemy_shot.move();
+		enemy_shot.calc_effect();
 
 		//“G‚ğ‘S‚Ä“|‚µ‚½‚çAƒNƒŠƒA
 		if (down_enemy_num == enemy.getSize()) {

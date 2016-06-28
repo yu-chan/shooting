@@ -4,7 +4,9 @@
 Enemy_shot::Enemy_shot()
 {
 	mallocSub(1);
+	mallocEff(getSize());
 	memset(getSub(), 0, sizeof(substance) * getSize());
+	memset(getEff(), 0, sizeof(effect) * getSize());
 }
 
 
@@ -66,6 +68,7 @@ void Enemy_shot::move() {
 
 			if (collision_detection(&player, player.getCha(), VGet(sub[i].x, sub[i].y, sub[i].z), -1, 1) == true) {
 				sub[i].flag = false;
+				effect_regist(VGet(sub[i].x, sub[i].y, sub[i].z));
 				//OutputDebugStringW(L"Enemy_shot Hit!!\n");
 				continue;
 			}
