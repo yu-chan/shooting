@@ -106,6 +106,18 @@ void draw_Planet() {
 	DrawSphere3D(VGet(sub[0].x, sub[0].y, sub[0].z), PLANET_R, PLANET_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 }
 
+//エフェクトの描画
+void draw_Effect() {
+	effect* eff = player_shot.getEff();
+	for (int i = 0; i < player_shot.getSize(); i++) {
+		if (eff[i].flag == true) {
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, eff[i].br);
+			DrawSphere3D(VGet(eff[i].x, eff[i].y, eff[i].z), eff[i].r, 8, GetColor(255, 0, 0), GetColor(255, 255, 255), TRUE);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+		}
+	}
+}
+
 //PlayerのHPの描画
 void draw_Player_HP() {
 	character *cha = player.getCha();
@@ -234,6 +246,7 @@ void draw() {
 			draw_Enemy_shot();
 			draw_Player();
 			draw_Enemy();
+			draw_Effect();
 			draw_Player_HP();
 			if (clear_flag == true) {
 				draw_GameClear();

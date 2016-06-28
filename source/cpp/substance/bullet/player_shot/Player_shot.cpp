@@ -7,11 +7,13 @@
 Player_shot::Player_shot()
 {
 	mallocSub(PLAYER_SHOT_MAX);
+	mallocEff(getSize());
 	/*if (getSub() == NULL)
 		OutputDebugStringW(L"Player_shot‚Åƒƒ‚ƒŠ‚ªŠm•Û‚Å‚«‚Ä‚È‚¢\n");
 	else
 		OutputDebugStringW(L"Player_shot‚Åƒƒ‚ƒŠ‚ªŠm•Û‚³‚ê‚Ä‚¢‚é\n");*/
 	memset(getSub(), 0, sizeof(substance) * getSize());
+	memset(getEff(), 0, sizeof(effect) * getSize());
 }
 
 
@@ -58,6 +60,7 @@ void Player_shot::move() {
 
 			if (collision_detection(&enemy, enemy.getCha(),  VGet(sub[i].x, sub[i].y, sub[i].z), ENEMY_MODEL_FRAMEINDEX, SHOT_POWER) == true) {
 				sub[i].flag = false;
+				effect_regist(VGet(sub[i].x, sub[i].y, sub[i].z));
 				//OutputDebugStringW(L"Player_shot Hit!!\n");
 				continue;
 			}
