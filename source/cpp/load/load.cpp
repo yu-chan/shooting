@@ -33,7 +33,7 @@ void load_3DModel() {
 
 	//敵の読み込み
 	sub = enemy.getSub();
-	ModelEnemy = MV1LoadModel("./data/3dModel/Enemy/enemy.mqo"); //大きさ x:26*10 y:わからん z:26*
+	ModelEnemy = MV1LoadModel("./data/3dModel/Enemy/enemy.mqo"); //大きさ x:26*10 y:わからん z:26*10
 	for (int i = 0; i < enemy.getSize(); i++) {
 		sub[i].MHandle = MV1DuplicateModel(ModelEnemy);
 		//モデルのサイズを小さくする

@@ -5,7 +5,7 @@
 Enemy::Enemy()
 {
 	mallocSub(3);
-	mallocCha(3);
+	mallocCha(getSize());
 }
 
 
@@ -40,6 +40,33 @@ void Enemy::move() {
 			sub[i].x += p_e_sub.x;
 			sub[i].y += p_e_sub.y;
 			sub[i].z += p_e_sub.z;
+
+			for (int j = 0; j < getSize(); j++) {
+				if (j == i) {
+					OutputDebugStringW(L"一緒\n");
+					continue;
+				}
+				if (sub[j].flag == false) {
+					OutputDebugStringW(L"まだ作られてない\n");
+					continue;
+				}
+
+				/*別の敵と当たりそうなら、座標を元に戻す */
+				MV1SetupCollInfo(sub[j].MHandle, -1, 8, 8, 8);
+				MV1_COLL_RESULT_POLY_DIM Hit = MV1CollCheck_Sphere(sub[j].MHandle, -1, VGet(sub[i].x, sub[i].y, sub[i].z), 7);
+				if (Hit.HitNum >= 1) {
+					OutputDebugStringW(L"enemy同士が当たってる\n");
+					sub[i].x = pre_enemy.x;
+					sub[i].y = pre_enemy.y;
+					sub[i].z = pre_enemy.z;
+					//当たり判定情報の後始末
+					//MV1CollResultPolyDimTerminate(Hit);
+					//break;
+				}
+
+				//当たり判定情報の後始末
+				MV1CollResultPolyDimTerminate(Hit);
+			}
 
 
 			/*角度*/
