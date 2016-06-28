@@ -26,7 +26,7 @@ void Player_shot::shot_regist() {
 	if (keyboard.checkKey(KEY_INPUT_SPACE)==1) { 
 		substance* _sub = getSub();
 		for (int i = 0; i < getSize(); i++) {
-			if (_sub[i].flag == false){	
+			if (stage_count != 0 && _sub[i].flag == false){	
 				/*OutputDebugStringW(L"Player_shot‚Åƒƒ‚ƒŠ‚ªfalse\n");
 				sprintf(str, "%d:ƒtƒ‰ƒO‚ª%d\n", i, _sub[i].flag);
 				OutputDebugString(str);*/
