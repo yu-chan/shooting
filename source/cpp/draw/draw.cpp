@@ -130,12 +130,12 @@ void draw_Effect() {
 //Player‚ÌHP‚Ì•`‰æ
 void draw_Player_HP() {
 	character *cha = player.getCha();
-	int px = 480, py = 10;
+	int px = 520, py = 10;
 	int addx = 100, addy = 15;
 	unsigned int white = GetColor(255, 255, 255), ygreen = GetColor(0, 255, 0);//”’A‰©—Î
 
 	//HP‚Ì•¶š‚ğ•\‹L
-	DrawFormatString(px - 20, py, white, "HP");
+	DrawFormatString(px - 60, py, white, "HP %3d", cha[0].hp);
 
 	//lŠp‚Ì•`‰æ
 	DrawBox(px, py, px + cha[0].hp - 1, py + addy - 1, ygreen, TRUE);
