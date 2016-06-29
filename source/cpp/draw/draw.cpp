@@ -88,15 +88,12 @@ void draw_Dust() {
 		DrawPixel3D(VGet(sub[i].x, sub[i].y, sub[i].z), GetColor(255, 255, 255));
 
 		//‹ß‚­‚Ì‚à‚Ì‚Íü‚Å•`‰æ 
-		//sub[i].x = (float)GetRandom(0, DUST_RANGE);
-		//sub[i].y = (float)GetRandom(0, DUST_RANGE);
-		//sub[i].z = (float)GetRandom(0, DUST_RANGE);
-		sub[i].x = (float)(rand() % range);
-		sub[i].y = (float)(rand() % range);
-		sub[i].z = (float)(rand() % range);
-		sub[i].x = modulo(-p[0].x + sub[i].x, range) - range * 0.5f;
-		sub[i].y = modulo(-p[0].y + sub[i].y, range) - range * 0.5f;
-		sub[i].z = modulo(-p[0].z + sub[i].z, range) - range * 0.5f;
+		sub[i].x = (float)GetRandom(0, DUST_RANGE);
+		sub[i].y = (float)GetRandom(0, DUST_RANGE);
+		sub[i].z = (float)GetRandom(0, DUST_RANGE);
+		sub[i].x = modulo(-p[0].x + sub[i].x, (float)range) - range * 0.5f;
+		sub[i].y = modulo(-p[0].y + sub[i].y, (float)range) - range * 0.5f;
+		sub[i].z = modulo(-p[0].z + sub[i].z, (float)range) - range * 0.5f;
 		DrawLine3D(VGet(sub[i].x, sub[i].y, sub[i].z), 
 			VGet(sub[i].x - p[0].vx * (range * 0.001f) + 0.001f, 
 			sub[i].y - p[0].vy * (range * 0.001f), 
@@ -105,12 +102,6 @@ void draw_Dust() {
 	}
 
 	srand(seed);
-}
-
-//Â‚¢˜f¯‚Ì•`‰æ
-void draw_Planet() {
-	substance *sub = planet.getSub();
-	DrawSphere3D(VGet(sub[0].x, sub[0].y, sub[0].z), PLANET_R, PLANET_DIVNUM, GetColor(0, 0, 255), GetColor(255, 255, 255), TRUE);
 }
 
 //ƒGƒtƒFƒNƒg‚Ì•`‰æ

@@ -7,5 +7,4 @@ GLOBAL Enemy enemy;
 GLOBAL Enemy_shot enemy_shot;
 GLOBAL Music music;
 GLOBAL Fps fps;
-GLOBAL Substance planet;
 GLOBAL Substance dust;

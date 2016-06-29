@@ -47,13 +47,6 @@ void initialization() {
 		cha[i].knd = 1;
 	}
 
-	//˜f¯‚ÌÀ•W‚ğŒˆ‚ß‚é
-	planet.mallocSub(1);
-	sub = planet.getSub();
-	sub[0].x = 0.0f;
-	sub[0].y = 0.0f;
-	sub[0].z = 600.0f;
-
 	//o‚Ì‰Šú‰»
 	dust.mallocSub(DUST_NUM);
 }
