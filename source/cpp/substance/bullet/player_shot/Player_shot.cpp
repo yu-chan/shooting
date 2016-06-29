@@ -38,6 +38,10 @@ void Player_shot::shot_regist() {
 				_sub[i].z = sub[0].z;
 				_sub[i].vx = 2.0f * sin((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
 				_sub[i].vz = 2.0f * cos((sub[0].angy - 180.0f) * DX_PI_F / 180.0f);
+				if (keyboard.checkKey(KEY_INPUT_C)) {
+					_sub[i].vx *= 3;
+					_sub[i].vz *= 3;
+				}
 				_sub[i].count = 0;
 
 				//ショット音のフラグを立てる

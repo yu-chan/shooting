@@ -46,6 +46,10 @@ void Player::move() {
 
 	sub[0].vx = 1.0f * cos((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
 	sub[0].vz = 1.0f * sin((90 - (sub[0].angy - 180.0f)) * DX_PI_F / 180.0f);
+	if (keyboard.checkKey(KEY_INPUT_C)) {
+		sub[0].vx *= 3;
+		sub[0].vz *= 3;
+	}
 	//XƒL[‚ª‰Ÿ‚³‚ê‚Ä‚½‚çA’â~‚·‚é
 	if (keyboard.checkKey(KEY_INPUT_X)) {
 		sub[0].vx = 0;
