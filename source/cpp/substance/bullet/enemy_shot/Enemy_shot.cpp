@@ -3,7 +3,7 @@
 
 Enemy_shot::Enemy_shot()
 {
-	mallocSub(1);
+	mallocSub(ENEMY_SHOT_MAX);
 	mallocEff(getSize());
 	memset(getSub(), 0, sizeof(substance) * getSize());
 	memset(getEff(), 0, sizeof(effect) * getSize());

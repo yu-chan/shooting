@@ -4,7 +4,7 @@
 
 Enemy::Enemy()
 {
-	mallocSub(3);
+	mallocSub(ENEMY_NUM);
 	mallocCha(getSize());
 }
 

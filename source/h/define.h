@@ -1,10 +1,6 @@
 // shooting/source/hの中 
 
 
-//true,false
-//#define TRUE 1
-//#define FALSE 0
-
 //ラジアンパイ
 #define PI 3.141592
 
@@ -24,23 +20,11 @@
 //斜めに動かした時に必要
 #define ROOT2 sqrt(2.0f)
 
-//プレイヤーの行動範囲
-#define PLAYER_RANGE_X_MIN -15
-#define PLAYER_RANGE_X_MAX 15
-#define PLAYER_RANGE_Y_MIN -10
-#define PLAYER_RANGE_Y_MAX 10
 //プレイヤーモデルのFrameIndex
 #define PLAYER_MODEL_FRAMEINDEX 0
 
-//敵の行動範囲
-#define ENEMY_RANGE_X_MIN -20
-#define ENEMY_RANGE_X_MAX 20
-#define ENEMY_RANGE_Y_MIN -20
-#define ENEMY_RANGE_Y_MAX 20
-#define ENEMY_RANGE_Z_MIN -20
-#define ENEMY_RANGE_Z_MAX 20
-//敵データの数
-#define ENEMY_DATA_CSV_NUM 7
+//敵の数
+#define ENEMY_NUM 10
 //敵モデルのFrameIndex
 #define ENEMY_MODEL_FRAMEINDEX 0
 
@@ -55,13 +39,6 @@
 //ショットの最大数
 #define PLAYER_SHOT_MAX 100
 #define ENEMY_SHOT_MAX 100
-//ショットの行動範囲
-#define SHOT_RANGE_X_MIN -20
-#define SHOT_RANGE_X_MAX 20
-#define SHOT_RANGE_Y_MIN -20
-#define SHOT_RANGE_Y_MAX 20
-#define SHOT_RANGE_Z_MIN -20
-#define SHOT_RANGE_Z_MAX 20
 #define SHOT_CAPSULE_R 1.0f
 #define SHOT_CAPSULE_DIVNUM 8
 //プレイヤーがショットを打った時のプラスする座標
