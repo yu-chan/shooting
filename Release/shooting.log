@@ -1,0 +1,18 @@
+﻿  draw.cpp
+  Fps.cpp
+  initialization.cpp
+  Keyboard.cpp
+  load.cpp
+  main.cpp
+  Music.cpp
+  Enemy_shot.cpp
+  Player_shot.cpp
+  Shot.cpp
+  Character.cpp
+  Enemy.cpp
+  Player.cpp
+  Substance.cpp
+     ライブラリ C:\college\syusyoku\shooting\Release\shooting.lib とオブジェクト C:\college\syusyoku\shooting\Release\shooting.exp を作成中
+  コード生成しています。
+  コード生成が終了しました。
+  shooting.vcxproj -> C:\college\syusyoku\shooting\Release\shooting.exe
