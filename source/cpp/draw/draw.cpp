@@ -79,7 +79,7 @@ void draw_Dust() {
 	srand(0);
 
 	//float range = 20.0f;		  
-	float range = 500.0f;
+	int range = 1000;
 	for (int i = 0; i < dust.getSize(); i++) {
 		//‰“‚­‚Ì‚à‚Ì‚Í“_‚Å•`‰æ
 		sub[i].x = (float)GetRandom(-DUST_RANGE, DUST_RANGE);
@@ -88,13 +88,20 @@ void draw_Dust() {
 		DrawPixel3D(VGet(sub[i].x, sub[i].y, sub[i].z), GetColor(255, 255, 255));
 
 		//‹ß‚­‚Ì‚à‚Ì‚Íü‚Å•`‰æ 
-		sub[i].x = (float)GetRandom(0, DUST_RANGE);
-		sub[i].y = (float)GetRandom(0, DUST_RANGE);
-		sub[i].z = (float)GetRandom(0, DUST_RANGE);
+		//sub[i].x = (float)GetRandom(0, DUST_RANGE);
+		//sub[i].y = (float)GetRandom(0, DUST_RANGE);
+		//sub[i].z = (float)GetRandom(0, DUST_RANGE);
+		sub[i].x = (float)(rand() % range);
+		sub[i].y = (float)(rand() % range);
+		sub[i].z = (float)(rand() % range);
 		sub[i].x = modulo(-p[0].x + sub[i].x, range) - range * 0.5f;
 		sub[i].y = modulo(-p[0].y + sub[i].y, range) - range * 0.5f;
 		sub[i].z = modulo(-p[0].z + sub[i].z, range) - range * 0.5f;
-		DrawLine3D(VGet(sub[i].x, sub[i].y, sub[i].z), VGet(sub[i].x - p[0].x * (range * 0.001f) + 0.001f, sub[i].y - p[0].y * (range * 0.001f), sub[i].z - p[0].z * (range * 0.001f)), GetColor(255, 255, 255));
+		DrawLine3D(VGet(sub[i].x, sub[i].y, sub[i].z), 
+			VGet(sub[i].x - p[0].vx * (range * 0.001f) + 0.001f, 
+			sub[i].y - p[0].vy * (range * 0.001f), 
+			sub[i].z - p[0].vz * (range * 0.001f)), 
+			GetColor(255, 255, 255));
 	}
 
 	srand(seed);
@@ -249,7 +256,7 @@ void draw() {
 			SetUseZBuffer3D(TRUE);
 			SetWriteZBuffer3D(TRUE);
 			setCamera();
-			draw_Planet();
+			//draw_Planet();
 			draw_Dust();
 			draw_Player_shot();
 			draw_Enemy_shot();
